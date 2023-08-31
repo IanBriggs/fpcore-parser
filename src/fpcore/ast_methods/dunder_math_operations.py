@@ -29,7 +29,7 @@
 # Magic methods to integrate FPCore with python
 #
 
-from fpcore.base_ast import ASTNode, Expr, FPCore, Number, Operation, Property
+from fpcore.base_ast import ASTNode, Expr, FPCore, Number, Operation
 from utils import add_method, Logger
 
 logger = Logger(level=Logger.EXTRA)
