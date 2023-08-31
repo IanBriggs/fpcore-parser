@@ -1,0 +1,3195 @@
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_b_number_0"
+    :pre (and (and (and (<= -1000000000.0 b) (<= b 1000000000.0)) (and (<= -1000000000.0 a) (<= a 1000000000.0))) (and (<= -1000000000.0 c) (<= c 1000000000.0)))
+    (/ (+ (- b) (sqrt (- (pow b 2.0) (* (* 4.0 a) c)))) (* 2.0 a)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_1"
+    :pre (and (<= 0.9 x) (<= x 1.0))
+    (/ (+ 1.0 (pow x 2.0)) (- 1.0 x)))
+
+(FPCore (ephem_start_delta_s window_duration_s)
+    :description "herbie web query"
+    :name "set_b_number_2"
+    :pre (and (and (<= 0.0 ephem_start_delta_s) (<= ephem_start_delta_s 6311520000.0)) (and (<= 0.0 window_duration_s) (<= window_duration_s 518400.0)))
+    (floor (/ ephem_start_delta_s window_duration_s)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_3"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (/ (+ 1.0 (pow x 2.0)) (- 1.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_4"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (/ (+ 1.0 (pow x 2.0)) (- 1.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_5"
+    :pre (and (<= 10.0 x) (<= x 100.0))
+    (/ 1.0 (/ (+ (* (* 0.0176058 (exp (- (* (- 0.00177462) x) 6.36701))) (pow x 0.0057)) (* (* 0.8279 (exp (- (* (- 0.0217371) x) 6.87129))) (pow x 0.8123))) (+ (+ (* (* 0.34 (exp (- (* (- 0.210748) x) 10.7371))) (pow x 3.9259)) (* (* 0.592482 (exp (- (* (- 0.761267) x) 14.2397))) (pow x 8.4834))) 1.0))))
+
+(FPCore (alpha beta x)
+    :description "herbie web query"
+    :name "set_b_number_6"
+    :pre (and (and (and (<= 1.0 alpha) (<= alpha 10.0)) (and (<= 0.0001 beta) (<= beta 1.0))) (and (<= 10.0 x) (<= x 100.0)))
+    (exp (- (+ (+ (* alpha (log beta)) (* (- alpha 1.0) (log x))) (* (- beta) x)) (lgamma alpha))))
+
+(FPCore (alpha beta x)
+    :description "herbie web query"
+    :name "set_b_number_7"
+    :pre (and (and (and (<= 1.0 alpha) (<= alpha 10.0)) (and (<= 0.0 beta) (<= beta 1.0))) (and (<= 0.0 x) (<= x 100.0)))
+    (exp (- (+ (+ (* alpha (log beta)) (* (- alpha 1.0) (log x))) (* (- beta) x)) (lgamma alpha))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_8"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (sqrt (+ x 42.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_9"
+    :pre (and (<= -1000.0 x) (<= x 1.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_10"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (sqrt (+ x 2.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_11"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (- (sqrt (+ x 7.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_12"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (asinh x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_13"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (- 1.0 (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_14"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (sqrt (* (pow x 2.0) 5.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_15"
+    :pre (and (<= -1000000000.0 x) (<= x 1.0))
+    (* (sin (+ x (/ PI 2.0))) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_16"
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_17"
+    :pre (and (<= -0.7 x) (<= x 1.5))
+    (- (log (+ 1.0 x)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_18"
+    :pre (and (<= 0.0 x) (<= x 1.5))
+    (- (log (+ 1.0 x)) x))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_19"
+    (/ 3.33 3.7))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_20"
+    (/ 3.3 3.7))
+
+(FPCore (m_air r1_drop)
+    :description "herbie web query"
+    :name "set_b_number_21"
+    :pre (and (and (<= 1e-12 m_air) (<= m_air 1e-11)) (and (<= 100000.0 r1_drop) (<= r1_drop 400000.0)))
+    (+ 1.0 (* (/ (* 2.0 m_air) r1_drop) (+ 1.257 (* 0.4 (exp (/ (/ (* (- 1.1) r1_drop) 2.0) m_air)))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_22"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (/ 1.0 (pow x 12.0)) (/ 1.0 (pow x 6.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_23"
+    :pre (and (<= 0.0 x) (<= x 0.7853981633974483))
+    (sin x))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_24"
+    :pre (and (and (and (<= -1000000000.0 a) (<= a 1000000000.0)) (and (<= -1000000000.0 b) (<= b 1000000000.0))) (and (<= -1000000000.0 c) (<= c 1000000000.0)))
+    (/ (+ (- (* (* (* 2.0 a) a) a) (* (* 9.0 a) b)) (* 27.0 c)) 54.0))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_25"
+    :pre (and (and (and (<= -1.79e+308 x) (<= x 1.79e+308)) (and (<= -1.79e+308 y) (<= y 1.79e+308))) (and (<= -1.79e+308 z) (<= z 1.79e+308)))
+    (sqrt (+ (+ (* x x) (* y y)) (* z z))))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_26"
+    :pre (and (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0))) (and (<= -1000.0 z) (<= z 1000.0)))
+    (sqrt (+ (+ (* x x) (* y y)) (* z z))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_27"
+    :pre (and (and (and (<= 0.0 a) (<= a 100.0)) (and (<= 0.0 b) (<= b 100.0))) (and (<= 0.0 c) (<= c 100.0)))
+    (/ (- (+ (pow a 2.0) (pow b 2.0)) (pow c 2.0)) (* (* 2.0 a) b)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_28"
+    :pre (and (<= 1.0 x) (<= x 1000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_29"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (/ (+ x y) 2.0))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_30"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (/ (+ x y) 2.0))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_31"
+    (pow E PI))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_32"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (log (- 1.0 (+ (/ 1.0 1.0) (exp (- x))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_33"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (log (- 1.0 (+ (/ 1.0 1.0) (exp (- x))))))
+
+(FPCore (x a)
+    :description "herbie web query"
+    :name "set_b_number_34"
+    :pre (and (and (<= 0.0 x) (<= x 1000.0)) (and (<= -1.0 a) (<= a 1.0)))
+    (+ 1.0 (* (exp (/ (- 1.0) x)) (tanh (/ a x)))))
+
+(FPCore (x a)
+    :description "herbie web query"
+    :name "set_b_number_35"
+    :pre (and (and (<= 0.0 x) (<= x 1000.0)) (and (<= -1.0 a) (<= a 1.0)))
+    (+ 1.0 (* (exp (- x)) (tanh (/ a x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_36"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (log (+ 1.0 (exp x))))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_37"
+    :pre (and (and (<= -1000.0 y) (<= y 1000.0)) (and (<= -1000.0 x) (<= x 1000.0)))
+    (- y (/ (- (* y (exp y)) x) (- (* (+ 1.0 y) (exp y)) (/ (* (+ y 2.0) (- (* y (exp y)) x)) (* 2.0 (+ 1.0 y)))))))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_38"
+    :pre (and (and (<= -1000.0 y) (<= y 1000.0)) (and (<= -1000.0 x) (<= x 1000.0)))
+    (- y (- (* (/ (- (* y (exp y)) x) (+ 1.0 y)) (exp y)) (/ (* (+ y 2.0) (- (* y (exp y)) x)) (* 2.0 (+ y 1.0))))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_39"
+    :pre (and (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 b) (<= b 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308)))
+    (- a (/ (+ b c) (- a c))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_40"
+    :pre (and (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 b) (<= b 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308)))
+    (- a (/ (+ b c) (- a c))))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_41"
+    (sin (/ (* (* 2.0 PI) 100.0) 44100.0)))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_42"
+    (sin (/ (* (* (* 5.0 2.0) PI) 100.0) 44100.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_43"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (log (+ x (sqrt (- (* x x) 1.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_44"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (* (exp (- (* x (log1p (/ 1.0 x))) 1.0)) (sqrt (+ 1.0 (/ 1.0 x)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_45"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (- (+ x y) (* x y)))
+
+(FPCore (input_impedance PF3W_SENSOR_OUTPUT_IMPEDANCE)
+    :description "herbie web query"
+    :name "set_b_number_46"
+    :pre (and (and (<= 0.0 input_impedance) (<= input_impedance 65000.0)) (and (<= 0.0 PF3W_SENSOR_OUTPUT_IMPEDANCE) (<= PF3W_SENSOR_OUTPUT_IMPEDANCE 65000.0)))
+    (/ 1.0 (/ input_impedance (+ input_impedance PF3W_SENSOR_OUTPUT_IMPEDANCE))))
+
+(FPCore (x t y)
+    :description "herbie web query"
+    :name "set_b_number_47"
+    :pre (and (and (and (<= -1000000000.0 x) (<= x 1000000000.0)) (and (<= 0.0 t) (<= t 1.0))) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (+ (* x (- 1.0 t)) (* y t)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_48"
+    :pre (and (and (<= 0.0 x) (<= x 1.0)) (and (<= 0.0 y) (<= y 1.0)))
+    (+ (* x 0.5) (* y 0.5)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_49"
+    :pre (and (and (<= -1000000000.0 x) (<= x 1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (+ (* x 0.5) (* y 0.5)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_50"
+    :pre (and (and (<= -1000000000.0 x) (<= x 1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (* (+ x y) 0.5))
+
+(FPCore (b r a)
+    :description "herbie web query"
+    :name "set_b_number_51"
+    :pre (and (and (and (<= -1000000000.0 b) (<= b 1000000000.0)) (and (<= -1000000000.0 r) (<= r 1000000000.0))) (and (<= -1000000000.0 a) (<= a 1000000000.0)))
+    (/ (+ (* (- b) (pow r 2.0)) (* a (sqrt (- (+ (pow a 2.0) (pow b 2.0)) (pow r 2.0))))) (+ (pow a 2.0) (pow b 2.0))))
+
+(FPCore (r a b)
+    :description "herbie web query"
+    :name "set_b_number_52"
+    :pre (and (and (and (<= -1000000000.0 r) (<= r 1000000000.0)) (and (<= -1000000000.0 a) (<= a 1000000000.0))) (and (<= -1000000000.0 b) (<= b 1000000000.0)))
+    (/ (pow r 2.0) (+ (pow a 2.0) (pow b 2.0))))
+
+(FPCore (r a b)
+    :description "herbie web query"
+    :name "set_b_number_53"
+    :pre (and (and (and (<= -1000000000.0 r) (<= r 1000000000.0)) (and (<= -1000000000.0 a) (<= a 1000000000.0))) (and (<= -1000000000.0 b) (<= b 1000000000.0)))
+    (/ (* r (sqrt (- (+ (pow a 2.0) (pow b 2.0)) (pow r 2.0)))) (+ (pow a 2.0) (pow b 2.0))))
+
+(FPCore (r a b)
+    :description "herbie web query"
+    :name "set_b_number_54"
+    :pre (and (and (and (<= -1000000000.0 r) (<= r 1000000000.0)) (and (<= -1000000000.0 a) (<= a 1000000000.0))) (and (<= -1000000000.0 b) (<= b 1000000000.0)))
+    (* r (sqrt (- (+ (pow a 2.0) (pow b 2.0)) (pow r 2.0)))))
+
+(FPCore (w1 mt3 w2 mt2 t w3 mt t2 w4 t3)
+    :description "herbie web query"
+    :name "set_b_number_55"
+    :pre (and (and (and (and (and (and (and (and (and (and (<= -1.79e+308 w1) (<= w1 1.79e+308)) (and (<= -1.79e+308 mt3) (<= mt3 1.79e+308))) (and (<= -1.79e+308 w2) (<= w2 1.79e+308))) (and (<= -1.79e+308 mt2) (<= mt2 1.79e+308))) (and (<= -1.79e+308 t) (<= t 1.79e+308))) (and (<= -1.79e+308 w3) (<= w3 1.79e+308))) (and (<= -1.79e+308 mt) (<= mt 1.79e+308))) (and (<= -1.79e+308 t2) (<= t2 1.79e+308))) (and (<= -1.79e+308 w4) (<= w4 1.79e+308))) (and (<= -1.79e+308 t3) (<= t3 1.79e+308)))
+    (+ (+ (+ (* w1 mt3) (* (* (* 3.0 w2) mt2) t)) (* (* (* 3.0 w3) mt) t2)) (* w4 t3)))
+
+(FPCore (a t)
+    :description "herbie web query"
+    :name "set_b_number_56"
+    :pre (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 t) (<= t 1.79e+308)))
+    (* a (cos t)))
+
+(FPCore (A t)
+    :description "herbie web query"
+    :name "set_b_number_57"
+    :pre (and (and (<= -1.79e+308 A) (<= A 1.79e+308)) (and (<= -1.79e+308 t) (<= t 1.79e+308)))
+    (* A (cos t)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_58"
+    :pre (and (<= 1000.0 x) (<= x 1e+100))
+    (log (log (+ 1.0 (exp (exp x))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_59"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (sqrt (+ (* x x) 1.0)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_60"
+    :pre (and (and (<= -1.79e+308 x) (<= x 1.79e+308)) (and (<= -1.79e+308 y) (<= y 1.79e+308)))
+    (sqrt (+ (pow x 2.0) (pow y 2.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_61"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (/ 1.0 (+ 1.0 (exp x))))
+
+(FPCore (u b w a f d v e c)
+    :description "herbie web query"
+    :name "set_b_number_62"
+    :pre (and (and (and (and (and (and (and (and (and (<= -1000000000.0 u) (<= u 1000000000.0)) (and (<= -1000000000.0 b) (<= b 1000000000.0))) (and (<= 0.0 w) (<= w 1000.0))) (and (<= -1000000000.0 a) (<= a 1000000000.0))) (and (<= -1000000000.0 f) (<= f 1000000000.0))) (and (<= -1000000000.0 d) (<= d 1000000000.0))) (and (<= -1000000000.0 v) (<= v 1000000000.0))) (and (<= -1000000000.0 e) (<= e 1000000000.0))) (and (<= -1000000000.0 c) (<= c 1000000000.0)))
+    (- (* (- (* (- u b) w) (- a b)) (- f d)) (* (- (* (- v e) w) (- d e)) (- c a))))
+
+(FPCore (b a x)
+    :description "herbie web query"
+    :name "set_b_number_63"
+    :pre (and (and (and (<= 0.0 b) (<= b 1000.0)) (and (<= 0.0 a) (<= a 1000.0))) (and (<= 0.0 x) (<= x 1000.0)))
+    (* (/ b a) (sqrt (- (pow a 2.0) (pow x 2.0)))))
+
+(FPCore (b a x)
+    :description "herbie web query"
+    :name "set_b_number_64"
+    :pre (and (and (and (<= 0.0 b) (<= b 1000.0)) (and (<= 0.0 a) (<= a 1000.0))) (and (<= 0.0 x) (<= x 1000.0)))
+    (* (/ b a) (sqrt (- (pow x 2.0) (pow x 2.0)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_65"
+    :pre (and (and (<= 0.001 x) (<= x 1000.0)) (and (<= 0.001 y) (<= y 1000.0)))
+    (log (/ x y)))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_66"
+    :pre (and (and (<= -1000000000.0 a) (<= a 1000000000.0)) (and (<= -1000000000.0 b) (<= b 1000000000.0)))
+    (log (- (exp a) (exp b))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_67"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (log (+ 1.0 (exp (- x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_68"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (exp (+ 1.0 (log x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_69"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (log (+ 1.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_70"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (+ (sqrt x) (sqrt (+ x 1.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_71"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (sqrt (- (* x x) 1.0)))
+
+(FPCore (z n)
+    :description "herbie web query"
+    :name "set_b_number_72"
+    :pre (and (and (<= -10.0 z) (<= z 10.0)) (and (<= 0.0 n) (<= n 100.0)))
+    (pow z n))
+
+(FPCore (v0 t v1)
+    :description "herbie web query"
+    :name "set_b_number_73"
+    :pre (and (and (and (<= -1000.0 v0) (<= v0 1000.0)) (and (<= -1000.0 t) (<= t 1000.0))) (and (<= -1000.0 v1) (<= v1 1000.0)))
+    (+ v0 (* t (- v1 v0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_74"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_75"
+    :pre (and (<= 1.0 x) (<= x 1000000000.0))
+    (log (+ x (sqrt (- (* x x) 1.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_76"
+    :pre (and (<= 1.0 x) (<= x 2.0))
+    (log (+ x (sqrt (- (* x x) 1.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_77"
+    :pre (and (<= -1000.0 x) (<= x -1000.0))
+    (/ (* (exp PI) 1.0) (tan x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_78"
+    :pre (and (and (<= -1000000000.0 x) (<= x 1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (sqrt (+ (* x x) (* y y))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_79"
+    :pre (and (and (<= -1000000000.0 x) (<= x 1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (+ (acos (cos x)) (acos (cos y))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_80"
+    :pre (and (<= 0.0 x) (<= x 1000.0))
+    (+ (sqrt x) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_81"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (+ (sqrt x) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_82"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (+ (sqrt (- x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_83"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (+ (sqrt (- x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_84"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (+ (- x 1.0) (sqrt x)))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_85"
+    (+ 2.0 2.0))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_86"
+    :pre (and (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0))) (and (<= -1000.0 z) (<= z 1000.0)))
+    (+ (- x (/ y 2.0)) (/ z 2.0)))
+
+(FPCore (p c t)
+    :description "herbie web query"
+    :name "set_b_number_87"
+    :pre (and (and (and (<= -1.79e+308 p) (<= p 1.79e+308)) (and (<= -1.79e+308 c) (<= c 1.79e+308))) (and (<= -1.79e+308 t) (<= t 1.79e+308)))
+    (+ (- p (/ c 2.0)) (/ t 2.0)))
+
+(FPCore (p c t)
+    :description "herbie web query"
+    :name "set_b_number_88"
+    :pre (and (and (and (<= -1000000000.0 p) (<= p 1000000000.0)) (and (<= -1000000000.0 c) (<= c 1000000000.0))) (and (<= -1000000000.0 t) (<= t 1000000000.0)))
+    (+ (- p (/ c 2.0)) (/ t 2.0)))
+
+(FPCore (p c t)
+    :description "herbie web query"
+    :name "set_b_number_89"
+    :pre (and (and (and (<= -1000.0 p) (<= p 1000.0)) (and (<= -1000.0 c) (<= c 1000.0))) (and (<= -1000.0 t) (<= t 1000.0)))
+    (+ (- p (/ c 2.0)) (/ t 2.0)))
+
+(FPCore (q p)
+    :description "herbie web query"
+    :name "set_b_number_90"
+    (sqrt (fma q q (pow p 3.0))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_91"
+    (* 1.7320508075688772 (sqrt (+ x (* y y)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_92"
+    (sqrt (+ (* 3.0 x) (* (* 3.0 y) y))))
+
+(FPCore (x pi)
+    :description "herbie web query"
+    :name "set_b_number_93"
+    :pre (and (<= 3.14159265358979 pi) (<= pi 3.1415926535898))
+    (+ x (/ (+ (- (* x (cos x)) (sin x)) (* 0.5 pi)) (* x (sin x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_94"
+    :pre (and (<= 0.0 x) (<= x 10.0))
+    (+ (sqrt (/ 1.0 x)) (cbrt (/ x 2.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_95"
+    :pre (and (<= 0.0 x) (<= x 10000.0))
+    (sqrt (/ 1.0 x)))
+
+(FPCore (r)
+    :description "herbie web query"
+    :name "set_b_number_96"
+    :pre (and (<= 0.0 r) (<= r 1.0))
+    (sqrt (/ (* (- 2.0) (log r)) r)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_97"
+    :pre (and (<= 0.0 x) (<= x 100.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_98"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (- (exp x) (cos x)))
+
+(FPCore (q p)
+    :description "herbie web query"
+    :name "set_b_number_99"
+    (+ (* q q) (* (* p p) p)))
+
+(FPCore (q p)
+    :description "herbie web query"
+    :name "set_b_number_100"
+    (sqrt (+ (* q q) (* (* p p) p))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_101"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_102"
+    :pre (and (and (<= -10000000000.0 x) (<= x 10000000000.0)) (and (<= -10000000000.0 y) (<= y 10000000000.0)))
+    (log (+ 1.0 (exp (- x y)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_103"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (log (+ 1.0 (exp (- x y)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_104"
+    :pre (and (and (<= -1000000000.0 x) (<= x 1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (log (+ 1.0 (exp (- x y)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_105"
+    :pre (and (and (<= -1000000000.0 x) (<= x -1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (log (+ 1.0 (exp (- x y)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_106"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (/ (- x (sin x)) (- x (tan x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_109"
+    (+ (* x x) (* x 10.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_110"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (+ (+ 1.0 (pow x 2.0)) (pow x 3.0)) (pow x 4.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_111"
+    :pre (and (<= -1.57079632679 x) (<= x 1.57079632679))
+    (sin x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_112"
+    :pre (and (<= 0.0 x) (<= x 1e+100))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_113"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x n_dot_h)
+    :description "herbie web query"
+    :name "set_b_number_114"
+    :pre (and (and (<= 0.0 x) (<= x 1.0)) (and (<= -1.0 n_dot_h) (<= n_dot_h 1.0)))
+    (/ (* x x) (* PI (pow (+ (* (* n_dot_h n_dot_h) (- (* 0.5 0.5) 1.0)) 1.0) 2.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_115"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (a n_dot_h)
+    :description "herbie web query"
+    :name "set_b_number_116"
+    :pre (and (and (<= 0.0 a) (<= a 1.0)) (and (<= 0.0 n_dot_h) (<= n_dot_h 1.0)))
+    (/ (* a a) (* PI (pow (+ (* (* n_dot_h n_dot_h) (- (* a a) 1.0)) 1.0) 2.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_117"
+    :pre (and (<= 0.0 x) (<= x 2.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (a n_dot_h)
+    :description "herbie web query"
+    :name "set_b_number_118"
+    :pre (and (and (<= 0.0 a) (<= a 1.0)) (and (<= 0.0 n_dot_h) (<= n_dot_h 1.0)))
+    (/ (* a a) (* 3.14 (pow (+ (* (* n_dot_h n_dot_h) (- (* a a) 1.0)) 1.0) 2.0))))
+
+(FPCore (B x A n)
+    :description "herbie web query"
+    :name "set_b_number_119"
+    :pre (and (and (and (and (<= 0.0 B) (<= B 1000.0)) (and (<= -1000.0 x) (<= x 1000.0))) (and (<= 0.0 A) (<= A 1000.0))) (and (<= 1.0 n) (<= n 1000.0)))
+    (+ B (* (- x A) (- x (+ A (/ (- x A) n))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_120"
+    :pre (and (<= -1.79e+308 x) (<= x 1000.0))
+    (pow x 1.2))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_121"
+    :pre (and (and (<= -1000.0 a) (<= a 0.0)) (and (<= 0.0 b) (<= b 1.0)))
+    (/ (* (exp (/ a b)) a) b))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_122"
+    :pre (and (and (<= 0.0 x) (<= x 1000000000.0)) (and (<= 0.0 y) (<= y 1000000000.0)))
+    (/ x y))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_123"
+    :pre (and (and (<= 0.0 x) (<= x 1.79e+308)) (and (<= 0.0 y) (<= y 1.79e+308)))
+    (/ x y))
+
+(FPCore (p A)
+    :description "herbie web query"
+    :name "set_b_number_124"
+    :pre (and (and (<= 0.0 p) (<= p 1.0)) (and (<= 1e-10 A) (<= A 5.0)))
+    (- (log (+ (- (/ 1.0 p) 1.0) A))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_125"
+    (/ 1.0 (sqrt x)))
+
+(FPCore (c g)
+    :description "herbie web query"
+    :name "set_b_number_126"
+    :pre (and (and (<= 0.0 c) (<= c 1.0)) (and (<= 0.0 g) (<= g 1000000000.0)))
+    (/ (log c) (log (pow c (* g 2.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_127"
+    :pre (and (<= 1.0 x) (<= x 1000.0))
+    (+ (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_128"
+    :pre (and (<= 0.0 x) (<= x 10000.0))
+    (- (/ 1.0 x) (/ 1.0 (+ x 1.0))))
+
+(FPCore (X Y)
+    :description "herbie web query"
+    :name "set_b_number_129"
+    (- (pow X 2.0) (pow (/ Y 128.0) 2.0)))
+
+(FPCore (X Y)
+    :description "herbie web query"
+    :name "set_b_number_130"
+    (- (pow X 2.0) (pow (/ (+ X Y) 2.0) 128.0)))
+
+(FPCore (X Y)
+    :description "herbie web query"
+    :name "set_b_number_131"
+    (- (/ (pow X 2.0) 128.0) (pow (/ (+ X Y) 2.0) 128.0)))
+
+(FPCore (X Y)
+    :description "herbie web query"
+    :name "set_b_number_132"
+    (pow (- X (/ Y 128.0)) 2.0))
+
+(FPCore (X Y)
+    :description "herbie web query"
+    :name "set_b_number_133"
+    (- (/ (pow X 2.0) 2.0) (pow (/ (+ X Y) 2.0) 2.0)))
+
+(FPCore (X Y Z)
+    :description "herbie web query"
+    :name "set_b_number_134"
+    :pre (and (and (and (<= -1000.0 X) (<= X 1000.0)) (and (<= -1000.0 Y) (<= Y 1000.0))) (and (<= -1000.0 Z) (<= Z 1000.0)))
+    (pow (- X (/ (+ (+ X Y) Z) 3.0)) 2.0))
+
+(FPCore (X Y Z)
+    :description "herbie web query"
+    :name "set_b_number_135"
+    :pre (and (and (and (<= -1000.0 X) (<= X 1000.0)) (and (<= -1000.0 Y) (<= Y 1000.0))) (and (<= -1000.0 Z) (<= Z 1000.0)))
+    (- (/ (pow X 2.0) 3.0) (pow (/ (+ (+ X Y) Z) 3.0) 2.0)))
+
+(FPCore (X Y)
+    :description "herbie web query"
+    :name "set_b_number_136"
+    :pre (and (and (<= -1000.0 X) (<= X 1000.0)) (and (<= -1000.0 Y) (<= Y 1000.0)))
+    (- (/ (pow X 2.0) 2.0) (pow (/ (+ X Y) 2.0) 2.0)))
+
+(FPCore (X Y)
+    :description "herbie web query"
+    :name "set_b_number_137"
+    :pre (and (and (<= -1000.0 X) (<= X 1000.0)) (and (<= -1000.0 Y) (<= Y 1000.0)))
+    (pow (- X (/ (+ X Y) 2.0)) 2.0))
+
+(FPCore (X Y)
+    :description "herbie web query"
+    :name "set_b_number_138"
+    :pre (and (and (<= -1000.0 X) (<= X 1000.0)) (and (<= -1000.0 Y) (<= Y 1000.0)))
+    (- (/ (pow X 2.0) 3.0) (pow (/ (+ X Y) 3.0) 2.0)))
+
+(FPCore (X Y Z N)
+    :description "herbie web query"
+    :name "set_b_number_139"
+    :pre (and (and (and (and (<= 0.001 X) (<= X 1000.0)) (and (<= 0.001 Y) (<= Y 1000.0))) (and (<= 0.001 Z) (<= Z 1000.0))) (and (<= 0.001 N) (<= N 1000.0)))
+    (pow (- X (/ (+ (+ X Y) Z) N)) 2.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_140"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (- (+ 1.0 x) (pow x 2.0)))
+
+(FPCore (x b c y)
+    :description "herbie web query"
+    :name "set_b_number_141"
+    :pre (and (and (and (and (<= -1e+15 x) (<= x 1e+15)) (and (<= -1e+15 b) (<= b 10.0))) (and (<= 1e-15 c) (<= c 1e+15))) (and (<= -1e+15 y) (<= y 1e+15)))
+    (+ (/ x (- b c)) (/ y (- b c))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_142"
+    :pre (and (<= -1.79e+308 x) (<= x -1000000000.0))
+    (- (* (sqrt x) (sqrt x)) x))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_143"
+    :pre (and (and (and (<= -1000.0 a) (<= a 1000.0)) (and (<= -1000.0 b) (<= b 1000.0))) (and (<= -1000.0 c) (<= c 1000.0)))
+    (* a (/ (- b c) (- 1.0 c))))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_b_number_144"
+    :pre (and (<= -1000.0 a) (<= a 1000.0))
+    (* (/ (exp (- a)) (+ 1.0 (exp (- a)))) (+ a (log (+ 1.0 (exp (- a)))))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_145"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (/ (- 1.0 (exp (* (- (exp (- x))) (+ 1.0 (exp (- y)))))) (+ 1.0 (exp (- y)))))
+
+(FPCore (a b x y)
+    :description "herbie web query"
+    :name "set_b_number_146"
+    :pre (and (and (and (and (<= -1000.0 a) (<= a 1000.0)) (and (<= -1000.0 b) (<= b 1000.0))) (and (<= -1000.0 x) (<= x 1000.0))) (and (<= -1000.0 y) (<= y 1000.0)))
+    (+ (- (+ (* (- 2.0) a) (* (* 4.0 b) (pow x 3.0))) (* (* (* 4.0 b) x) y)) (* 2.0 x)))
+
+(FPCore (a b x y)
+    :description "herbie web query"
+    :name "set_b_number_147"
+    :pre (and (and (and (and (<= -1000.0 a) (<= a 1000.0)) (and (<= -1000.0 b) (<= b 1000.0))) (and (<= -1000.0 x) (<= x 1000.0))) (and (<= -1000.0 y) (<= y 1000.0)))
+    (+ (- (+ (* (- 2.0) a) (* (* 4.0 b) (pow x 3.0))) (* (* (* 4.0 b) x) y)) (* 2.0 x)))
+
+(FPCore (a b x y)
+    :description "herbie web query"
+    :name "set_b_number_148"
+    :pre (and (and (and (and (<= -1000.0 a) (<= a 1000.0)) (and (<= -1000.0 b) (<= b 1000.0))) (and (<= -1000.0 x) (<= x 1000.0))) (and (<= -1000.0 y) (<= y 1000.0)))
+    (+ (- (+ (* (- 2.0) a) (* (* 4.0 b) (pow x 3.0))) (* (* 4.0 b) y)) (* 2.0 x)))
+
+(FPCore (a t b)
+    :description "herbie web query"
+    :name "set_b_number_149"
+    :pre (and (and (and (<= -1000.0 a) (<= a 1000.0)) (and (<= -1000.0 t) (<= t 1000.0))) (and (<= -1000.0 b) (<= b 1000.0)))
+    (+ a (* t (- b a))))
+
+(FPCore (t a b)
+    :description "herbie web query"
+    :name "set_b_number_150"
+    :pre (and (and (and (<= -1000.0 t) (<= t 1000.0)) (and (<= -1000.0 a) (<= a 1000.0))) (and (<= -1000.0 b) (<= b 1000.0)))
+    (+ (* (- 1.0 t) a) (* t b)))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_151"
+    :pre (and (and (<= 0.001 y) (<= y 100.0)) (and (<= 0.001 x) (<= x 100.0)))
+    (- (* 2.0 y) (/ (* 3.0 (pow y 4.0)) (+ x (* 2.0 (pow y 3.0))))))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_152"
+    :pre (and (and (<= 0.001 y) (<= y 100.0)) (and (<= 0.001 x) (<= x 100.0)))
+    (- (* 2.0 y) (/ (* 2.0 (pow y 4.0)) (+ x (* 2.0 (pow y 3.0))))))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_153"
+    :pre (and (and (<= 0.001 y) (<= y 100.0)) (and (<= 0.001 x) (<= x 100.0)))
+    (- y (/ (- (pow y 2.0) (/ x y)) (- (* 2.0 y) (/ x (pow y 2.0))))))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_154"
+    :pre (and (and (<= 0.0 y) (<= y 1000.0)) (and (<= 0.0 x) (<= x 1000.0)))
+    (- y (/ (- (pow y 2.0) (/ x y)) (- (* 2.0 y) (/ x (pow y 2.0))))))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_155"
+    :pre (and (and (<= -1000.0 y) (<= y 1000.0)) (and (<= -1000.0 x) (<= x 1000.0)))
+    (- y (/ (- (pow y 2.0) (/ x y)) (- (* 2.0 y) (/ x (pow y 2.0))))))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_156"
+    :pre (and (and (<= 1.0 y) (<= y 2.0)) (and (<= 1.0 x) (<= x 4.0)))
+    (* (* 0.5 y) (- 3.0 (* (* x y) y))))
+
+(FPCore (r phi l offset xstart)
+    :description "herbie web query"
+    :name "set_b_number_157"
+    :pre (and (and (and (and (and (<= 0.0 r) (<= r 1000.0)) (and (<= -1000000000.0 phi) (<= phi 1000000000.0))) (and (<= 0.0 l) (<= l 1000.0))) (and (<= 0.0 offset) (<= offset 1000.0))) (and (<= 0.0 xstart) (<= xstart 1000.0)))
+    (- (+ (* r (cos phi)) (sqrt (- (pow l 2.0) (pow (+ offset (* r (sin phi))) 2.0)))) xstart))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_158"
+    :pre (and (<= -1.79e+308 x) (<= x -1.79e+308))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (z y)
+    :description "herbie web query"
+    :name "set_b_number_159"
+    :pre (and (and (<= 0.0001 z) (<= z 100.0)) (and (<= 0.0001 y) (<= y 100.0)))
+    (/ (pow z 2.0) y))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_b_number_160"
+    :pre (and (and (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 b) (<= b 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308))) (and (<= -1.79e+308 d) (<= d 1.79e+308)))
+    (+ (* (- 1.0 a) (* (pow (* b c) d) (/ 1.0 c))) (* a b)))
+
+(FPCore (a n b)
+    :description "herbie web query"
+    :name "set_b_number_161"
+    :pre (and (and (and (<= 0.0 a) (<= a 1.0)) (and (<= 1.0 n) (<= n 1000.0))) (and (<= 1.0 b) (<= b 1000.0)))
+    (/ (+ a n) (+ (+ a b) n)))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_162"
+    :pre (and (and (<= 0.0 a) (<= a 1.0)) (and (<= 1000.0 b) (<= b 1000000000.0)))
+    (/ a (+ b a)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_163"
+    :pre (and (and (<= -1000000000.0 x) (<= x 1000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (/ (* (+ (* x x) (* y y)) 1.0) (sqrt x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_164"
+    :pre (and (and (<= 0.0 x) (<= x 1000.0)) (and (<= 0.0 y) (<= y 1000000000.0)))
+    (/ (* (+ (* x x) (* y y)) 1.0) (sqrt x)))
+
+(FPCore (deflate res)
+    :description "herbie web query"
+    :name "set_b_number_165"
+    :pre (and (and (<= 0.0 deflate) (<= deflate 10.0)) (and (<= 0.0 res) (<= res 10000.0)))
+    (/ (/ deflate res) 2.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_166"
+    :pre (and (<= 0.0 x) (<= x 256.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_167"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (+ (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (pos height)
+    :description "herbie web query"
+    :name "set_b_number_168"
+    :pre (and (and (<= 0.0 pos) (<= pos 32768.0)) (and (<= 1.0 height) (<= height 32768.0)))
+    (- (/ (* pos 2.0) height) 1.0))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_169"
+    :pre (and (and (<= 0.0 x) (<= x 1.0)) (and (<= 0.0 y) (<= y 0.25)))
+    (- (* (exp x) (cos y)) 1.0))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_170"
+    :pre (and (and (<= 0.0 x) (<= x 1.0)) (and (<= 0.0 y) (<= y 1.0)))
+    (- (exp x) (exp y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_171"
+    :pre (and (and (<= 0.0 x) (<= x 1.0)) (and (<= 0.0 y) (<= y 1.0)))
+    (- (sqrt x) (sqrt y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_172"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (- (exp x) (exp y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_173"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (sqrt (- 1.0 (pow x 2.0))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_174"
+    :pre (and (and (<= 0.9 x) (<= x 1.1)) (and (<= 0.9 y) (<= y 1.1)))
+    (- (sin x) (sin y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_175"
+    :pre (and (and (<= 0.9999999 x) (<= x 1.00000001)) (and (<= 0.9999999 y) (<= y 1.00000001)))
+    (- (sin x) (sin y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_176"
+    :pre (and (<= -1.0 x) (<= x -1.0))
+    (/ (- (exp (* 2.0 x)) 1.0) (* 2.0 x)))
+
+(FPCore (x a b c d)
+    :description "herbie web query"
+    :name "set_b_number_177"
+    :pre (and (and (and (and (and (<= 1.0 x) (<= x 10.0)) (and (<= 1.0 a) (<= a 1000.0))) (and (<= 1.0 b) (<= b 1000.0))) (and (<= 1.0 c) (<= c 1000.0))) (and (<= 1.0 d) (<= d 1000.0)))
+    (/ (+ (exp (* (- x) a)) (exp (* (- x) b))) (+ (exp (* (- x) c)) (exp (* (- x) d)))))
+
+(FPCore (y0 y1 x x0 x1)
+    :description "herbie web query"
+    :name "set_b_number_178"
+    :pre (and (and (and (and (and (and (<= -1.0 y0) (<= y0 1.0)) (and (<= -1.0 y1) (<= y1 1.0))) (and (<= -1.0 x) (<= x 1.0))) (and (<= -1.0 x0) (<= x0 1.0))) (and (<= -1.0 x1) (<= x1 1.0))) (<= (/ (- x x0) (- x1 x0)) 0.5))
+    (+ y0 (* (- y1 y0) (/ (- x x0) (- x1 x0)))))
+
+(FPCore (y0 y1 x x0 x1)
+    :description "herbie web query"
+    :name "set_b_number_179"
+    :pre (and (and (and (and (and (<= -1.0 y0) (<= y0 1.0)) (and (<= -1.0 y1) (<= y1 1.0))) (and (<= -1.0 x) (<= x 1.0))) (and (<= -1.0 x0) (<= x0 1.0))) (and (<= -1.0 x1) (<= x1 1.0)))
+    (+ y0 (* (- y1 y0) (/ (- x x0) (- x1 x0)))))
+
+(FPCore (y_0 y_1 x x_0 x_1)
+    :description "herbie web query"
+    :name "set_b_number_180"
+    :pre (and (and (and (and (and (<= -1.0 y_0) (<= y_0 1.0)) (and (<= -1.0 y_1) (<= y_1 1.0))) (and (<= -1.0 x) (<= x 1.0))) (and (<= -1.0 x_0) (<= x_0 1.0))) (and (<= -1.0 x_1) (<= x_1 1.0)))
+    (+ y_0 (* (- y_1 y_0) (/ (- x x_0) (- x_1 x_0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_181"
+    :pre (and (<= -0.0001 x) (<= x 0.0001))
+    (log1p (exp x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_182"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (log (- (exp 0.0) (exp x))))
+
+(FPCore (sinx siny)
+    :description "herbie web query"
+    :name "set_b_number_183"
+    (- sinx siny))
+
+(FPCore (sinx siny)
+    :description "herbie web query"
+    :name "set_b_number_184"
+    :pre (and (and (<= 0.0 sinx) (<= sinx 1.0)) (and (<= 0.0 siny) (<= siny 1.0)))
+    (- sinx siny))
+
+(FPCore (sinx siny)
+    :description "herbie web query"
+    :name "set_b_number_185"
+    :pre (and (and (<= -1000.0 sinx) (<= sinx 1000.0)) (and (<= -1000.0 siny) (<= siny 1000.0)))
+    (- sinx siny))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_186"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (sqrt (+ x 2.0)) (sqrt x)))
+
+(FPCore (x a b c d)
+    :description "herbie web query"
+    :name "set_b_number_187"
+    :pre (and (and (and (and (and (<= 1.0 x) (<= x 1000.0)) (and (<= 1.0 a) (<= a 1000.0))) (and (<= 1.0 b) (<= b 1000.0))) (and (<= 1.0 c) (<= c 1000.0))) (and (<= 1.0 d) (<= d 1000.0)))
+    (- (+ (- (/ (exp (* (- x) a)) a) (/ (exp (* (- x) b)) b)) (/ (exp (* (- x) c)) c)) (/ (exp (* (- x) d)) d)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_188"
+    :pre (and (<= 0.0 x) (<= x 2.0))
+    (exp (- x 1.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_189"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (exp (- x 1.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_190"
+    :pre (and (<= -1.79e+308 x) (<= x 1.0))
+    (log (- E (exp x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_191"
+    :pre (and (<= -1.79e+308 x) (<= x 1.0))
+    (log (- (exp 1.0) (exp x))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_192"
+    :pre (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 b) (<= b 1.79e+308)))
+    (log (- (exp a) (exp b))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_193"
+    :pre (and (and (<= 1.78e+308 a) (<= a 1.79e+308)) (and (<= 1.78e+308 b) (<= b 1.79e+308)))
+    (- (fmax a b) (log1p (exp (- (fmin a b) (fmax a b))))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_194"
+    :pre (and (and (<= 1.78e+308 a) (<= a 1.79e+308)) (and (<= 1.78e+308 b) (<= b 1.79e+308)))
+    (log (- (exp a) (exp b))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_195"
+    :pre (and (and (<= -0.001 x) (<= x 0.001)) (and (<= -0.001 y) (<= y 0.001)))
+    (- (pow x 2.0) (pow y 2.0)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_196"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (- (pow x 2.0) (pow y 2.0)))
+
+(FPCore (x a)
+    :description "herbie web query"
+    :name "set_b_number_197"
+    :pre (and (and (<= 0.0 x) (<= x 1000.0)) (and (<= 0.0 a) (<= a 1000.0)))
+    (- (sqrt (+ x a)) (sqrt x)))
+
+(FPCore (a n pi)
+    :description "herbie web query"
+    :name "set_b_number_198"
+    :pre (and (and (and (<= 1.618 a) (<= a 1.619)) (and (<= 0.0 n) (<= n 1000.0))) (and (<= 3.1415 pi) (<= pi 3.1416)))
+    (/ (- (pow a n) (* (cos (* pi n)) (pow a (- n)))) (- (* 2.0 a) 1.0)))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_199"
+    :pre (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 b) (<= b 1.79e+308)))
+    (log (+ (exp a) (exp b))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_200"
+    :pre (and (and (<= -1.0 a) (<= a 1.0)) (and (<= -1.0 b) (<= b 1.0)))
+    (log (+ (exp a) (exp b))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_201"
+    (+ (log1p (exp a)) (/ b (+ (exp a) 1.0))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_202"
+    :pre (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 b) (<= b 1.79e+308)))
+    (log (+ (exp a) (exp b))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_203"
+    :pre (and (<= -10.0 x) (<= x 0.0))
+    (log (+ (exp x) (- (log1p (exp (- (exp x)))) (log1p (exp (expm1 x)))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_204"
+    :pre (and (<= -1.79e+308 x) (<= x 0.0))
+    (log (+ (exp x) (- (log1p (exp (- (exp x)))) (log1p (exp (expm1 x)))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_205"
+    (log (+ (exp x) (- (log1p (exp (- (exp x)))) (log1p (exp (expm1 x)))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_206"
+    :pre (and (<= -1.5 x) (<= x -0.5))
+    (log (+ (- (exp x) (log (+ 1.0 (exp (+ (- 1.0) (exp x)))))) (log (+ 1.0 (exp (- (exp x))))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_207"
+    :pre (and (<= -1.79e+308 x) (<= x 0.0))
+    (log (+ (- (exp x) (log (+ 1.0 (exp (+ (- 1.0) (exp x)))))) (log (+ 1.0 (exp (- (exp x))))))))
+
+(FPCore (v)
+    :description "herbie web query"
+    :name "set_b_number_208"
+    :pre (and (<= -1.0 v) (<= v 1.0))
+    (* (* (* (- (* (+ (- v) 8.0) v) 18.0) v) v) (/ 1.0 27.0)))
+
+(FPCore (v)
+    :description "herbie web query"
+    :name "set_b_number_209"
+    :pre (and (<= -1.0 v) (<= v 1.0))
+    (* (* v v) (+ (+ v 1.0) 0.5)))
+
+(FPCore (v)
+    :description "herbie web query"
+    :name "set_b_number_210"
+    :pre (and (<= -1.0 v) (<= v 1.0))
+    (* (* (* 0.25 v) v) (- v 3.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_211"
+    :pre (and (<= 11.0 x) (<= x 255.0))
+    (pow (fma 0.003717126661090977 x 0.05213270142180095) 2.4))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_212"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (- (sin x) (sin y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_213"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (/ (sin x) (- x (sqrt (- (pow x 2.0) 1.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_214"
+    :pre (and (<= 0.0 x) (<= x 255.0))
+    (/ x 255.0))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_215"
+    :pre (and (and (<= -1000000000.0 x) (<= x 1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (- (sin x) (sin y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_216"
+    :pre (and (and (<= -1000000000.0 x) (<= x -1000000000.0)) (and (<= -1000000000.0 y) (<= y -1000000000.0)))
+    (- (sin x) (sin y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_217"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (- (pow x 2.0) (pow y 2.0)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_218"
+    :pre (and (and (<= -10.0 x) (<= x 10.0)) (and (<= -10.0 y) (<= y 10.0)))
+    (- (sin x) (sin y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_219"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (sqrt (+ x 1.0)) 1.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_220"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (+ (sqrt (- x 1.0)) 1.0))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_221"
+    :pre (and (and (and (<= 0.0 x) (<= x 1022.0)) (and (<= 0.0 y) (<= y 1022.0))) (and (<= 0.0 z) (<= z 1022.0)))
+    (sqrt (/ (- (+ (- (+ (- (+ (* (* (- 1.0) x) x) (* 1022.0 x)) (* y y)) (* 1022.0 y)) (* z z)) (* 1022.0 z)) 261121.0) (/ (* 1022.0 1022.0) 2.0))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_222"
+    :pre (and (and (<= 1.0 a) (<= a 1000.0)) (and (<= 0.0 b) (<= b 1.0)))
+    (- (exp (- a)) b))
+
+(FPCore (a x b)
+    :description "herbie web query"
+    :name "set_b_number_223"
+    :pre (and (and (and (<= 1.0 a) (<= a 1000.0)) (and (<= 0.0 x) (<= x 1.0))) (and (<= 1.0 b) (<= b 1000.0)))
+    (- (/ (exp (* (- a) x)) a) (/ (exp (* (- b) x)) b)))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_b_number_224"
+    :pre (and (and (and (and (<= 1.0 a) (<= a 1000.0)) (and (<= 1.0 b) (<= b 1000.0))) (and (<= 1.0 c) (<= c 1000.0))) (and (<= 1.0 d) (<= d 1000.0)))
+    (- (+ (- (exp (- a)) (exp (- b))) (exp (- c))) (exp (- d))))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_b_number_225"
+    :pre (and (and (and (and (<= -1000.0 a) (<= a 1000.0)) (and (<= -1000.0 b) (<= b 1000.0))) (and (<= -1000.0 c) (<= c 1000.0))) (and (<= -1000.0 d) (<= d 1000.0)))
+    (- (+ (- (exp (- a)) (exp (- b))) (exp (- c))) (exp (- d))))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_b_number_226"
+    :pre (and (<= 0.0 a) (<= a 1000000000.0))
+    (- (exp (- a)) 1e-16))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_227"
+    :pre (and (and (<= 0.0 a) (<= a 1000.0)) (and (<= 0.0 b) (<= b 1000.0)))
+    (exp (* (- a) (sqrt b))))
+
+(FPCore (a t b)
+    :description "herbie web query"
+    :name "set_b_number_228"
+    :pre (and (and (and (<= -1000000000.0 a) (<= a 1000000000.0)) (and (<= 0.0 t) (<= t 1.0))) (and (<= -1000.0 b) (<= b 1000000000.0)))
+    (+ (* a t) (* b (- 1.0 t))))
+
+(FPCore (a t b c)
+    :description "herbie web query"
+    :name "set_b_number_229"
+    :pre (and (and (and (and (<= -1000000000.0 a) (<= a 1000000000.0)) (and (<= 0.0 t) (<= t 1.0))) (and (<= -1000000000.0 b) (<= b 1000000000.0))) (and (<= -1000000000.0 c) (<= c 1000000000.0)))
+    (+ (+ (* a (pow (- 1.0 t) 2.0)) (* (* (* b (- 1.0 t)) t) 2.0)) (* c (pow t 2.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_230"
+    :pre (and (<= 0.0 x) (<= x 1e-9))
+    (log (/ x (- 1.0 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_231"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (log (/ x (- 1.0 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_232"
+    :pre (and (<= 1e-9 x) (<= x 1.0))
+    (log (/ x (- 1.0 x))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_233"
+    :pre (and (and (<= 1e-7 x) (<= x 10000000.0)) (and (<= 1e-7 y) (<= y 10000000.0)))
+    (+ (log1p (/ (exp x) (exp y))) y))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_234"
+    :pre (and (and (<= 1e-7 x) (<= x 10000000.0)) (and (<= 1e-7 y) (<= y 10000000.0)))
+    (log (+ (exp x) (exp y))))
+
+(FPCore (deficit)
+    :description "herbie web query"
+    :name "set_b_number_235"
+    :pre (and (<= 400.0 deficit) (<= deficit 500.0))
+    (log1p (exp (+ (* (log (/ (- (exp (+ 1.0 0.01)) 1.0) (- (exp 0.01) 1.0))) deficit) (log (- (exp 0.01) 1.0))))))
+
+(FPCore (deficit)
+    :description "herbie web query"
+    :name "set_b_number_236"
+    :pre (and (<= 0.1 deficit) (<= deficit 1000.0))
+    (log1p (exp (+ (* (log (/ (- (exp (+ 1.0 0.01)) 1.0) (- (exp 0.01) 1.0))) deficit) (log (- (exp 0.01) 1.0))))))
+
+(FPCore (tolerance deficit)
+    :description "herbie web query"
+    :name "set_b_number_237"
+    :pre (and (and (<= 0.01 tolerance) (<= tolerance 0.01)) (and (<= 0.1 deficit) (<= deficit 1000.0)))
+    (log1p (exp (+ (* (log (/ (- (exp (+ 1.0 tolerance)) 1.0) (- (exp tolerance) 1.0))) deficit) (log (- (exp tolerance) 1.0))))))
+
+(FPCore (tolerance deficit)
+    :description "herbie web query"
+    :name "set_b_number_238"
+    :pre (and (and (<= 0.01 tolerance) (<= tolerance 0.01)) (and (<= 0.01 deficit) (<= deficit 1000.0)))
+    (log1p (exp (+ (* (log (/ (- (exp (+ 1.0 tolerance)) 1.0) (- (exp tolerance) 1.0))) deficit) (log (- (exp tolerance) 1.0))))))
+
+(FPCore (tolerance deficit)
+    :description "herbie web query"
+    :name "set_b_number_239"
+    :pre (and (and (<= 0.1 tolerance) (<= tolerance 0.1)) (and (<= 0.01 deficit) (<= deficit 1000.0)))
+    (log1p (exp (+ (* (log (/ (- (exp (+ 1.0 tolerance)) 1.0) (- (exp tolerance) 1.0))) deficit) (log (- (exp tolerance) 1.0))))))
+
+(FPCore (tolerance deficit)
+    :description "herbie web query"
+    :name "set_b_number_240"
+    :pre (and (and (<= 1e-5 tolerance) (<= tolerance 0.1)) (and (<= 0.0 deficit) (<= deficit 100.0)))
+    (log1p (exp (+ (* (log (/ (- (exp (+ 1.0 tolerance)) 1.0) (- (exp tolerance) 1.0))) deficit) (log (- (exp tolerance) 1.0))))))
+
+(FPCore (tolerance deficit)
+    :description "herbie web query"
+    :name "set_b_number_241"
+    :pre (and (and (<= 1e-5 tolerance) (<= tolerance 0.1)) (and (<= 0.0 deficit) (<= deficit 20.0)))
+    (log1p (exp (+ (* (/ (log (- (exp (+ 1.0 tolerance)) 1.0)) (- (exp tolerance) 1.0)) deficit) (log (- (exp tolerance) 1.0))))))
+
+(FPCore (tolerance deficit)
+    :description "herbie web query"
+    :name "set_b_number_242"
+    :pre (and (and (<= 1e-5 tolerance) (<= tolerance 0.1)) (and (<= 0.0 deficit) (<= deficit 20.0)))
+    (log1p (+ (* (exp (/ (log (- (exp (+ 1.0 tolerance)) 1.0)) (- (exp tolerance) 1.0))) deficit) (log (- (exp tolerance) 1.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_243"
+    :pre (and (<= 0.0 x) (<= x 2.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (tolerance deficit)
+    :description "herbie web query"
+    :name "set_b_number_244"
+    :pre (and (and (<= 1e-5 tolerance) (<= tolerance 0.1)) (and (<= 0.0 deficit) (<= deficit 20.0)))
+    (log (+ (exp (+ (* (log (/ (- (exp (+ 1.0 tolerance)) 1.0) (- (exp tolerance) 1.0))) deficit) (log (- (exp tolerance) 1.0)))) 1.0)))
+
+(FPCore (tolerance deficit)
+    :description "herbie web query"
+    :name "set_b_number_245"
+    :pre (and (and (<= 1e-5 tolerance) (<= tolerance 0.1)) (and (<= 0.0 deficit) (<= deficit 20.0)))
+    (+ (* (log (/ (- (exp (+ 1.0 tolerance)) 1.0) (- (exp tolerance) 1.0))) deficit) (log (- (exp tolerance) 1.0))))
+
+(FPCore (tolerance humidity_deficit)
+    :description "herbie web query"
+    :name "set_b_number_246"
+    :pre (and (and (<= 1e-5 tolerance) (<= tolerance 0.1)) (and (<= 0.0 humidity_deficit) (<= humidity_deficit 20.0)))
+    (+ (* (log (/ (- (exp (+ 1.0 tolerance)) 1.0) (- (exp tolerance) 1.0))) humidity_deficit) (log (- (exp tolerance) 1.0))))
+
+(FPCore (tolerance)
+    :description "herbie web query"
+    :name "set_b_number_247"
+    :pre (and (<= 1e-5 tolerance) (<= tolerance 0.1))
+    (log (/ (- (exp (+ 1.0 tolerance)) 1.0) (- (exp tolerance) 1.0))))
+
+(FPCore (temperature)
+    :description "herbie web query"
+    :name "set_b_number_248"
+    :pre (and (<= -10.0 temperature) (<= temperature 40.0))
+    (* 611.21 (exp (* (- 18.678 (/ temperature 234.5)) (/ temperature (+ 257.14 temperature))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_249"
+    :pre (and (<= -1000000000.0 x) (<= x 1000.0))
+    (+ (sqrt (+ x 1.0)) (sqrt (/ 1.0 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_250"
+    :pre (and (<= 1.0 x) (<= x 2.0))
+    (sqrt x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_251"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (pow (sin (/ x 2.0)) 2.0))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_b_number_252"
+    :pre (and (and (and (and (<= 0.0 a) (<= a 1.0)) (and (<= 0.0 b) (<= b 1.0))) (and (<= 0.0 c) (<= c 1.0))) (and (<= 0.0 d) (<= d 1.0)))
+    (- (* a b) (* c d)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_253"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (* (/ 1.0 2.0) (- 1.0 (cos x))))
+
+(FPCore (x d y h)
+    :description "herbie web query"
+    :name "set_b_number_254"
+    :pre (and (and (and (and (<= 0.0001 x) (<= x 10.0)) (and (<= 0.0001 d) (<= d 1.0))) (and (<= 0.0001 y) (<= y 10.0))) (and (<= 0.0001 h) (<= h 0.1)))
+    (/ (- (/ x d) (/ y d)) h))
+
+(FPCore (x d h)
+    :description "herbie web query"
+    :name "set_b_number_255"
+    :pre (and (and (and (<= 0.0001 x) (<= x 1.0)) (and (<= 0.0001 d) (<= d 1.0))) (and (<= 0.001 h) (<= h 0.01)))
+    (/ (/ x d) h))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_256"
+    :pre (and (<= 1e-8 x) (<= x 10.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (a1 b1 a2 b2 a3 b3)
+    :description "herbie web query"
+    :name "set_b_number_257"
+    :pre (and (and (and (and (and (and (<= -1.0 a1) (<= a1 1.0)) (and (<= -1.0 b1) (<= b1 1.0))) (and (<= -1.0 a2) (<= a2 1.0))) (and (<= -1.0 b2) (<= b2 1.0))) (and (<= -1.0 a3) (<= a3 1.0))) (and (<= -1.0 b3) (<= b3 1.0)))
+    (+ (+ (* a1 b1) (* a2 b2)) (* a3 b3)))
+
+(FPCore (x low high)
+    :description "herbie web query"
+    :name "set_b_number_258"
+    :pre (and (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 low) (<= low 1000.0))) (and (<= -1000.0 high) (<= high 1000.0)))
+    (* (/ (* (/ (- x low) (- high low)) (- x low)) (- high low)) (- 3.0 (/ (* 2.0 (- x low)) (- high low)))))
+
+(FPCore (t x y)
+    :description "herbie web query"
+    :name "set_b_number_259"
+    :pre (and (and (and (<= 0.0 t) (<= t 1.0)) (and (<= -1000000000.0 x) (<= x 1000000000.0))) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (+ (* t x) (* (- 1.0 t) y)))
+
+(FPCore (x y t)
+    :description "herbie web query"
+    :name "set_b_number_260"
+    :pre (and (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0))) (and (<= -1000.0 t) (<= t 1000.0)))
+    (+ x (/ (- x y) t)))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_261"
+    :pre (and (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0))) (and (<= -1.0 z) (<= z 1.0)))
+    (sqrt (+ (+ (pow x 2.0) (pow y 2.0)) (pow z 2.0))))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_262"
+    :pre (and (and (<= 0.0 y) (<= y 1.0)) (and (<= -1.0 x) (<= x 1.0)))
+    (* 2.0 (atan (/ y x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_263"
+    :pre (and (<= 0.1 x) (<= x 2.0))
+    (log (sin (exp x))))
+
+(FPCore (x y z r)
+    :description "herbie web query"
+    :name "set_b_number_264"
+    :pre (and (and (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0))) (and (<= -1.0 z) (<= z 1.0))) (and (<= -1.0 r) (<= r 1.0)))
+    (* 2.0 (atan (/ (sqrt (+ (+ (pow x 2.0) (pow y 2.0)) (pow z 2.0))) r))))
+
+(FPCore (z x y)
+    :description "herbie web query"
+    :name "set_b_number_265"
+    :pre (and (and (and (<= -1.0 z) (<= z 1.0)) (and (<= -1.0 x) (<= x 1.0))) (and (<= -1.0 y) (<= y 1.0)))
+    (/ z (sqrt (+ (+ (pow x 2.0) (pow y 2.0)) (pow z 2.0)))))
+
+(FPCore (y x z)
+    :description "herbie web query"
+    :name "set_b_number_266"
+    :pre (and (and (and (<= -1.0 y) (<= y 1.0)) (and (<= -1.0 x) (<= x 1.0))) (and (<= -1.0 z) (<= z 1.0)))
+    (/ y (sqrt (+ (+ (pow x 2.0) (pow y 2.0)) (pow z 2.0)))))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_267"
+    :pre (and (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0))) (and (<= -1.0 z) (<= z 1.0)))
+    (/ x (sqrt (+ (+ (pow x 2.0) (pow y 2.0)) (pow z 2.0)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_268"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (/ 1.0 (sqrt (+ (* x x) (* y y)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_269"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (/ (asin (sqrt x)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_270"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (acos (/ x (sqrt (- 1.0 (pow x 2.0))))))
+
+(FPCore (t A B C)
+    :description "herbie web query"
+    :name "set_b_number_271"
+    :pre (and (and (and (and (<= 0.0 t) (<= t 1.0)) (and (<= -1.79e+308 A) (<= A 1.79e+308))) (and (<= -1.79e+308 B) (<= B 1.79e+308))) (and (<= -1.79e+308 C) (<= C 1.79e+308)))
+    (+ (* (- 1.0 t) (+ (* (- 1.0 t) A) (* t B))) (* t (+ (* (- 1.0 t) B) (* t C)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_272"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_273"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (/ 1.0 (+ (sqrt (+ x 1.0)) (sqrt x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_274"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (- (+ 1.0 x) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_275"
+    :pre (and (<= 0.0 x) (<= x 1000000000.0))
+    (- (pow (+ (* x x) 2.0) (/ 1.0 3.0)) (pow (* x x) (/ 1.0 3.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_276"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (- (pow (+ (pow x 2.0) 1.0) (/ 1.0 3.0)) (pow (pow x 2.0) (/ 1.0 3.0))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_277"
+    :pre (and (and (<= -10.0 x) (<= x 10.0)) (and (<= 1e-6 y) (<= y 0.1)))
+    (* x (- 1.0 y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_278"
+    :pre (and (and (<= -10.0 x) (<= x 10.0)) (and (<= 1e-6 y) (<= y 0.1)))
+    (/ (- x y) x))
+
+(FPCore (a x)
+    :description "herbie web query"
+    :name "set_b_number_279"
+    :pre (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 x) (<= x 1.79e+308)))
+    (/ a (pow x 2.0)))
+
+(FPCore (a x)
+    :description "herbie web query"
+    :name "set_b_number_280"
+    :pre (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= 1.79e+308 x) (<= x 1.79e+308)))
+    (/ a (pow x 2.0)))
+
+(FPCore (a x)
+    :description "herbie web query"
+    :name "set_b_number_281"
+    :pre (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 x) (<= x 1.79e+308)))
+    (/ a (pow x 4.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_282"
+    :pre (and (<= 1.94 x) (<= x 2.07))
+    (pow (- x 2.0) 9.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_283"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (- (* x (+ (* x (- (* x (+ (* x (- (* x (+ (* x (- (* x (+ (* x (- x 18.0)) 144.0)) 672.0)) 2016.0)) 4032.0)) 5376.0)) 4608.0)) 2304.0)) 512.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_284"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (pow (- x 2.0) 9.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_285"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (sqrt x) (sqrt (+ x 1.0))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_286"
+    :pre (and (and (<= -1000000000.0 x) (<= x 1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (/ (cos x) (* y y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_287"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (+ (- 1.0 (sqrt x)) (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_288"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (+ (- (+ (- (+ (- (+ (- (+ (- 512.0) (* 2304.0 x)) (* 4608.0 (pow x 2.0))) (* 5376.0 (pow x 3.0))) (* 4032.0 (pow x 4.0))) (* 2016.0 (pow x 5.0))) (* 672.0 (pow x 6.0))) (* 144.0 (pow x 7.0))) (* 18.0 (pow x 8.0))) (pow x 9.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_289"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (+ (- (pow x 2.0) (* 2.0 x)) 1.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_290"
+    :pre (and (<= 0.0 x) (<= x 1.79e+308))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_291"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_292"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (- (- (exp x) (sin x)) (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_293"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (/ (- (exp (* 2.0 x)) 1.0) (* 2.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_294"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (/ (- (exp (* 2.0 x)) 1.0) (* 2.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_295"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (+ (+ (+ 1.0 x) (pow x 2.0)) (pow x 3.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_296"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (cos x) (sqrt (+ x 1.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_297"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (sin x) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_298"
+    :pre (and (<= 1.9 x) (<= x 2.1))
+    (pow (- x 2.0) 3.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_299"
+    :pre (and (<= 1.9 x) (<= x 2.1))
+    (+ (- (+ (- 8.0) (* 12.0 x)) (* 6.0 (pow x 2.0))) (pow x 3.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_300"
+    :pre (and (<= 1.9 x) (<= x 2.1))
+    (+ (- (+ (- (+ (- 64.0 (* 192.0 x)) (* 240.0 (pow x 2.0))) (* 160.0 (pow x 3.0))) (* 60.0 (pow x 4.0))) (* 12.0 (pow x 5.0))) (pow x 6.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_301"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (+ (- (pow x 2.0) (* 2.0 x)) 1.0))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_302"
+    :pre (and (and (<= -1000.0 y) (<= y 1000.0)) (and (<= -1000.0 x) (<= x 1000.0)))
+    (+ (+ (+ (* 333.75 (pow y 6.0)) (* (pow x 2.0) (- (- (- (* (* 11.0 (pow x 2.0)) (pow y 2.0)) (pow y 6.0)) (* 121.0 (pow y 4.0))) 2.0))) (* 5.5 (pow y 8.0))) (/ x (* 2.0 y))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_303"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (+ (exp x) (cos x)) (* 2.0 x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_304"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (- (pow x 4.0) (pow y 4.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_305"
+    :pre (and (<= -1e-5 x) (<= x 1e-5))
+    (- (exp x) (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_306"
+    :pre (and (<= -0.1 x) (<= x 0.1))
+    (- (exp x) (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_307"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (exp (* 2.0 x)) (exp x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_308"
+    :pre (and (<= -0.1 x) (<= x 0.1))
+    (- (exp x) (exp (- x))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_309"
+    :pre (and (and (<= -1.0 a) (<= a 1.0)) (and (<= -1.0 b) (<= b 1.0)))
+    (/ (+ a b) (- (pow a 2.0) (pow b 2.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_310"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (exp (* 2.0 x)) (exp (- x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_311"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (exp x) (exp (- x))))
+
+(FPCore (b a)
+    :description "herbie web query"
+    :name "set_b_number_312"
+    :pre (and (and (<= -1.0 b) (<= b 1.0)) (and (<= -1.0 a) (<= a 1.0)))
+    (- b (sqrt (- (pow b 2.0) (* a b)))))
+
+(FPCore (r min max)
+    :description "herbie web query"
+    :name "set_b_number_313"
+    :pre (and (and (and (<= -1000000000.0 r) (<= r 1000000000.0)) (and (<= -1000000000.0 min) (<= min 0.0))) (and (<= 0.0 max) (<= max 1000000000.0)))
+    (/ (- (* r min) max) (- 1.0 r)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_314"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (/ (* (* (- x) x) x) 6.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_315"
+    :pre (and (<= -2.0 x) (<= x 2.0))
+    (- (* 0.954929658551372 x) (* 0.12900613773279798 (* (* x x) x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_316"
+    :pre (and (<= 1.0 x) (<= x 999.0))
+    (/ x (+ x 1.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_317"
+    :pre (and (<= 1.00001 x) (<= x 2.0))
+    (/ 1.0 (+ x 1.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_318"
+    :pre (and (<= 1.00001 x) (<= x 2.0))
+    (/ (- x 1.0) (- (* x x) 1.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_319"
+    :pre (and (<= 0.0 x) (<= x 100.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_320"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (/ (- 1.0 (cos x)) (sin x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_321"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (- (/ 1.0 (tan (+ x 1.0))) (/ 1.0 (tan x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_322"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (- (/ 1.0 (sqrt x)) (/ 1.0 (sqrt (+ x 1.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_323"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (- (/ 1.0 (+ x 1.0)) (/ 1.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_324"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (+ (- (/ 1.0 (+ x 1.0)) (/ 2.0 x)) (/ 1.0 (- x 1.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_325"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (- (cbrt (+ x 1.0)) (cbrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_326"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (- (- (* (+ x 1.0) (log (+ x 1.0))) (* x (log x))) 1.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_327"
+    :pre (and (<= 0.1 x) (<= x 0.5))
+    (- (* (+ 35000000.0 (* (* 0.401 (/ 1000.0 x)) (/ 1000.0 x))) (- x (* 1000.0 4.27e-5))) (* (* 1.3806503e-23 1000.0) 300.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_328"
+    :pre (and (<= -1.57079632679 x) (<= x 1.57079632679))
+    (- (+ (- x (/ (* (* x x) x) 6.0)) (/ (* (* (* (* x x) x) x) x) 120.0)) (/ (* (* (* (* (* (* x x) x) x) x) x) x) 5040.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_329"
+    :pre (and (<= 0.01 x) (<= x 8.0))
+    (log (- (exp x) 1.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_330"
+    :pre (and (<= 0.1 x) (<= x 0.3))
+    (/ (* (* 4.0 x) x) (+ (+ 1.0 (/ x 1.11)) (/ x 1.11))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_331"
+    :pre (and (<= 0.1 x) (<= x 0.3))
+    (/ (* 4.0 x) (+ (/ x 1.11) 1.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_332"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (+ (- (exp x) 2.0) (exp (- x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_333"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (/ (- x (sin x)) (- x (tan x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_334"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (/ (exp x) (- (exp x) 1.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_335"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (/ (- 1.0 (cos x)) (* x x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_336"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (- (/ 1.0 x) (/ 1.0 (tan x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_337"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (- (log (+ x 1.0)) (log x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_338"
+    :pre (and (<= 0.01 x) (<= x 100.0))
+    (- (exp x) 1.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_339"
+    :pre (and (<= 0.01 x) (<= x 0.5))
+    (/ (- (exp x) 1.0) (log (exp x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_340"
+    :pre (and (<= 0.01 x) (<= x 0.5))
+    (/ (- (exp x) 1.0) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_341"
+    :pre (and (<= 1.0 x) (<= x 1000.0))
+    (/ 1.0 (+ (sqrt (+ x 1.0)) (sqrt x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_342"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (- (+ (- (+ 1.0 (* 0.5 x)) (* (* 0.125 x) x)) (* (* (* 0.0625 x) x) x)) (* (* (* (* 0.0390625 x) x) x) x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_343"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (/ 1.0 (sqrt (+ (pow x 2.0) (pow y 2.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_344"
+    :pre (and (<= -1.79e+308 x) (<= x -1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_345"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (sqrt x) (sqrt (- x 1.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_346"
+    :pre (and (<= 0.0 x) (<= x 1000.0))
+    (- (+ (- (+ (- (+ (- (+ (- (pow x 9.0) (* 18.0 (pow x 8.0))) (* 144.0 (pow x 7.0))) (* 672.0 (pow x 6.0))) (* 2016.0 (pow x 5.0))) (* 4032.0 (pow x 4.0))) (* 5376.0 (pow x 3.0))) (* 4608.0 (pow x 2.0))) (* 2304.0 x)) 512.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_347"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (exp x) (exp (- x))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_348"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (- (pow x 2.0) (pow y 2.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_349"
+    :pre (and (<= -1e-5 x) (<= x 1e-5))
+    (- (exp (- x)) (exp x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_350"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (exp (- x)) (exp x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_351"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (/ (+ x y) (- (pow x 2.0) (pow y 2.0))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_352"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (/ 1.0 (- x y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_353"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_354"
+    (/ (+ a b) 2.0))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_355"
+    (* (* a b) 0.5))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_356"
+    (/ (+ a b) 2.0))
+
+(FPCore (num precision)
+    :description "herbie web query"
+    :name "set_b_number_357"
+    :pre (and (and (<= -1.79e+308 num) (<= num 1.79e+308)) (and (<= -1.79e+308 precision) (<= precision 1.79e+308)))
+    (round (/ (* num (pow 10.0 precision)) (pow 10.0 precision))))
+
+(FPCore (num precision)
+    :description "herbie web query"
+    :name "set_b_number_358"
+    :pre (and (and (<= -1.79e+308 num) (<= num 1.79e+308)) (and (<= -1.79e+308 precision) (<= precision 1.79e+308)))
+    (/ (* num (pow 10.0 precision)) (pow 10.0 precision)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_359"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (+ (/ 1.0 x) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_360"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (+ (/ 1.0 x) (/ 3.0 x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_361"
+    :pre (and (and (<= 0.0 x) (<= x 1000.0)) (and (<= 0.0 y) (<= y 1000.0)))
+    (/ (- x (* 2.0 y)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_362"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (* x (sqrt (+ (- 1.0 0.39) (+ (* 0.39 0.39) (* (* 0.25 x) x))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_363"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_b_number_364"
+    :pre (and (and (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 b) (<= b 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308))) (and (<= -1.79e+308 d) (<= d 1.79e+308)))
+    (- (* a b) (* c d)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_365"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (/ x (- x y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_366"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (/ x (- x y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_367"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (/ x y))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_368"
+    :pre (and (<= -1.0 x) (<= x 1.79e+308))
+    (tanh x))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_369"
+    :pre (and (and (and (<= -1.79e+308 x) (<= x 1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000.0))) (and (<= -1000000000.0 z) (<= z 1000000000.0)))
+    (sqrt (+ (+ (* x x) (* y y)) (* z z))))
+
+(FPCore (x p)
+    :description "herbie web query"
+    :name "set_b_number_370"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= 1.0 p) (<= p 20.0)))
+    (- 1.0 (pow (+ 1.0 x) p)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_371"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- 1.0 (pow (+ 1.0 x) 10.3)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_372"
+    :pre (and (<= -0.001 x) (<= x 0.001))
+    (- 1.0 (pow (+ 1.0 x) 10.3)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_373"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (+ 1.0 (pow (+ 1.0 x) 10.0)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_374"
+    :pre (and (and (<= 0.0 x) (<= x 10.0)) (and (<= 0.0 y) (<= y 10.0)))
+    (- (pow (fabs x) 10.3) (pow (fabs y) 10.3)))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_375"
+    :pre (and (and (and (<= 0.0 a) (<= a 1000000000.0)) (and (<= 0.0 b) (<= b 1000000000.0))) (and (<= 0.0 c) (<= c 1000000000.0)))
+    (pow (/ (sqrt (+ (* a a) (* b b))) (sqrt (+ (* a a) (* c c)))) 2.0))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_376"
+    :pre (and (and (and (<= 0.0 a) (<= a 1.79e+308)) (and (<= 0.0 b) (<= b 1.79e+308))) (and (<= 0.0 c) (<= c 1.79e+308)))
+    (/ (sqrt (+ (* a a) (* b b))) (sqrt (+ (* a a) (* c c)))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_377"
+    :pre (and (and (and (<= 0.0 a) (<= a 1.79e+308)) (and (<= 0.0 b) (<= b 1.79e+308))) (and (<= 0.0 c) (<= c 1.79e+308)))
+    (log (/ (sqrt (+ (* a a) (* b b))) (sqrt (+ (* a a) (* c c))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_378"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (sin x))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_379"
+    (+ 0.1 0.2))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_380"
+    :pre (and (<= -0.05 x) (<= x 0.05))
+    (* (/ x 0.135) (+ (/ (/ 0.135 6.144e-6) (+ (/ 0.00248 (* (exp (/ (- (* x x)) (* 2.0 6.14e-6))) 0.368)) 1.0)) 1.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_381"
+    :pre (and (<= -0.05 x) (<= x 0.05))
+    (* (/ x 0.135) (+ (/ (/ 0.135 6.15e-6) (+ (/ 6.14e-6 (* (exp (* (/ (* (- x) x) 2.0) 6.15e-6)) 0.368)) 1.0)) 1.0)))
+
+(FPCore (y1 x1 y2 x2)
+    :description "herbie web query"
+    :name "set_b_number_382"
+    :pre (and (and (and (and (<= -1.79e+308 y1) (<= y1 1.79e+308)) (and (<= -1.79e+308 x1) (<= x1 1.79e+308))) (and (<= -1.79e+308 y2) (<= y2 1.79e+308))) (and (<= -1.79e+308 x2) (<= x2 1.79e+308)))
+    (fmod (- (atan (/ y1 x1)) (atan (/ y2 x2))) (* 2.0 PI)))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_383"
+    :pre (and (and (<= -1.79e+308 y) (<= y 1.79e+308)) (and (<= -1.79e+308 x) (<= x 1.79e+308)))
+    (atan (/ y x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_384"
+    :pre (and (and (<= 1.0 x) (<= x 100.0)) (and (<= 1.0 y) (<= y 100.0)))
+    (+ (sqrt (* x x)) (sqrt (* y y))))
+
+(FPCore (z x y)
+    :description "herbie web query"
+    :name "set_b_number_385"
+    :pre (and (and (and (<= -1000.0 z) (<= z 1000.0)) (and (<= 0.0 x) (<= x 10000.0))) (and (<= 0.0 y) (<= y 10000.0)))
+    (/ (/ (* z (log (/ x y))) (log 0.9)) 10.0))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_386"
+    :pre (and (and (<= -1.79e+308 y) (<= y 1.79e+308)) (and (<= -1.79e+308 x) (<= x 1.79e+308)))
+    (pow (cbrt (pow (hypot (/ y x) (/ x y)) 2.0)) 3.0))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_b_number_387"
+    :pre (and (and (<= -1.79e+308 y) (<= y 1.79e+308)) (and (<= -1.79e+308 x) (<= x 1.79e+308)))
+    (pow (hypot (/ y x) (/ x y)) 2.0))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_388"
+    :pre (and (and (<= -1.79e+308 x) (<= x 1.79e+308)) (and (<= -1.79e+308 y) (<= y 1.79e+308)))
+    (+ (/ (pow x 2.0) (pow y 2.0)) (/ (pow y 2.0) (pow x 2.0))))
+
+(FPCore (n m)
+    :description "herbie web query"
+    :name "set_b_number_389"
+    :pre (and (and (<= 1.0 n) (<= n 500.0)) (and (<= 1.0 m) (<= m 500.0)))
+    (* (* (- 2.0) (sqrt (/ 1.0 (+ n (* n n))))) (sqrt (/ 1.0 (+ m (* m m))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_390"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (/ x (sinh x)) 1.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_391"
+    :pre (and (<= -10.0 x) (<= x 10.0))
+    (- (/ x (sinh x)) 1.0))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_b_number_392"
+    :pre (and (and (and (<= -1000000000.0 b) (<= b 1000000000.0)) (and (<= -1000000000.0 a) (<= a 1000000000.0))) (and (<= -1000000000.0 c) (<= c 1000000000.0)))
+    (sqrt (- (* b b) (* (* 4.0 a) c))))
+
+(FPCore (u x)
+    :description "herbie web query"
+    :name "set_b_number_393"
+    :pre (and (and (<= -1.79e+308 u) (<= u 1.79e+308)) (and (<= -1.79e+308 x) (<= x 1.79e+308)))
+    (/ (pow u 2.0) (pow x 4.0)))
+
+(FPCore (a c b d e f)
+    :description "herbie web query"
+    :name "set_b_number_394"
+    :pre (and (and (and (and (and (and (<= -1000.0 a) (<= a 1000.0)) (and (<= -1000.0 c) (<= c 1000.0))) (and (<= -1000.0 b) (<= b 1000.0))) (and (<= -1000.0 d) (<= d 1000.0))) (and (<= -1000.0 e) (<= e 1000.0))) (and (<= -1000.0 f) (<= f 1000.0)))
+    (- (* (- a c) (- b d)) (* (- e c) (- f d))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_395"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (+ (pow x 2.0) 5.0))
+
+(FPCore (x1 xt2 y3 y4 xt3 y2 xt4 x2 xt1 y1 x3 x4)
+    :description "herbie web query"
+    :name "set_b_number_396"
+    :pre (and (and (and (and (and (and (and (and (and (and (and (and (<= -1.79e+308 x1) (<= x1 1.79e+308)) (and (<= -1.79e+308 xt2) (<= xt2 1.79e+308))) (and (<= -1.79e+308 y3) (<= y3 1.79e+308))) (and (<= -1.79e+308 y4) (<= y4 1.79e+308))) (and (<= -1.79e+308 xt3) (<= xt3 1.79e+308))) (and (<= -1.79e+308 y2) (<= y2 1.79e+308))) (and (<= -1.79e+308 xt4) (<= xt4 1.79e+308))) (and (<= -1.79e+308 x2) (<= x2 1.79e+308))) (and (<= -1.79e+308 xt1) (<= xt1 1.79e+308))) (and (<= -1.79e+308 y1) (<= y1 1.79e+308))) (and (<= -1.79e+308 x3) (<= x3 1.79e+308))) (and (<= -1.79e+308 x4) (<= x4 1.79e+308)))
+    (/ (- (+ (+ (- (- (+ (+ (- (- (+ (+ (- (- (+ (+ (- (- (+ (+ (- (- (+ (+ (* (* (- x1) xt2) y3) (* (* x1 xt2) y4)) (* (* x1 xt3) y2)) (* (* x1 xt3) y4)) (* (* x1 xt4) y2)) (* (* x1 xt4) y3)) (* (* x2 xt1) y3)) (* (* x2 xt1) y4)) (* (* x2 xt3) y1)) (* (* x2 xt3) y4)) (* (* x2 xt4) y1)) (* (* x2 xt4) y3)) (* (* x3 xt1) y2)) (* (* x3 xt1) y4)) (* (* x3 xt2) y1)) (* (* x3 xt2) y4)) (* (* x3 xt4) y1)) (* (* x3 xt4) y2)) (* (* x4 xt1) y2)) (* (* x4 xt1) y3)) (* (* x4 xt2) y1)) (* (* x4 xt2) y3)) (* (* x4 xt3) y1)) (* (* x4 xt3) y2)) (+ (- (- (+ (- (+ (+ (- (+ (- (- (+ (+ (- (- (+ (- (+ (+ (- (+ (- (- (* (* (* x1 x2) y1) y3) (* (* (* x1 x2) y1) y4)) (* (* (* x1 x2) y2) y3)) (* (* (* x1 x2) y2) y4)) (* (* (* x1 x3) y1) y2)) (* (* (* x1 x3) y1) y4)) (* (* (* x1 x3) y2) y3)) (* (* (* x1 x3) y3) y4)) (* (* (* x1 x4) y1) y2)) (* (* (* x1 x4) y1) y3)) (* (* (* x1 x4) y2) y4)) (* (* (* x1 x4) y3) y4)) (* (* (* x2 x3) y1) y2)) (* (* (* x2 x3) y1) y3)) (* (* (* x2 x3) y2) y4)) (* (* (* x2 x3) y3) y4)) (* (* (* x2 x4) y1) y2)) (* (* (* x2 x4) y1) y4)) (* (* (* x2 x4) y2) y3)) (* (* (* x2 x4) y3) y4)) (* (* (* x3 x4) y1) y3)) (* (* (* x3 x4) y1) y4)) (* (* (* x3 x4) y2) y3)) (* (* (* x3 x4) y2) y4))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_397"
+    :pre (and (and (<= 1e-20 x) (<= x 1e+20)) (and (<= 1e-20 y) (<= y 1e+20)))
+    (/ 1.0 (sqrt (+ (* x x) (* y y)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_398"
+    :pre (and (<= -10.0 x) (<= x 10.0))
+    (/ 1.0 (+ 1.0 (exp (- x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_399"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_400"
+    :pre (and (and (<= 1e-20 x) (<= x 1e+20)) (and (<= 1e-20 y) (<= y 1e+20)))
+    (/ 1.0 (sqrt (+ (* x x) (* y y)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_401"
+    :pre (and (and (<= 0.001 x) (<= x 10000000000.0)) (and (<= 0.001 y) (<= y 10000000000.0)))
+    (/ 1.0 (sqrt (+ (* x x) (* y y)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_402"
+    :pre (and (and (<= 1000000000.0 x) (<= x 1.79e+308)) (and (<= 1000000000.0 y) (<= y 1.79e+308)))
+    (- (pow x 3.0) (pow y 3.0)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_403"
+    :pre (and (and (<= 0.0 x) (<= x 1.79e+308)) (and (<= 0.0 y) (<= y 1.79e+308)))
+    (- (pow x 2.0) (pow y 2.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_404"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (log (+ 1.0 (* 0.5 (/ (* 2.0 x) (- 1.0 x))))))
+
+(FPCore (a0 a2 n s)
+    :description "herbie web query"
+    :name "set_b_number_405"
+    :pre (and (and (and (and (<= -10.0 a0) (<= a0 10.0)) (and (<= -10.0 a2) (<= a2 10.0))) (and (<= 1.0 n) (<= n 100.0))) (and (<= 2.0 s) (<= s 101.0)))
+    (+ a0 (/ (* (- a2 a0) n) s)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_406"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (/ (- x) (* y y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_407"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (/ (- x) (pow y 2.0)))
+
+(FPCore (r f p B)
+    :description "herbie web query"
+    :name "set_b_number_408"
+    :pre (and (and (and (and (<= 0.0 r) (<= r 1.0)) (and (<= 0.0 f) (<= f 1.0))) (and (<= 0.0 p) (<= p 100.0))) (and (<= 0.0 B) (<= B 10.0)))
+    (/ (* (* PI r) f) (* p B)))
+
+(FPCore (a b f p B)
+    :description "herbie web query"
+    :name "set_b_number_409"
+    :pre (and (and (and (and (and (<= 0.0 a) (<= a 1.0)) (and (<= 0.0 b) (<= b 1.0))) (and (<= 0.0 f) (<= f 1.0))) (and (<= 0.0 p) (<= p 100.0))) (and (<= 0.0 B) (<= B 10.0)))
+    (/ (+ a b) (- 1.0 (/ (* PI f) (* p B)))))
+
+(FPCore (i)
+    :description "herbie web query"
+    :name "set_b_number_410"
+    :pre (and (<= 0.0 i) (<= i 100.0))
+    (pow (* i (sqrt 2.0)) 2.0))
+
+(FPCore (i)
+    :description "herbie web query"
+    :name "set_b_number_411"
+    :pre (and (<= 0.5 i) (<= i 2.0))
+    (pow (* i (sqrt 2.0)) 2.0))
+
+(FPCore (i)
+    :description "herbie web query"
+    :name "set_b_number_412"
+    :pre (and (<= 0.0 i) (<= i 1.0))
+    (pow (* i (sqrt 2.0)) 2.0))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_413"
+    :pre (and (and (and (<= 0.0 x) (<= x 1.0)) (and (<= 0.0 y) (<= y 1.0))) (and (<= 0.0 z) (<= z 1.0)))
+    (* PI (- (pow x 2.0) (pow (- y z) 2.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_414"
+    :pre (and (<= 0.0 x) (<= x 100.0))
+    (sqrt (/ 1.0 x)))
+
+(FPCore (t)
+    :description "herbie web query"
+    :name "set_b_number_415"
+    :pre (and (<= -1000.0 t) (<= t 1000.0))
+    (/ t (sqrt (+ 1.0 (pow t 2.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_416"
+    :pre (and (<= -20.0 x) (<= x 20.0))
+    (/ x (+ (- 1.0 0.67) (pow (+ (pow 0.67 4.0) (* (* 0.25 x) x)) 0.25))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_417"
+    :pre (and (and (and (<= 0.0 a) (<= a 1.0)) (and (<= -1.0 b) (<= b 1.0))) (and (<= -1.0 c) (<= c 1.0)))
+    (/ (* a b) c))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_418"
+    :pre (and (and (and (<= 0.0 a) (<= a 1.0)) (and (<= -1.0 b) (<= b 1.0))) (and (<= -1.0 c) (<= c 1.0)))
+    (* a (/ b c)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_419"
+    :pre (and (and (<= -1000.0 x) (<= x -1000.0)) (and (<= -1000.0 y) (<= y -1000.0)))
+    (* (exp x) (exp y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_420"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (+ (- (sqrt x) (sqrt y)) (sqrt (+ y 1.0))))
+
+(FPCore (y x s)
+    :description "herbie web query"
+    :name "set_b_number_421"
+    :pre (and (and (and (<= 1.0 y) (<= y 1000.0)) (and (<= 1.0 x) (<= x 1000.0))) (and (<= 1.0 s) (<= s 1000.0)))
+    (pow (- 1.0 (* y x)) (/ s y)))
+
+(FPCore (y x s)
+    :description "herbie web query"
+    :name "set_b_number_422"
+    :pre (and (and (and (<= -1000000000.0 y) (<= y 1000000000.0)) (and (<= -1000000000.0 x) (<= x 1000000000.0))) (and (<= -1000000000.0 s) (<= s 1000000000.0)))
+    (pow (- 1.0 (* y x)) (/ s y)))
+
+(FPCore (e x s)
+    :description "herbie web query"
+    :name "set_b_number_423"
+    :pre (and (and (and (<= -1000000000.0 e) (<= e 1000000000.0)) (and (<= -1000000000.0 x) (<= x 1000000000.0))) (and (<= -1000000000.0 s) (<= s 1000000000.0)))
+    (pow (- 1.0 (* e x)) (/ s e)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_424"
+    :pre (and (and (<= 0.0 x) (<= x 1.0)) (and (<= 0.0 y) (<= y 1.0)))
+    (sqrt (+ (pow x 2.0) (pow y 2.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_425"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (far zp)
+    :description "herbie web query"
+    :name "set_b_number_426"
+    :pre (and (and (<= 4000.0 far) (<= far 4000.0)) (and (<= 0.0 zp) (<= zp 100.0)))
+    (fabs (- far zp)))
+
+(FPCore (far r)
+    :description "herbie web query"
+    :name "set_b_number_427"
+    :pre (and (and (<= 4000.0 far) (<= far 4000.0)) (and (<= 0.0 r) (<= r 10.0)))
+    (+ far r))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_428"
+    :pre (and (<= -100000.0 x) (<= x 100000.0))
+    (log (+ (fabs x) (sqrt (+ (* x x) 1.0)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_429"
+    :pre (and (and (<= -100.0 x) (<= x 100.0)) (and (<= -100.0 y) (<= y 100.0)))
+    (sqrt (+ (pow x 2.0) (pow y 2.0))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_430"
+    :pre (and (>= (* b b) (* 4.0 (* a c))) (!= a 0.0))
+    (/ (+ (- b) (sqrt (- (* b b) (* 4.0 (* a c))))) (* 2.0 a)))
+
+(FPCore (m0 m1 m2 w0 w1 w2 a0 a1 a2)
+    :description "herbie web query"
+    :name "set_b_number_431"
+    :pre (and (and (and (and (and (and (and (and (and (< -1.0 m0) (< m0 1.0)) (and (< -1.0 m1) (< m1 1.0))) (and (< -1.0 m2) (< m2 1.0))) (and (< 1e-5 w0) (< w0 1.0))) (and (< 1e-5 w1) (< w1 1.0))) (and (< 1e-5 w2) (< w2 1.0))) (and (< 1e-5 a0) (< a0 1.0))) (and (< 1e-5 a1) (< a1 1.0))) (and (< 1e-5 a2) (< a2 1.0)))
+    (+ 0.0 (+ (* (* (* w0 (- 0.0 m0)) (* -3.0 (* (* 1.0 (/ a0 w0)) (/ a0 w0)))) 1.0) (+ (* (* (* w1 (- 0.0 m1)) (* -3.0 (* (* 1.0 (/ a1 w1)) (/ a1 w1)))) 1.0) (+ (* (* (* w2 (- 0.0 m2)) (* -3.0 (* (* 1.0 (/ a2 w2)) (/ a2 w2)))) 1.0) 0.0)))))
+
+(FPCore (x0 x1 x2 x3 x4 x5 x6 x7)
+    :description "herbie web query"
+    :name "set_b_number_432"
+    :pre (and (and (and (and (and (and (and (and (< 1.0 x0) (< x0 2.0)) (and (< 1.0 x1) (< x1 2.0))) (and (< 1.0 x2) (< x2 2.0))) (and (< 1.0 x3) (< x3 2.0))) (and (< 1.0 x4) (< x4 2.0))) (and (< 1.0 x5) (< x5 2.0))) (and (< 1.0 x6) (< x6 2.0))) (and (< 1.0 x7) (< x7 2.0)))
+    (+ (+ (+ (+ (+ (+ (+ x0 x1) x2) x3) x4) x5) x6) x7))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_433"
+    :pre (and (and (<= -1.79e+308 x) (<= x 1.79e+308)) (and (<= -1.79e+308 y) (<= y 1.79e+308)))
+    (log1p (+ (* x (+ 2.0 x)) (* y y))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_434"
+    :pre (and (and (<= -1.79e+308 x) (<= x 1.79e+308)) (and (<= -1.79e+308 y) (<= y 1.79e+308)))
+    (log (+ (+ 1.0 (* x (+ 2.0 x))) (* y y))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_435"
+    (+ x y))
+
+(FPCore (m11 m22 m33 m44 m34 m43 m23 m42 m32 m24 m12 m41 m31 m21 m13 m14)
+    :description "herbie web query"
+    :name "set_b_number_436"
+    :pre (and (and (and (and (and (and (and (and (and (and (and (and (and (and (and (and (<= -1.79e+308 m11) (<= m11 1.79e+308)) (and (<= -1.79e+308 m22) (<= m22 1.79e+308))) (and (<= -1.79e+308 m33) (<= m33 1.79e+308))) (and (<= -1.79e+308 m44) (<= m44 1.79e+308))) (and (<= -1.79e+308 m34) (<= m34 1.79e+308))) (and (<= -1.79e+308 m43) (<= m43 1.79e+308))) (and (<= -1.79e+308 m23) (<= m23 1.79e+308))) (and (<= -1.79e+308 m42) (<= m42 1.79e+308))) (and (<= -1.79e+308 m32) (<= m32 1.79e+308))) (and (<= -1.79e+308 m24) (<= m24 1.79e+308))) (and (<= -1.79e+308 m12) (<= m12 1.79e+308))) (and (<= -1.79e+308 m41) (<= m41 1.79e+308))) (and (<= -1.79e+308 m31) (<= m31 1.79e+308))) (and (<= -1.79e+308 m21) (<= m21 1.79e+308))) (and (<= -1.79e+308 m13) (<= m13 1.79e+308))) (and (<= -1.79e+308 m14) (<= m14 1.79e+308)))
+    (+ (- (+ (- (+ (- (- (+ (- (+ (- (+ (+ (- (+ (- (+ (- (- (+ (- (+ (- (* (* (* m11 m22) m33) m44) (* (* (* m11 m22) m34) m43)) (* (* (* m11 m23) m34) m42)) (* (* (* m11 m23) m32) m44)) (* (* (* m11 m24) m32) m43)) (* (* (* m11 m24) m33) m42)) (* (* (* m12 m23) m34) m41)) (* (* (* m12 m23) m31) m44)) (* (* (* m12 m24) m31) m43)) (* (* (* m12 m24) m33) m41)) (* (* (* m12 m21) m33) m44)) (* (* (* m12 m21) m34) m43)) (* (* (* m13 m24) m31) m42)) (* (* (* m13 m24) m32) m41)) (* (* (* m13 m21) m32) m44)) (* (* (* m13 m21) m34) m42)) (* (* (* m13 m22) m34) m41)) (* (* (* m13 m22) m31) m44)) (* (* (* m14 m21) m32) m43)) (* (* (* m14 m21) m33) m42)) (* (* (* m14 m22) m33) m41)) (* (* (* m14 m22) m31) m43)) (* (* (* m14 m23) m31) m42)) (* (* (* m14 m23) m32) m41)))
+
+(FPCore (a u b v c)
+    :description "herbie web query"
+    :name "set_b_number_437"
+    :pre (and (and (and (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 u) (<= u 1.79e+308))) (and (<= -1.79e+308 b) (<= b 1.79e+308))) (and (<= -1.79e+308 v) (<= v 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308)))
+    (+ (+ a (* u (- b a))) (* v (- c a))))
+
+(FPCore (blend bX aX)
+    :description "herbie web query"
+    :name "set_b_number_438"
+    :pre (and (and (and (<= 0.0 blend) (<= blend 1.0)) (and (<= -1.79e+308 bX) (<= bX 1.79e+308))) (and (<= -1.79e+308 aX) (<= aX 1.79e+308)))
+    (+ (* blend (- bX aX)) aX))
+
+(FPCore (lx rx ly ry lz rz)
+    :description "herbie web query"
+    :name "set_b_number_439"
+    :pre (and (and (and (and (and (and (<= -1.79e+308 lx) (<= lx 1.79e+308)) (and (<= -1.79e+308 rx) (<= rx 1.79e+308))) (and (<= -1.79e+308 ly) (<= ly 1.79e+308))) (and (<= -1.79e+308 ry) (<= ry 1.79e+308))) (and (<= -1.79e+308 lz) (<= lz 1.79e+308))) (and (<= -1.79e+308 rz) (<= rz 1.79e+308)))
+    (+ (+ (* lx rx) (* ly ry)) (* lz rz)))
+
+(FPCore (circleSize)
+    :description "herbie web query"
+    :name "set_b_number_440"
+    :pre (and (<= 0.0 circleSize) (<= circleSize 10.0))
+    (* 1.00041 (- 54.4 (* 4.48 circleSize))))
+
+(FPCore (xre xim)
+    :description "herbie web query"
+    :name "set_b_number_441"
+    :pre (and (and (<= -1.79e+308 xre) (<= xre 1.79e+308)) (and (<= 0.0 xim) (<= xim 1.79e+308)))
+    (* 0.5 (sqrt (* 2.0 (+ (sqrt (+ (* xre xre) (* xim xim))) xre)))))
+
+(FPCore (i FRAME_RATE SPEED_MULTIPLIER)
+    :description "herbie web query"
+    :name "set_b_number_442"
+    :pre (and (and (and (<= 0.0 i) (<= i 1000000000.0)) (and (<= 1.0 FRAME_RATE) (<= FRAME_RATE 1000.0))) (and (<= 1.0 SPEED_MULTIPLIER) (<= SPEED_MULTIPLIER 1000.0)))
+    (* (* (/ i FRAME_RATE) SPEED_MULTIPLIER) 1000.0))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_b_number_443"
+    :pre (and (and (<= 1e-25 a) (<= a 1e-24)) (and (<= 1e-31 b) (<= b 1e-30)))
+    (/ (- a b) a))
+
+(FPCore (a b c d e)
+    :description "herbie web query"
+    :name "set_b_number_444"
+    :pre (and (and (and (and (and (<= -1000.0 a) (<= a 1000.0)) (and (<= -1000.0 b) (<= b 1000.0))) (and (<= -1000.0 c) (<= c 1000.0))) (and (<= -1000.0 d) (<= d 1000.0))) (and (<= -1000.0 e) (<= e 1000.0)))
+    (+ (* (- a (* b c)) d) e))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_445"
+    :pre (and (<= 0.9 x) (<= x 1.1))
+    (- 1.0 (* x x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_446"
+    :pre (and (<= -100.0 x) (<= x 100.0))
+    (- 1.0 (* x x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_447"
+    :pre (and (<= 0.0 x) (<= x 65504.0))
+    (/ (* (* 4.0 x) x) (+ 1.0 (* (/ x 1.11) (/ x 1.11)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_448"
+    :pre (and (<= 2.2 x) (<= x 2.4))
+    (/ (* (* 4.0 x) x) (+ 1.0 (* (/ x 1.11) (/ x 1.11)))))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_b_number_449"
+    :pre (and (and (and (<= 0.0 b) (<= b 1.79e+308)) (and (<= -1.79e+308 a) (<= a 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308)))
+    (/ (+ (- b) (sqrt (- (pow b 2.0) (* (* 4.0 a) c)))) (* 2.0 a)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_450"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (log (exp x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_451"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (* x (sin E)))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_452"
+    (sin E))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_453"
+    (sin PI))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_454"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (* 1e-6 x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_455"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (* 0.0 x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_456"
+    :pre (and (<= 0.1 x) (<= x 0.5))
+    (/ 1.0 x))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_457"
+    1.0)
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_458"
+    :pre (and (<= -10000.0 x) (<= x 10000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_459"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (U t n)
+    :description "herbie web query"
+    :name "set_b_number_460"
+    :pre (and (and (and (<= 0.0 U) (<= U 1.0)) (and (<= 0.0 t) (<= t 1000.0))) (and (<= 0.0 n) (<= n 1000.0)))
+    (* U (pow (/ (+ t 1.0) (+ (- t n) 1.0)) 2.0)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_461"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (/ (- 1.0 (cos x)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_462"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (/ (- 1.0 (cos x)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_463"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (- 1.0 (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_464"
+    :pre (and (<= -1.0 x) (<= x 1.0))
+    (- 1.0 (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_465"
+    :pre (and (<= 1e+40 x) (<= x 2e+40))
+    (sin x))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_466"
+    (- (+ 1.0 1e+20) 1e+20))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_467"
+    (+ 1.0 (- 1e+20 1e+20)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_468"
+    :pre (and (<= -1000000000.0 x) (<= x 1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_469"
+    :pre (and (<= -1e+50 x) (<= x 1e+50))
+    (sin (/ 1.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_470"
+    :pre (and (<= -1e+50 x) (<= x 1e+50))
+    (pow (+ x 1.0) 34.0))
+
+(FPCore (t a)
+    :description "herbie web query"
+    :name "set_b_number_471"
+    :pre (and (and (<= 0.99 t) (<= t 1.0)) (and (<= 3.14 a) (<= a 3.15)))
+    (/ (sin (* t a)) (sin a)))
+
+(FPCore (t a)
+    :description "herbie web query"
+    :name "set_b_number_472"
+    :pre (and (and (<= 0.0 t) (<= t 1.0)) (and (<= 3.14 a) (<= a 3.15)))
+    (/ (sin (* t a)) (sin a)))
+
+(FPCore (t a)
+    :description "herbie web query"
+    :name "set_b_number_473"
+    :pre (and (and (<= 0.0 t) (<= t 1.0)) (and (<= 0.0 a) (<= a 4.0)))
+    (/ (sin (* t a)) (sin a)))
+
+(FPCore (t a)
+    :description "herbie web query"
+    :name "set_b_number_474"
+    :pre (and (and (<= 0.0 t) (<= t 1.0)) (and (<= 0.0 a) (<= a 3.14159265359)))
+    (/ (sin (* t a)) (sin a)))
+
+(FPCore (t a)
+    :description "herbie web query"
+    :name "set_b_number_475"
+    :pre (and (and (<= 0.0 t) (<= t 1.0)) (and (<= -1.0 a) (<= a 1.0)))
+    (/ (sin (* t a)) (sin a)))
+
+(FPCore (t a)
+    :description "herbie web query"
+    :name "set_b_number_476"
+    :pre (and (and (<= 0.0 t) (<= t 1.0)) (and (<= 0.0 a) (<= a 3.14159265359)))
+    (sin (* (- 1.0 t) a)))
+
+(FPCore (q t a r)
+    :description "herbie web query"
+    :name "set_b_number_477"
+    :pre (and (and (and (and (<= -1.0 q) (<= q 1.0)) (and (<= 0.0 t) (<= t 1.0))) (and (<= 0.0 a) (<= a 3.14159265359))) (and (<= -1.0 r) (<= r 1.0)))
+    (+ (/ (* q (sin (* (- 1.0 t) a))) (sin a)) (/ (* r (sin (* t a))) (sin a))))
+
+(FPCore (q t a r)
+    :description "herbie web query"
+    :name "set_b_number_478"
+    :pre (and (and (and (and (<= -1.0 q) (<= q 1.0)) (and (<= 0.0 t) (<= t 1.0))) (and (<= 0.0 a) (<= a 3.141592654))) (and (<= -1.0 r) (<= r 1.0)))
+    (+ (/ (* q (sin (* (- 1.0 t) a))) (sin a)) (/ (* r (sin (* t a))) (sin a))))
+
+(FPCore (a t b)
+    :description "herbie web query"
+    :name "set_b_number_479"
+    :pre (and (and (and (<= -1.0 a) (<= a 1.0)) (and (<= 0.0 t) (<= t 1.0))) (and (<= -1.0 b) (<= b 1.0)))
+    (+ (/ (* a (sin (* (- 1.0 t) a))) (sin a)) (/ (* b (sin (* t a))) (sin a))))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_b_number_480"
+    :pre (and (and (and (<= -1.79e+308 b) (<= b 1.79e+308)) (and (<= -1.79e+308 a) (<= a 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308)))
+    (- (* b b) (* (* 4.0 a) c)))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_b_number_481"
+    :pre (and (and (and (<= -1.79e+308 b) (<= b 1.79e+308)) (and (<= -1.79e+308 a) (<= a 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308)))
+    (+ (* b b) (* a c)))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_b_number_482"
+    :pre (and (and (and (<= -1.79e+308 b) (<= b 1.79e+308)) (and (<= -1.79e+308 a) (<= a 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308)))
+    (sqrt (- (* b b) (* (* 4.0 a) c))))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_b_number_483"
+    (- (pow b 2.0) (* (* 4.0 a) c)))
+
+(FPCore (a t b)
+    :description "herbie web query"
+    :name "set_b_number_484"
+    :pre (and (and (and (<= 0.0 a) (<= a 255.0)) (and (<= 0.0 t) (<= t 1.0))) (and (<= 0.0 b) (<= b 255.0)))
+    (floor (+ (* a (- 1.0 t)) (* b t))))
+
+(FPCore (a t b)
+    :description "herbie web query"
+    :name "set_b_number_485"
+    :pre (and (and (and (<= 0.0 a) (<= a 255.0)) (and (<= 0.0 t) (<= t 1.0))) (and (<= 0.0 b) (<= b 255.0)))
+    (+ (* a (- 1.0 t)) (* b t)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_486"
+    :pre (and (<= 1000000000.0 x) (<= x 1.79e+308))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_487"
+    :pre (and (<= -1000.0 x) (<= x 1.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x d)
+    :description "herbie web query"
+    :name "set_b_number_488"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= 0.0 d) (<= d 100.0)))
+    (/ (- (pow x 2.0)) (* 2.0 (pow d 2.0))))
+
+(FPCore (d x)
+    :description "herbie web query"
+    :name "set_b_number_489"
+    :pre (and (and (<= 0.0 d) (<= d 100.0)) (and (<= -1000.0 x) (<= x 1000.0)))
+    (* (/ 1.0 (* (sqrt (* 2.0 PI)) d)) (exp (/ (- (pow x 2.0)) (* 2.0 (pow d 2.0))))))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_b_number_490"
+    (/ 1.0 (sqrt 2.0)))
+
+(FPCore (R G)
+    :description "herbie web query"
+    :name "set_b_number_491"
+    :pre (and (and (<= -1000000000000.0 R) (<= R 1000000000000.0)) (and (<= -1000000000000.0 G) (<= G 1000000000000.0)))
+    (- (* 255.0 (+ (* 256.0 R) G)) 32768.0))
+
+(FPCore (R G)
+    :description "herbie web query"
+    :name "set_b_number_492"
+    :pre (and (and (<= -100000.0 R) (<= R 100000.0)) (and (<= -100000.0 G) (<= G 100000.0)))
+    (- (* 255.0 (+ (* 256.0 R) G)) 32768.0))
+
+(FPCore (R G)
+    :description "herbie web query"
+    :name "set_b_number_493"
+    :pre (and (and (<= -100000.0 R) (<= R 100000.0)) (and (<= -100000.0 G) (<= G 100000.0)))
+    (- (* 255.0 (+ (* 256.0 R) G)) 32768.0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_494"
+    :pre (and (<= 0.0 x) (<= x 1.79e+308))
+    (/ (* (* 100.0 1.4) 100.0) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_495"
+    :pre (and (<= -10.0 x) (<= x 10.0))
+    (/ (- 1.0 x) (* 2.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_496"
+    :pre (and (<= -16000.0 x) (<= x 16000.0))
+    (/ (- 1.0 x) (* 2.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_497"
+    :pre (and (<= -4096.0 x) (<= x 4096.0))
+    (/ (- 1.0 x) (* 2.0 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_498"
+    :pre (and (<= -1.79e+308 x) (<= x 0.0))
+    (sqrt (/ (- (exp (* 2.0 x)) 1.0) (- (exp x) 1.0))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_499"
+    (/ (sin x) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_500"
+    :pre (and (<= 0.0 x) (<= x 1.0))
+    (exp (+ (- 1.0) (* x (log1p (/ 1.0 x))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_501"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (/ 1.0 (+ (sqrt (* 2.0 (sqrt x))) (sqrt x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_502"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (/ 1.0 (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_503"
+    :pre (and (<= 1.0 x) (<= x 1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (sigma b d)
+    :description "herbie web query"
+    :name "set_b_number_504"
+    (- (- (- (+ (+ (* 4.0 (pow sigma 5.0)) (* (* 5.0 b) (pow sigma 4.0))) (* (- (+ 1.0 (pow b 2.0)) (* 4.0 d)) (pow sigma 3.0))) (* (* (* 10.0 b) d) (pow sigma 2.0))) (* (+ (+ (* 8.0 (pow d 2.0)) (* (* 3.0 (pow b 2.0)) d)) (* 3.0 d)) sigma)) (* (* 3.0 b) (pow d 2.0))))
+
+(FPCore (sigma b d)
+    :description "herbie web query"
+    :name "set_b_number_505"
+    :pre (and (and (and (<= -1000.0 sigma) (<= sigma 1000.0)) (and (<= -1000.0 b) (<= b 1000.0))) (and (<= -1000.0 d) (<= d 1000.0)))
+    (- (- (- (+ (+ (* 4.0 (pow sigma 5.0)) (* (* 5.0 b) (pow sigma 4.0))) (* (- (+ 1.0 (pow b 2.0)) (* 4.0 d)) (pow sigma 3.0))) (* (* (* 10.0 b) d) (pow sigma 2.0))) (* (+ (+ (* 8.0 (pow d 2.0)) (* (* 3.0 (pow b 2.0)) d)) (* 3.0 d)) sigma)) (* (* 3.0 b) (pow d 2.0))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_506"
+    (/ (- (- b) (sqrt (- (pow b 2.0) (* (* 4.0 a) c)))) (* 2.0 a)))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_b_number_507"
+    (/ (- (- b) (sqrt (- (pow b 2.0) (* (* 4.0 a) c)))) (* 2.0 a)))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_b_number_508"
+    (/ (+ (- b) (sqrt (- (pow b 2.0) (* (* 4.0 a) c)))) (* 2.0 a)))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_b_number_509"
+    :pre (and (and (and (<= -1.79e+308 b) (<= b 1.79e+308)) (and (<= -1.79e+308 a) (<= a 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308)))
+    (/ (+ (- b) (sqrt (- (pow b 2.0) (* (* 4.0 a) c)))) (* 2.0 a)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_510"
+    :pre (and (<= 1.0 x) (<= x 1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_b_number_511"
+    :pre (and (and (and (and (<= -1000000000.0 a) (<= a 1000000000.0)) (and (<= -1000000000.0 b) (<= b 1000000000.0))) (and (<= -1000000000.0 c) (<= c 1000000000.0))) (and (<= -1000000000.0 d) (<= d 1000000000.0)))
+    (/ a (* (* b c) d)))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_b_number_512"
+    :pre (and (and (and (and (<= -1.79e+308 a) (<= a 1.79e+308)) (and (<= -1.79e+308 b) (<= b 1.79e+308))) (and (<= -1.79e+308 c) (<= c 1.79e+308))) (and (<= -1.79e+308 d) (<= d 1.79e+308)))
+    (/ a (* (* b c) d)))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_b_number_513"
+    :pre (and (and (and (and (<= -1000000000.0 a) (<= a 1000000000.0)) (and (<= -1000000000.0 b) (<= b 1000000000.0))) (and (<= -1000000000.0 c) (<= c 1000000000.0))) (and (<= -1000000000.0 d) (<= d 1000000000.0)))
+    (/ (/ (/ a b) c) d))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_b_number_514"
+    :pre (and (and (and (and (<= -1000000000.0 a) (<= a 1000000000.0)) (and (<= -1000000000.0 b) (<= b 1000000000.0))) (and (<= -1000000000.0 c) (<= c 1000000000.0))) (and (<= -1000000000.0 d) (<= d 1000000000.0)))
+    (/ (/ (/ a b) c) d))
+
+(FPCore (min pos d)
+    :description "herbie web query"
+    :name "set_b_number_515"
+    :pre (and (and (and (<= -1.0 min) (<= min 1.0)) (and (<= -1.0 pos) (<= pos 1.0))) (and (<= -1.0 d) (<= d 1.0)))
+    (* (- min pos) (/ 1.0 d)))
+
+(FPCore (min pos inv_d)
+    :description "herbie web query"
+    :name "set_b_number_516"
+    :pre (and (and (and (<= -1000.0 min) (<= min 1000.0)) (and (<= -1000.0 pos) (<= pos 1000.0))) (and (<= -1000.0 inv_d) (<= inv_d 1000.0)))
+    (* (- min pos) inv_d))
+
+(FPCore (sx ly sy lx)
+    :description "herbie web query"
+    :name "set_b_number_517"
+    :pre (and (and (and (and (<= -1.0 sx) (<= sx 1.0)) (and (<= -1.0 ly) (<= ly 1.0))) (and (<= -1.0 sy) (<= sy 1.0))) (and (<= -1.0 lx) (<= lx 1.0)))
+    (- (* sx ly) (* sy lx)))
+
+(FPCore (sigma b d)
+    :description "herbie web query"
+    :name "set_b_number_518"
+    :pre (and (and (and (<= -10.0 sigma) (<= sigma 10.0)) (and (<= -10.0 b) (<= b 10.0))) (and (<= -10.0 d) (<= d 10.0)))
+    (- (- (- (+ (+ (* 4.0 (pow sigma 5.0)) (* (* 5.0 b) (pow sigma 4.0))) (* (- (+ 1.0 (pow b 2.0)) (* 4.0 d)) (pow sigma 3.0))) (* (* (* 10.0 b) d) (pow sigma 2.0))) (* (+ (+ (* 8.0 (pow d 2.0)) (* (* 3.0 (pow b 2.0)) d)) (* 3.0 d)) sigma)) (* (* 3.0 b) (pow d 2.0))))
+
+(FPCore (sigma b d)
+    :description "herbie web query"
+    :name "set_b_number_519"
+    :pre (and (and (and (<= -10.0 sigma) (<= sigma 10.0)) (and (<= -10.0 b) (<= b 10.0))) (and (<= -10.0 d) (<= d 10.0)))
+    (- (- (- (+ (+ (* 4.0 (pow sigma 5.0)) (* (* 5.0 b) (pow sigma 4.0))) (* (- (+ 1.0 (pow b 2.0)) (* 4.0 d)) (pow sigma 3.0))) (* (* (* 10.0 b) d) (pow sigma 2.0))) (* (+ (+ (* 8.0 (pow d 2.0)) (* (* 3.0 (pow b 2.0)) d)) (* 3.0 d)) sigma)) (* (* 3.0 b) (pow d 2.0))))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_520"
+    :pre (and (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0))) (and (<= -1.0 z) (<= z 1.0)))
+    (sqrt (+ (+ (* x x) (* y y)) (* z z))))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_b_number_521"
+    :pre (and (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0))) (and (<= -1.0 z) (<= z 1.0)))
+    (+ (+ (* x x) (* y y)) (* z z)))
+
+(FPCore (sx ry sy rx)
+    :description "herbie web query"
+    :name "set_b_number_522"
+    :pre (and (and (and (and (<= -1.0 sx) (<= sx 1.0)) (and (<= -1.0 ry) (<= ry 1.0))) (and (<= -1.0 sy) (<= sy 1.0))) (and (<= -1.0 rx) (<= rx 1.0)))
+    (- (* sx ry) (* sy rx)))
+
+(FPCore (v)
+    :description "herbie web query"
+    :name "set_b_number_523"
+    :pre (and (<= 0.0 v) (<= v 1.0))
+    (/ (* v (+ (* v 2.51) 0.03)) (+ (* v (+ (* v 2.43) 0.59)) 0.14)))
+
+(FPCore (v a b c d e)
+    :description "herbie web query"
+    :name "set_b_number_524"
+    :pre (and (and (and (and (and (and (<= 0.0 v) (<= v 1.0)) (and (<= 0.0 a) (<= a 1.0))) (and (<= 0.0 b) (<= b 1.0))) (and (<= 0.0 c) (<= c 1.0))) (and (<= 0.0 d) (<= d 1.0))) (and (<= 0.0 e) (<= e 1.0)))
+    (/ (* v (+ (* v a) b)) (+ (* v (+ (* v c) d)) e)))
+
+(FPCore (lx rx ly ry lz rz)
+    :description "herbie web query"
+    :name "set_b_number_525"
+    :pre (and (and (and (and (and (and (<= -1.0 lx) (<= lx 1.0)) (and (<= -1.0 rx) (<= rx 1.0))) (and (<= -1.0 ly) (<= ly 1.0))) (and (<= -1.0 ry) (<= ry 1.0))) (and (<= -1.0 lz) (<= lz 1.0))) (and (<= -1.0 rz) (<= rz 1.0)))
+    (+ (+ (* lx rx) (* ly ry)) (* lz rz)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_526"
+    :pre (and (<= 1.0 x) (<= x 1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_527"
+    :pre (and (<= 1.0 x) (<= x 1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_528"
+    :pre (and (<= 1.0 x) (<= x 1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_529"
+    :pre (and (<= 1.0 x) (<= x 1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_530"
+    :pre (and (<= 1.0 x) (<= x 1000.0))
+    (- (sqrt (+ x 2.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_531"
+    :pre (and (<= 1.0 x) (<= x 1000.0))
+    (+ (sqrt (- x 5.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_532"
+    :pre (and (<= 1.0 x) (<= x 1000000000.0))
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (r d)
+    :description "herbie web query"
+    :name "set_b_number_533"
+    :pre (and (and (<= 0.0 r) (<= r 1.0)) (and (<= 0.0 d) (<= d 10.0)))
+    (* (/ 2.0 (pow r 2.0)) (- 1.0 (/ d (sqrt (+ (pow d 2.0) (pow r 2.0)))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_534"
+    :pre (and (<= -1000.0 x) (<= x 1000.0))
+    (/ x (sqrt (+ 1.0 (pow x 2.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_535"
+    :pre (and (<= -1.79e+308 x) (<= x 1.79e+308))
+    (/ x (sqrt (+ 1.0 (pow x 2.0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_b_number_536"
+    :pre (and (<= 0.0 x) (<= x 1000000.0))
+    (/ 1.0 (sqrt x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_537"
+    :pre (and (and (<= -1.79e+308 x) (<= x 1.79e+308)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (/ (+ x 1.0) y))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_538"
+    :pre (and (and (<= -1000000000.0 x) (<= x 1000000000.0)) (and (<= -1000000000.0 y) (<= y 1000000000.0)))
+    (/ (+ x 1.0) y))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_539"
+    :pre (and (and (<= -1000.0 x) (<= x 1000.0)) (and (<= -1000.0 y) (<= y 1000.0)))
+    (/ (+ x 1.0) y))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_b_number_540"
+    :pre (and (and (<= -1.0 x) (<= x 1.0)) (and (<= -1.0 y) (<= y 1.0)))
+    (/ (+ x 1.0) y))
+

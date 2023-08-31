@@ -1,0 +1,2830 @@
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_0"
+    (/ x (* (* 2 (pow (+ 1 y) 2)) y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_1"
+    (- (log (+ 1 x)) (* x y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_2"
+    (- (log (+ 1 x)) (/ (* x y) (* (* 2 x) (pow (+ 1 x) 2)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_3"
+    (- (log (+ 1 x)) (/ (* (+ 1 x) y) (* 2 (pow (+ 1 x) 3)))))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_v10_number_4"
+    (- (log (+ 1 y)) (* y x)))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_v10_number_5"
+    (- (log y) (* y x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_6"
+    (- (- (log (* x y)) (* x y)) (log x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_7"
+    (- (log (+ 1 x)) (/ y (pow (+ 1 x) 2))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_8"
+    (- (log x) (/ x (pow y 2))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_9"
+    (/ (+ (/ x y) 1) (- (/ x y) 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_10"
+    (* (+ x 1) (- x 1)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_11"
+    (- (sqr (+ x y)) (sqr (- x y))))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_12"
+    (- (+ (- x y) z) (+ x (- z y))))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_13"
+    (- (+ (+ x y) z) (+ x (+ y z))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_14"
+    (- (sqr (+ x 1)) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_15"
+    (- (+ x 1) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_16"
+    (- (exp (+ x 1)) (exp x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_17"
+    (sqrt (+ (* x x) 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_18"
+    (* (exp (* 3 x)) (exp (* 6 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_19"
+    (- (pow e x) (pow e (- x 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_20"
+    (pow e x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_21"
+    (sqrt (+ (exp x) (* 2 (sin (log x))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_22"
+    (- (/ (sin x) x) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_23"
+    (- (- (exp x) 1) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_24"
+    (- (cos (+ x 1)) (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_25"
+    (- (sqr (+ x 1)) (sqr x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_26"
+    (/ (pow (+ x 1) 2) (- x 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_27"
+    (- (sqrt (+ x 1)) (cos x)))
+
+(FPCore (A B)
+    :description "herbie web query"
+    :name "set_v10_number_28"
+    (* (+ A B) (- A B)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_29"
+    (/ (sqrt (+ x 1)) (sin x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_30"
+    (exp (+ 1 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_31"
+    (+ x (* x x)))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_32"
+    (+ (* a b) (* a c)))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_33"
+    (* a (+ b c)))
+
+(FPCore (x i)
+    :description "herbie web query"
+    :name "set_v10_number_34"
+    (/ (- (* x (log 2)) i) (log 2)))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_35"
+    (exp (* a (log b))))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_v10_number_36"
+    (sqrt (- (pow b 2) (* (* 4 a) c))))
+
+(FPCore (b)
+    :description "herbie web query"
+    :name "set_v10_number_37"
+    (sqrt (+ 1 (pow b 2))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_38"
+    (* x (exp x)))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_39"
+    (sqrt (+ 1 (* a a))))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_v10_number_40"
+    (/ (sqrt (- (* b b) (* (* 4 a) c))) (* 2 a)))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_v10_number_41"
+    (- (* b b) (* 4 (* a c))))
+
+(FPCore (b ac)
+    :description "herbie web query"
+    :name "set_v10_number_42"
+    (- (* b b) (* 4 ac)))
+
+(FPCore (y a x b)
+    :description "herbie web query"
+    :name "set_v10_number_43"
+    (- (+ (- (- (+ (- (+ (+ (pow y 4) (pow a 2)) (* (* 2 a) (pow x 2))) (* (* 2 a) (pow y 2))) a) (pow b 2)) (* (* (* 4 b) x) y)) (pow x 4)) (* (* 6 (pow x 2)) (pow y 2))))
+
+(FPCore (a b x y)
+    :description "herbie web query"
+    :name "set_v10_number_44"
+    (+ (- (+ (- (- (+ (- (+ (pow a 2) (* (* 2 a) (pow x 2))) (* (* 2 a) (pow y 2))) a) (pow b 2)) (* (* (* 4 b) x) y)) (pow x 4)) (* (* 6 (pow x 2)) (pow y 2))) (pow y 4)))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_45"
+    (pow (pow a 2) 2))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_46"
+    (pow a 4))
+
+(FPCore (sqr a)
+    :description "herbie web query"
+    :name "set_v10_number_47"
+    (* sqr a))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_48"
+    (pow a 3))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_49"
+    (- 1 (/ a b)))
+
+(FPCore (lambda m delta)
+    :description "herbie web query"
+    :name "set_v10_number_50"
+    (/ lambda (* 2 (sqrt (+ (sqr m) delta)))))
+
+(FPCore (t)
+    :description "herbie web query"
+    :name "set_v10_number_51"
+    (* (cos (/ t 3)) (cos (/ (+ pi t) 3))))
+
+(FPCore (f)
+    :description "herbie web query"
+    :name "set_v10_number_52"
+    (pow (sqrt f) (/ 1 3)))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_53"
+    (/ a (* b c)))
+
+(FPCore (a v c d)
+    :description "herbie web query"
+    :name "set_v10_number_54"
+    (* a (- (* v c) (* d e))))
+
+(FPCore (t)
+    :description "herbie web query"
+    :name "set_v10_number_55"
+    (cos (/ (+ pi t) 3)))
+
+(FPCore (c b)
+    :description "herbie web query"
+    :name "set_v10_number_56"
+    (/ (acos (/ c (* (* 2 (sqrt (/ b 3))) (/ b 3)))) 3))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_57"
+    (acos (* x y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_58"
+    (/ (- 1 (cos x)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_59"
+    (- (pow (+ 1 x) 2) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_60"
+    (- 1 (sqrt (- 1 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_61"
+    (- (sqrt (+ 1 x)) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_62"
+    (* 2 (pow (sin (/ x 2)) 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_63"
+    (acos (- 1 x)))
+
+(FPCore (t)
+    :description "herbie web query"
+    :name "set_v10_number_64"
+    (cos (/ (atan t) 3)))
+
+(FPCore (s v)
+    :description "herbie web query"
+    :name "set_v10_number_65"
+    (/ (/ s v) (sqrt v)))
+
+(FPCore (s v)
+    :description "herbie web query"
+    :name "set_v10_number_66"
+    (cos (/ (acos (/ s (* v (sqrt v)))) 3)))
+
+(FPCore (s v sqrtv)
+    :description "herbie web query"
+    :name "set_v10_number_67"
+    (cos (/ (acos (/ s (* v sqrtv))) 3)))
+
+(FPCore (s v)
+    :description "herbie web query"
+    :name "set_v10_number_68"
+    (cos (- (/ pi 3) (/ (acos (/ s (* v (sqrt v)))) 3))))
+
+(FPCore (s v)
+    :description "herbie web query"
+    :name "set_v10_number_69"
+    (cos (+ (/ pi 3) (/ (acos (/ s (* v (sqrt v)))) 3))))
+
+(FPCore (v s)
+    :description "herbie web query"
+    :name "set_v10_number_70"
+    (* (sqrt v) (cos (- (/ pi 3) (/ (acos (/ s (* v (sqrt v)))) 3)))))
+
+(FPCore (s v)
+    :description "herbie web query"
+    :name "set_v10_number_71"
+    (cos (+ (/ (acos (/ s (* v (sqrt v)))) 3) (/ pi 3))))
+
+(FPCore (v s)
+    :description "herbie web query"
+    :name "set_v10_number_72"
+    (* (sqrt v) (cos (/ (acos (/ s (* v (sqrt v)))) 3))))
+
+(FPCore (s v)
+    :description "herbie web query"
+    :name "set_v10_number_73"
+    (/ (acos (/ s (* v (sqrt v)))) 3))
+
+(FPCore (b)
+    :description "herbie web query"
+    :name "set_v10_number_74"
+    (/ (+ (- b) (sqrt (- (pow b 2) (* (* 4 10) 5)))) (* 2 10)))
+
+(FPCore (b)
+    :description "herbie web query"
+    :name "set_v10_number_75"
+    (/ (+ (- b) (sqrt (- (* b b) (* (* 4 1) 1)))) (* 2 1)))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_v10_number_76"
+    (sqrt (- (* b b) (* (* 4 a) c))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_77"
+    (- (log (- (/ 1 x) 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_78"
+    (log (/ 1 (- 1 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_79"
+    (/ 1 (- 1 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_80"
+    (/ x (+ 1 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_81"
+    (/ x (log x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_82"
+    (- (* x y) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_83"
+    (- (log (+ 1 x)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_84"
+    (- (exp (+ 100 x)) (exp (- (+ x 100)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_85"
+    (+ (sqrt (+ 1 x)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_86"
+    (+ (sqrt x) x))
+
+(FPCore (x z y)
+    :description "herbie web query"
+    :name "set_v10_number_87"
+    (/ (* (/ x (sqrt (+ (* x x) (* z z)))) y) (sqrt (+ (+ (* x x) (* y y)) (* z z)))))
+
+(FPCore (z x)
+    :description "herbie web query"
+    :name "set_v10_number_88"
+    (/ z (sqrt (+ (* x x) (* z z)))))
+
+(FPCore (j n)
+    :description "herbie web query"
+    :name "set_v10_number_89"
+    (- 1 (pow (- (/ j (/ (- n 1) 2)) 1) 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_90"
+    (- (sqrt (* x (sin x))) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_91"
+    (/ (/ (/ (/ 1 1) 1) 1) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_92"
+    (/ 1 (sqrt (- 1 (* x x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_93"
+    (+ (+ (+ (+ x (/ (pow x 3) 3)) (/ (pow x 5) 5)) (/ (pow x 7) 7)) (/ (pow x 9) 9)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_94"
+    (sqrt (+ x 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_95"
+    (* (sqrt (/ 1 x)) x))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_96"
+    (+ (* a b) c))
+
+(FPCore (alt)
+    :description "herbie web query"
+    :name "set_v10_number_97"
+    (* (/ 288.15 0.0065) (- 1 (pow (/ alt 101325) (/ (* 287.05 0.0065) 9.80665)))))
+
+(FPCore (n x)
+    :description "herbie web query"
+    :name "set_v10_number_98"
+    (cos (* n (acos x))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_99"
+    (+ (sqrt (+ x 1)) (sqrt (/ (pow x y) 2))))
+
+(FPCore (lat distance azimuth)
+    :description "herbie web query"
+    :name "set_v10_number_100"
+    (asin (+ (* (sin lat) (cos distance)) (* (* (cos lat) (sin distance)) (cos azimuth)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_101"
+    (- (cos x) (sin y)))
+
+(FPCore (b)
+    :description "herbie web query"
+    :name "set_v10_number_102"
+    (+ 10 b))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_v10_number_103"
+    (/ (* (* 0.01 (exp (+ (+ (- (+ (- (+ (- (/ (- 2991.2729) (pow K 2)) (/ 6017.0128 K)) 18.87642854) (* 0.028354721 K)) (* 1.7838301e-05 (pow K 2))) (* 8.4150417e-10 (pow K 3))) (* 4.4412543e-13 (pow K 4))) (* 2.8584870000000002 (log K))))) (+ (+ 1 0.00072) (* (* (+ (+ (- (/ P 1013.25) (* 0.000119 E)) (* 3.5088e-09 (pow E 2))) (* 1.1696e-12 (pow E 3))) 1.01325) (+ 3.2e-06 (* 5.9e-10 (pow C 2)))))) 1013.25))
+
+(FPCore (sinx cosx)
+    :description "herbie web query"
+    :name "set_v10_number_104"
+    (+ sinx cosx))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_105"
+    (- (sqrt (+ x 1)) 2))
+
+(FPCore (r)
+    :description "herbie web query"
+    :name "set_v10_number_106"
+    (* (* pi r) r))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_107"
+    (- (sqrt (+ 1 x)) (sqrt (pow x 2))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_108"
+    (* (sqrt (abs x)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_109"
+    (* (exp x) (log x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_110"
+    (- (sqrt 64) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_111"
+    (/ 1 (+ (pow e x) (pow e (- x)))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_112"
+    (+ (- b) (/ (sqrt (- (pow b 2) (* (* 4 a) c))) (* 2 a))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_113"
+    (- (exp x) (exp (- x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_114"
+    (+ (+ x (* x x)) (* (* x x) x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_115"
+    (+ (* (log (/ 1 x)) x) (* (exp 3) x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_116"
+    (* (log (/ 1 x)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_117"
+    (+ (* (log (/ 1 x)) (sin (+ x (/ 1 x)))) (* (exp 3) x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_118"
+    (+ (sqrt x) (sin (+ x 1))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_119"
+    (+ (/ (sqrt (* x 2)) 3) y))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_120"
+    (+ (exp x) (* (sin x) x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_121"
+    (* (exp x) (sin x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_122"
+    (+ (+ 1 17) (* 303 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_123"
+    (- (sin (+ x 1)) (sin x)))
+
+(FPCore (x x0 y y0)
+    :description "herbie web query"
+    :name "set_v10_number_124"
+    (sqrt (+ (* (- x x0) (- x x0)) (* (- y y0) (- y y0)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_125"
+    (+ (pow x 5) x))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_127"
+    (- (- (+ (+ (- (* 2 (pow x 2)) (* 3 xy)) (* 4 (pow y 2))) (* 6 x)) (* 3 y)) 4))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_128"
+    (pow (* 2.0 (sin (* (* pi 0.5) (* (/ 19912.127 22050.0) (pow 2.0 (- (* x 10.666667) 10.666667)))))) 0.25))
+
+(FPCore (a b x c d)
+    :description "herbie web query"
+    :name "set_v10_number_129"
+    (+ (+ (+ a (* b x)) (* (* c x) x)) (* (* (* d x) x) x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_130"
+    (sqr (- 0.5 (* 0.5 (cos x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_131"
+    (sqr (+ 0.5 (* 0.5 (cos x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_132"
+    (exp (sin x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_133"
+    (sqrt (+ 1 (exp (+ 1 x)))))
+
+(FPCore (y z)
+    :description "herbie web query"
+    :name "set_v10_number_134"
+    (/ (- 1 (exp (* (- y) z))) y))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_135"
+    (/ (* x (- 1 (exp (* (- y) z)))) y))
+
+(FPCore (a x b c)
+    :description "herbie web query"
+    :name "set_v10_number_136"
+    (+ (+ (* (* a x) x) (* b x)) c))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_137"
+    (+ (* x 0.1) 100))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_138"
+    (- (sqrt (+ 1 (pow x 2))) (sqrt (+ 1 (pow (+ x 1) 2)))))
+
+(FPCore (x alpha)
+    :description "herbie web query"
+    :name "set_v10_number_139"
+    (exp (/ (- (pow x 2)) alpha)))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_140"
+    (/ (sqrt (+ a 1)) (sqrt a)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_141"
+    (/ (- x 1) (- y 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_142"
+    (sinh (/ (pow x 2) (pow e x))))
+
+(FPCore (a b c d f)
+    :description "herbie web query"
+    :name "set_v10_number_143"
+    (+ (+ (sqr (- a b)) (sqr (- c d))) (sqr (- e f))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_144"
+    (- (- x) (sqrt (+ (pow x 2) 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_145"
+    (- (- x) (sqrt (+ (pow x 1) 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_146"
+    (- (sqrt (pow x 2)) x))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_147"
+    (/ (- (- b) (sqrt (- (* b b) (* (* 4 a) c)))) (* 2 a)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_148"
+    (- (sqrt (+ x 1)) x))
+
+(FPCore (a b c d f)
+    :description "herbie web query"
+    :name "set_v10_number_149"
+    (+ (+ (pow (- a b) 2) (pow (- c d) 2)) (pow (- e f) 2)))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_150"
+    (sqrt (/ (- a b) (+ a b))))
+
+(FPCore (f x)
+    :description "herbie web query"
+    :name "set_v10_number_151"
+    (/ (* 1.4744992e-18 (pow f 3)) (- (exp (* (/ 0.047992375 x) f)) 1)))
+
+(FPCore (f x)
+    :description "herbie web query"
+    :name "set_v10_number_152"
+    (/ (* 1.4744992e-18 (pow f 3)) (- (exp (/ 0.047992375 x)) 1)))
+
+(FPCore (f x)
+    :description "herbie web query"
+    :name "set_v10_number_153"
+    (/ (* (* (* 1.4744992e-18 f) f) f) (- (exp (/ 0.047992375 x)) 1)))
+
+(FPCore (x t)
+    :description "herbie web query"
+    :name "set_v10_number_154"
+    (* x (sqrt (+ 1 (* (/ t x) (/ t x))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_155"
+    (- (sqrt (+ x 1)) (sin x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_157"
+    (- (sqrt (+ x 1)) 3))
+
+(FPCore (t)
+    :description "herbie web query"
+    :name "set_v10_number_158"
+    (log (+ 1 t)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_159"
+    (log (+ 1 (/ x y))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_160"
+    (* (* x x) x))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_161"
+    (log (/ x y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_162"
+    (* (* x x) y))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_163"
+    (+ (- b) (sqrt (- (* b b) (* (* 4 a) c)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_165"
+    (- (/ (* 2 (exp (* 2 x))) (pow (+ 1 (exp x)) 3)) (/ (exp x) (pow (+ 1 (exp x)) 2))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_166"
+    (/ (* (exp x) (- 1 (exp x))) (pow (+ 1 (exp x)) 3)))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_167"
+    (+ x (* x (- y z))))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_168"
+    (+ (* x y) (* (- 1 x) z)))
+
+(FPCore (y x)
+    :description "herbie web query"
+    :name "set_v10_number_169"
+    (* 2 (atan (/ y (+ (sqrt (+ (+ (* x x) (* y y)) 1e-15)) x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_170"
+    (cos x))
+
+(FPCore (a s x)
+    :description "herbie web query"
+    :name "set_v10_number_171"
+    (log (- (* a (exp (* (- (sqrt s)) x))) (- a 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_172"
+    (log (- (* 100 (exp (* (- (sqrt 1e-11)) x))) 99)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_173"
+    (/ (log (+ (* 100 (exp (* (sqrt 1e-10) (sqrt (* (- 2) (log x)))))) 1)) (sqrt (* (- 2) (log x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_174"
+    (log (+ (* 100 (exp (* (sqrt 1e-10) (sqrt (* (- 2) (log x)))))) 1)))
+
+(FPCore (s x)
+    :description "herbie web query"
+    :name "set_v10_number_175"
+    (log (+ (* 100 (exp (* (sqrt s) x))) 1)))
+
+(FPCore (n m)
+    :description "herbie web query"
+    :name "set_v10_number_176"
+    (- 1 (abs (/ (- n m) m))))
+
+(FPCore (a b m s x)
+    :description "herbie web query"
+    :name "set_v10_number_177"
+    (/ (log (+ (* a (exp (+ (* (sqrt s) (sqrt (* (- 2.0) (log x)))) m))) b)) (sqrt (* (- 2.0) (log x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_178"
+    (sqrt (* (- 2.0) (log x))))
+
+(FPCore (a d)
+    :description "herbie web query"
+    :name "set_v10_number_179"
+    (/ (- 1 (pow (- 1 a) d)) a))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_180"
+    (exp (/ 1 (sqrt x))))
+
+(FPCore (a c b)
+    :description "herbie web query"
+    :name "set_v10_number_181"
+    (log (/ (- a c) (- b c))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_182"
+    (- (log a) (log (- b c))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_183"
+    (+ (sqrt x) (* (pow pi x) (log (* pi x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_184"
+    (+ (sin x) (sqrt (pow 2 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_185"
+    (- (cos x) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_186"
+    (- 1 (exp (- x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_187"
+    (+ (- (pow x 2) 1) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_188"
+    (log (+ 1 (exp (- x)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_189"
+    (log (+ (exp x) (exp y))))
+
+(FPCore (x b)
+    :description "herbie web query"
+    :name "set_v10_number_190"
+    (log (+ (exp x) (exp b))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_191"
+    (/ (+ (- b) (sqrt (- (pow b 2) (* (* 4 a) c)))) (* 2 a)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_192"
+    (/ (exp (- x)) (+ 1 (exp (- x)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_193"
+    (- x y))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_194"
+    (- (sqrt (+ (* x x) 1)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_195"
+    (- (sqrt (+ 1 (* x x))) x))
+
+(FPCore (z p)
+    :description "herbie web query"
+    :name "set_v10_number_196"
+    (sin (+ (* (* 2 pi) z) p)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_197"
+    (- (* 2 (abs x)) 1))
+
+(FPCore (x y a b c)
+    :description "herbie web query"
+    :name "set_v10_number_198"
+    (pow (+ x (* (/ (- y x) a) b)) c))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_199"
+    (- (cos x) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_200"
+    (- (* 2 x) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_201"
+    (- (+ (sin x) (cos x)) 1))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_202"
+    (* (+ a (/ b c)) c))
+
+(FPCore (a t b)
+    :description "herbie web query"
+    :name "set_v10_number_203"
+    (+ a (* t (- b a))))
+
+(FPCore (x y a b)
+    :description "herbie web query"
+    :name "set_v10_number_204"
+    (- (* (- x (* 0.5 (- y 1))) a) b))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_205"
+    (* x x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_206"
+    (/ (pow 2 x) (/ 2 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_207"
+    (+ (pow 2 x) (/ 2 x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_208"
+    (/ (* 2 x) (/ 2 y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_209"
+    (+ (* (sqrt (- 1)) 100) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_210"
+    (* (sin x) (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_211"
+    (+ (log x) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_212"
+    (+ (log x) x))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_213"
+    (/ (* x y) (- x y)))
+
+(FPCore (a x b y)
+    :description "herbie web query"
+    :name "set_v10_number_214"
+    (- (* a x) (* b y)))
+
+(FPCore (r)
+    :description "herbie web query"
+    :name "set_v10_number_215"
+    (* (* r r) (- (/ 1.0 12.0) (* (* r r) (- (/ 1.0 120.0) (* (* r r) (/ 1.0 252.0)))))))
+
+(FPCore (r)
+    :description "herbie web query"
+    :name "set_v10_number_216"
+    (* r (- (/ 1.0 12.0) (* r (- (/ 1.0 120.0) (* r (/ 1.0 252.0)))))))
+
+(FPCore (x y t)
+    :description "herbie web query"
+    :name "set_v10_number_217"
+    (+ x (* (- y x) t)))
+
+(FPCore (x y t)
+    :description "herbie web query"
+    :name "set_v10_number_218"
+    (+ x (* (- y 1) t)))
+
+(FPCore (y z)
+    :description "herbie web query"
+    :name "set_v10_number_219"
+    (/ (- (pow (sqrt y) 2) z) (- y (sqrt z))))
+
+(FPCore (y z)
+    :description "herbie web query"
+    :name "set_v10_number_220"
+    (/ (- (sqrt y) z) (- y (sqrt z))))
+
+(FPCore (y z)
+    :description "herbie web query"
+    :name "set_v10_number_221"
+    (/ (- (sqrt (- y 1)) (sqrt z)) (sqrt z)))
+
+(FPCore (y z)
+    :description "herbie web query"
+    :name "set_v10_number_222"
+    (- (sqrt (- y 1)) (sqrt (- z 1))))
+
+(FPCore (y)
+    :description "herbie web query"
+    :name "set_v10_number_223"
+    (sqrt (- y 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_224"
+    (/ (exp x) (+ (exp x) (exp (+ x 1)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_225"
+    (/ (+ (+ (+ (pow x 4) (pow x 3)) (pow x 2)) x) (sqrt (- y 1))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_226"
+    (+ (+ (* x x) (* (* 2 x) y)) (* y y)))
+
+(FPCore (x y yp ypp)
+    :description "herbie web query"
+    :name "set_v10_number_227"
+    (- x (/ (* (* 2 y) yp) (- (* (* 2 yp) yp) (* y ypp)))))
+
+(FPCore (t)
+    :description "herbie web query"
+    :name "set_v10_number_228"
+    (+ (* (tan t) (tan t)) 1))
+
+(FPCore (t)
+    :description "herbie web query"
+    :name "set_v10_number_229"
+    (+ 1 (* (tan t) (tan t))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_230"
+    (exp (sin (+ (* 2 x) 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_231"
+    (/ (* 6 (- x 1)) (+ (+ x 1) (* 4 (sqrt x)))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_233"
+    (+ a (/ (- b a) 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_234"
+    (- (tan x) (sin x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_235"
+    (- (exp (+ 1 x)) (exp x)))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_v10_number_238"
+    (/ (+ (- (* (* 9 (pow a 2)) d) (* (* (* 4 a) b) c)) (pow b 3)) (* a disc)))
+
+(FPCore (b d)
+    :description "herbie web query"
+    :name "set_v10_number_239"
+    (* (/ (- 1) 2) (+ b (sqrt d))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_240"
+    (sqrt (+ (* a a) b)))
+
+(FPCore (q)
+    :description "herbie web query"
+    :name "set_v10_number_241"
+    (sqrt (+ (* e e) q)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_242"
+    (- x (- x 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_243"
+    (+ x x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_244"
+    (/ 1 (+ (sqrt (+ x 1)) (sqrt x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_245"
+    (/ 1 (- (sqrt (+ x 1)) (sqrt x))))
+
+(FPCore (p)
+    :description "herbie web query"
+    :name "set_v10_number_246"
+    (/ 1 (sqrt (+ 1 (/ (* 3 (pow p 2)) (pow pi 2))))))
+
+(FPCore (p s)
+    :description "herbie web query"
+    :name "set_v10_number_247"
+    (sqrt (+ (pow p 2) (pow s 2))))
+
+(FPCore (s v)
+    :description "herbie web query"
+    :name "set_v10_number_248"
+    (/ 1 (sqrt (+ (/ 1 (pow s 2)) (/ 1 v)))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_249"
+    (/ (* 2 (- x y)) (+ x y)))
+
+(FPCore (b a c)
+    :description "herbie web query"
+    :name "set_v10_number_250"
+    (/ (+ (- b) (sqrt (* (* 4 a) c))) (* 2 a)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_251"
+    (- (sqrt (+ x 1)) (sqrt y)))
+
+(FPCore (far near)
+    :description "herbie web query"
+    :name "set_v10_number_253"
+    (/ (+ far near) (* (* 2 far) near)))
+
+(FPCore (far near)
+    :description "herbie web query"
+    :name "set_v10_number_254"
+    (/ (- (* (* 2 far) near)) (- far near)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_255"
+    (- (sqrt x) (sqrt y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_256"
+    (- (cos (/ 1 (+ x 1))) (cos (/ 1 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_257"
+    (- (sin (/ 1 (+ x 1))) (sin (/ 1 x))))
+
+(FPCore (p)
+    :description "herbie web query"
+    :name "set_v10_number_258"
+    (- (* (- p) (log p)) (* (- 1 p) (log (- 1 p)))))
+
+(FPCore (p)
+    :description "herbie web query"
+    :name "set_v10_number_259"
+    (* p (log p)))
+
+(FPCore (p)
+    :description "herbie web query"
+    :name "set_v10_number_260"
+    (log (/ p (- 1 p))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_261"
+    (log (/ x (- 1 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_262"
+    (/ (+ 1 (tanh (/ x 2))) 2))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_263"
+    (* 0.5 (+ 1 (tanh (/ x 2)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_264"
+    (/ 1 (+ 1 (exp (- x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_265"
+    (/ (exp x) (+ (exp x) 1)))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_266"
+    (sqrt (* a a)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_267"
+    (+ (/ 1 x) (/ 1 (* x x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_268"
+    (/ 1 (- x 3)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_269"
+    (/ 1 (- x y)))
+
+(FPCore (sigx sigy theta)
+    :description "herbie web query"
+    :name "set_v10_number_270"
+    (+ (* (+ (pow sigx 2) (pow sigy 2)) (cos (* 2 theta))) (+ (- (pow sigx 2)) (pow sigy 2))))
+
+(FPCore (sigx sigy theta)
+    :description "herbie web query"
+    :name "set_v10_number_271"
+    (+ (* (+ (pow sigx 2) (pow sigy 2)) (cos (* 2 theta))) (- (pow sigx 2) (pow sigy 2))))
+
+(FPCore (k s)
+    :description "herbie web query"
+    :name "set_v10_number_272"
+    (exp (/ (* k s) 2)))
+
+(FPCore (q w r t y u i o p)
+    :description "herbie web query"
+    :name "set_v10_number_273"
+    (+ (+ (+ (+ (+ (+ (+ (+ (+ q w) e) r) t) y) u) i) o) p))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_274"
+    (log (- x 1)))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_275"
+    (- a 1))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_276"
+    (sqrt (+ (* a a) (* b b))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_277"
+    (exp (+ (log x) 8)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_278"
+    (- (sqrt (+ (* x x) 1)) 1))
+
+(FPCore (m)
+    :description "herbie web query"
+    :name "set_v10_number_279"
+    (- (exp m) 1))
+
+(FPCore (m)
+    :description "herbie web query"
+    :name "set_v10_number_280"
+    (exp (- 1 m)))
+
+(FPCore (m)
+    :description "herbie web query"
+    :name "set_v10_number_281"
+    (exp (- m 1)))
+
+(FPCore (p)
+    :description "herbie web query"
+    :name "set_v10_number_282"
+    (log (+ 1 p)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_283"
+    (pow x 2))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_284"
+    (- (sqrt (+ x y)) (sqrt y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_285"
+    (- (sqrt x) 1))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_286"
+    (- (sqrt (+ x y)) (sqrt x)))
+
+(FPCore (a b c d f g h)
+    :description "herbie web query"
+    :name "set_v10_number_287"
+    (+ (+ (+ (+ (+ (+ (+ a b) c) d) e) f) g) h))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_288"
+    (+ (- x 1) x))
+
+(FPCore (n)
+    :description "herbie web query"
+    :name "set_v10_number_289"
+    (pow n n))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_290"
+    (asin (pow x (pow x x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_291"
+    (- (sqrt (+ x 1.0)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_292"
+    (sqrt (+ x 1.0)))
+
+(FPCore (k r a)
+    :description "herbie web query"
+    :name "set_v10_number_293"
+    (* k (pow (- r a) 3)))
+
+(FPCore (k r a)
+    :description "herbie web query"
+    :name "set_v10_number_294"
+    (* k (pow (- r a) 2)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_295"
+    (sin (- x y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_296"
+    (+ (sqrt (- x 1)) (/ (sin x) (log x))))
+
+(FPCore (angle dx dy)
+    :description "herbie web query"
+    :name "set_v10_number_297"
+    (- (* (cos angle) dx) (* (sin angle) dy)))
+
+(FPCore (cy radius4 angle)
+    :description "herbie web query"
+    :name "set_v10_number_298"
+    (+ cy (* radius4 (cos angle))))
+
+(FPCore (y)
+    :description "herbie web query"
+    :name "set_v10_number_299"
+    (+ x1 (/ (* (- y y1) (- x2 x1)) (- y2 y1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_300"
+    (+ y1 (/ (* (- x x1) (- y2 y1)) (- x2 x1))))
+
+(FPCore (p1x p2x p1y p2y)
+    :description "herbie web query"
+    :name "set_v10_number_301"
+    (sqrt (+ (* (- p1x p2x) (- p1x p2x)) (* (- p1y p2y) (- p1y p2y)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_302"
+    (- (- (- (* (sin x) (sin x)) (* (cos x) (cos x))) (* (* 2 (sin x)) (sin x))) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_303"
+    (- (* (sin x) (sin x)) (* (cos x) (cos x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_304"
+    (* 2 (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_305"
+    (- (sin x) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_306"
+    (- (exp x) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_307"
+    (sin (/ (* x (atan 1)) 45)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_308"
+    (+ 1 (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_309"
+    (- 1 (cos x)))
+
+(FPCore (x1 x2 y1 y2)
+    :description "herbie web query"
+    :name "set_v10_number_310"
+    (sqrt (+ (* (- x1 x2) (- x1 x2)) (* (- y1 y2) (- y1 y2)))))
+
+(FPCore (x1 x2)
+    :description "herbie web query"
+    :name "set_v10_number_311"
+    (sqrt (* (- x1 x2) (- x1 x2))))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_312"
+    (sqrt (+ (+ (* x x) (* y y)) (* z z))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_313"
+    (sqrt (pow x 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_314"
+    (+ (+ (+ (+ (+ (+ 1 2) 3) x) 4) 5) 6))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_315"
+    (+ (+ (+ (+ (+ 1 7) 8) 8) 9) x))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_316"
+    (+ (* 3.0 a) (* 40.1 b)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_317"
+    (+ (- (* (* x x) x) (* x x)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_318"
+    (sqrt (- x 1)))
+
+(FPCore (x z)
+    :description "herbie web query"
+    :name "set_v10_number_319"
+    (* (sqrt x) (sqr z)))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_320"
+    (sqrt (+ (+ (sqr x) (sqr y)) (sqr z))))
+
+(FPCore (x y z c)
+    :description "herbie web query"
+    :name "set_v10_number_321"
+    (/ (sqrt (+ (+ (sqr x) (sqr y)) (sqr z))) c))
+
+(FPCore (x y z c)
+    :description "herbie web query"
+    :name "set_v10_number_322"
+    (/ (sqrt (+ (+ (* x x) (* y y)) (* z z))) c))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_323"
+    (- (* x x) x))
+
+(FPCore (tdx dx tdy dy)
+    :description "herbie web query"
+    :name "set_v10_number_324"
+    (/ (+ (* tdx dx) (* tdy dy)) (+ (* dx dx) (* dy dy))))
+
+(FPCore (tdx dx tdy dy sl2)
+    :description "herbie web query"
+    :name "set_v10_number_325"
+    (/ (+ (* tdx dx) (* tdy dy)) sl2))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_326"
+    (sqrt (+ 1 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_327"
+    (/ (+ (log (/ 100 x)) (* (+ (- 0.05 0.01) (/ (* 0.15 0.15) 2)) 2)) (* 0.15 (sqrt 2))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_328"
+    (- (+ x 0.1) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_329"
+    (+ x 0.1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_330"
+    (* (* (* (- x 1) (- x 1)) (- x 1)) (- x 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_331"
+    (- (tanh x) (/ (pow (+ x 1) x) (tan (+ x 2)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_332"
+    (- (log x) (sin (+ x 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_333"
+    (sqr x))
+
+(FPCore (s)
+    :description "herbie web query"
+    :name "set_v10_number_334"
+    (sqrt (* (- 2 s) s)))
+
+(FPCore (s)
+    :description "herbie web query"
+    :name "set_v10_number_335"
+    (* (+ (* (- (* (+ (* (- (/ s 1814400) (/ 1.0 20160)) s) (/ 1.0 360)) s) (/ 1 12)) s) 1) s))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_336"
+    (* (- x 1) (+ x 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_337"
+    (+ (+ (+ (+ 1 x) (/ (* x x) 2)) (/ (* (* x x) x) 6)) (/ (* (* (* x x) x) x) 24)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_338"
+    (* (* (* (* (* x x) x) x) x) x))
+
+(FPCore (w x y z)
+    :description "herbie web query"
+    :name "set_v10_number_339"
+    (* (asin (sqrt (+ (pow (sin (/ (- x y) 2)) 2) (* (* (cos x) (cos y)) (pow (sin (/ (- z w) 2)) 2))))) 2))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_v10_number_340"
+    (+ (- (* a11 (- (* a22 a33) (* a23 a32))) (* a12 (- (* a21 a33) (* a23 a31)))) (* a13 (- (* a21 a32) (* a22 a31)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_342"
+    (sqrt (- (sqrt x) (* 2.546 (pow x x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_343"
+    (- (sqrt x) (pow x x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_344"
+    (/ (sqrt (+ x 1)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_345"
+    (+ (abs x) (sqrt x)))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_346"
+    (log (+ (exp a) (exp b))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_347"
+    (log (+ 1 (exp (* (- a) b)))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_348"
+    (log (+ 1 (exp (* a b)))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_349"
+    (exp (+ (+ 1 (log a)) (log b))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_350"
+    (/ (+ 1 (sqrt (- x 1))) (pow (- x 1) 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_351"
+    (/ (+ 1 (sqrt x)) (pow (- x 1) 2)))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_v10_number_352"
+    (+ (+ tm1 om2) (/ (* (* (* (- om1 tm1) (- om1 tm1)) tn) on) (+ tn on))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_353"
+    (- (- (sqrt (+ (pow a 2) (pow b 2))) a) b))
+
+(FPCore (a b d c f)
+    :description "herbie web query"
+    :name "set_v10_number_354"
+    (+ (+ a b) (/ (* (* (* (- d c) (- d c)) e) f) (+ e f))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_355"
+    (- (- (- (sqrt (+ (+ (pow a 2) (pow b 2)) (pow c 2))) a) b) c))
+
+(FPCore (q)
+    :description "herbie web query"
+    :name "set_v10_number_356"
+    (sqrt (- q (pow q 2))))
+
+(FPCore (q)
+    :description "herbie web query"
+    :name "set_v10_number_357"
+    (sqrt (* q (- q 1))))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_358"
+    (sqrt (- (pow a 2) 1)))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_359"
+    (- (- b) (sqrt (- (pow b 2) (* (* 4 a) c)))))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_v10_number_360"
+    (/ (+ (* a b) (* c d)) (+ a c)))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_361"
+    (* (* x y) z))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_362"
+    (- (/ (pow x 5) (pow y 4)) (sin xy)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_363"
+    (+ (+ (/ x 3) (/ x 3)) (/ x 3)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_364"
+    (+ (+ (+ (/ x 2) (/ y 2)) (/ x 3)) (/ y 4)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_365"
+    (+ (* 1.75 (* x (pow y 2))) (sqrt (/ x y))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_366"
+    (- (+ (sin x) 0.5) (* 3.75 (tan (* 2 x)))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_367"
+    (/ (/ (+ (* a 2147483648) b) 2147483648) 2147483648))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_368"
+    (exp (+ (* 3 (log x)) 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_369"
+    (exp (* 2 (log x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_370"
+    (* 2 (log x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_371"
+    (* (* x (sin x)) (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_372"
+    (* x (+ (log x) (log (log x)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_373"
+    (+ (sqrt (- x 1)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_374"
+    (sqrt (- x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_375"
+    (* (sqrt x) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_376"
+    (sin (/ 1 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_377"
+    (- (sqrt (+ (/ 1 x) 1)) (sqrt (/ 1 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_378"
+    (sqrt (- 2 (pow x 2))))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_379"
+    (/ (exp 1) a))
+
+(FPCore (left i right count)
+    :description "herbie web query"
+    :name "set_v10_number_380"
+    (+ left (* i (/ (- left right) count))))
+
+(FPCore (left count right)
+    :description "herbie web query"
+    :name "set_v10_number_381"
+    (+ left (* count (/ (- left right) count))))
+
+(FPCore (base count interval)
+    :description "herbie web query"
+    :name "set_v10_number_382"
+    (+ base (* count interval)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_383"
+    (- (sinh x) (cosh x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_384"
+    (- (sqrt (* x x)) (sqrt (* y y))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_385"
+    (sqrt (+ (+ x (* 1 y)) 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_386"
+    (- (log (+ x 1)) (log x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_387"
+    (/ 1 x))
+
+(FPCore (t b a)
+    :description "herbie web query"
+    :name "set_v10_number_388"
+    (+ (* t (- b a)) a))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_389"
+    (+ (* x (sqrt x)) (exp (pow x 2))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_390"
+    (pow (log (+ x 1)) x))
+
+(FPCore (minval minstep val)
+    :description "herbie web query"
+    :name "set_v10_number_391"
+    (* (+ (/ minval minstep) val) minstep))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_392"
+    (+ x (/ (* 1 3) 100)))
+
+(FPCore (val minstep minval)
+    :description "herbie web query"
+    :name "set_v10_number_393"
+    (+ (* val minstep) minval))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_394"
+    (* (pow x 2) (cos (- (/ x 2) (sqrt x)))))
+
+(FPCore (x4)
+    :description "herbie web query"
+    :name "set_v10_number_395"
+    (- (sqrt (pow x4 5)) (sqrt 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_396"
+    (sqrt (+ (+ 4 (pow x 2)) x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_397"
+    (* 1 (+ x 4)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_398"
+    (sqrt (log x)))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_399"
+    (/ x (sqrt (+ (+ (* x x) (* y y)) (* z z)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_400"
+    (sin (sqrt (+ x 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_401"
+    (- (sqrt x) (exp x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_402"
+    (+ (sqrt (+ x 1)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_403"
+    (exp (+ (- 1) x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_404"
+    (+ (exp (* 9 x)) (sqrt x)))
+
+(FPCore (a c b d)
+    :description "herbie web query"
+    :name "set_v10_number_405"
+    (sqrt (+ (sqr (- (* a c) (* b d))) (sqr (+ (* b c) (* a d))))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_406"
+    (sqrt (+ (sqr a) (sqr b))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_407"
+    (- (sqrt (- x 2)) (sqrt (- (pow x 2) 3))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_408"
+    (* 52 (sin (sqrt x))))
+
+(FPCore (a t v0 x0)
+    :description "herbie web query"
+    :name "set_v10_number_409"
+    (+ (+ (/ (* (* a t) t) 2) (* v0 t)) x0))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_410"
+    (- (pow x (+ x 1)) (pow x x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_411"
+    (pow x x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_412"
+    (/ (- (sin x) (tan x)) x))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_413"
+    (/ 1 (sqrt (- (pow x 2) (pow y 2)))))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_v10_number_414"
+    (sqrt (+ (pow (- x1 x2) 2) (pow (- y1 y2) 2))))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_v10_number_415"
+    (sqrt (+ (+ (pow (- x1 x2) 2) (pow (- y1 y2) 2)) (pow (- z1 z2) 2))))
+
+(FPCore (x1 x2)
+    :description "herbie web query"
+    :name "set_v10_number_416"
+    (sqrt (pow (- x1 x2) 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_417"
+    (/ 1 (+ (exp (- x)) 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_418"
+    (- x (sin x)))
+
+(FPCore (p x i d)
+    :description "herbie web query"
+    :name "set_v10_number_419"
+    (+ (+ (* p x) (* i x)) (* d x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_420"
+    (* 2.7 (exp (* (- 1.7) (pow x 2)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_421"
+    (+ (- (sqrt (+ x 1)) 1) x))
+
+(FPCore (w x y z)
+    :description "herbie web query"
+    :name "set_v10_number_422"
+    (* 2 (asin (sqrt (+ (pow (sin (/ (- x y) 2)) 2) (* (* (cos x) (cos y)) (pow (sin (/ (- z w) 2)) 2)))))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_423"
+    (+ (pow (cos x) 2) (pow (sin x) 2)))
+
+(FPCore (a c b)
+    :description "herbie web query"
+    :name "set_v10_number_424"
+    (/ (- (sqr a) (sqr c)) b))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_425"
+    (pow (cos x) 2))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_426"
+    (- a b))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_427"
+    (sqrt (* x x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_428"
+    (+ (sin (sin x)) (cos (cos x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_429"
+    (sinh (asin x)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_430"
+    (- (sin (+ x y)) (cos (+ x y))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_431"
+    (- (sin (pow x 2)) (cos (pow x 2))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_432"
+    (+ (- (sqrt (+ x 1)) (exp (- x))) (cos (* (* 2 pi) x))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_433"
+    (sqrt (+ (pow x 2) (pow y 2))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_434"
+    (sqrt (+ (* x x) (* y y))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_435"
+    (+ (sqrt (- x 4)) (sqrt (+ x 5))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_436"
+    (+ (pow (+ x 1) 2) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_437"
+    (- (pow (+ x 1) 2) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_438"
+    (- (* (+ x 1) 2) 1))
+
+(FPCore (x cos4x)
+    :description "herbie web query"
+    :name "set_v10_number_439"
+    (+ (sin (* 2 x)) (abs (* cos4x 3))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_440"
+    (- (sqrt (+ 1 x)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_441"
+    (/ (sqrt (+ x 1)) (sqr x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_442"
+    (/ (sqrt (+ x 1)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_443"
+    (* (sqrt (+ x 1)) (+ x (pow x 2))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_444"
+    (* (sqrt 4) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_445"
+    (sqrt (/ (pow x 2) 3)))
+
+(FPCore (x2 x1 y2 y1)
+    :description "herbie web query"
+    :name "set_v10_number_446"
+    (sqrt (+ (* (- x2 x1) (- x2 x1)) (* (- y2 y1) (- y2 y1)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_447"
+    (- x (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_448"
+    x)
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_450"
+    (+ (sqrt 0.4559) x))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_451"
+    (* (- (/ a b) 1) 100))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_452"
+    (- (/ (* 100 a) b) 100))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_453"
+    (/ (* 100 (- a b)) b))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_454"
+    (/ (* 100 (- a b)) a))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_455"
+    (/ (+ x y) 2))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_456"
+    (- (sqrt (log a)) (sqrt (- a 1))))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_457"
+    (- (sqrt (log a)) (sqrt a)))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_458"
+    (- (sqrt a) (sqrt b)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_459"
+    (- (abs (pow x 3)) (pow x 3)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_460"
+    (- (log x) (log (+ x 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_461"
+    (/ 1 (* x (+ x 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_462"
+    (- (/ 1 x) (/ 1 (+ x 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_463"
+    (+ (/ 1 (sin x)) (/ 1 (cos x))))
+
+(FPCore (a b c)
+    :description "herbie web query"
+    :name "set_v10_number_464"
+    (/ (+ (- b) (sqrt (- (* b b) (* (* 4 a) c)))) (* 2 a)))
+
+(FPCore (b ac a)
+    :description "herbie web query"
+    :name "set_v10_number_465"
+    (+ (- b) (/ (sqrt (- (* b b) (* 4 ac))) (* 2 a))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_466"
+    (/ (* (sqrt x) 1) (log x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_467"
+    (sqrt x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_468"
+    (sqrt (- (log (* 0.9 x)) (log 0.9))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_469"
+    (/ (sqrt (+ (log x) (sin x))) (asin (+ x 2))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_470"
+    (+ x (log 4)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_471"
+    (exp (- (* x x) (sin x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_472"
+    (/ x (sin x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_473"
+    (/ 1 (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_474"
+    (- (sin x) (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_475"
+    (- (sqrt (+ x 1)) (exp (+ 4 x))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_476"
+    (log (- x y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_477"
+    (- (log x) (log y)))
+
+(FPCore (a an c cn)
+    :description "herbie web query"
+    :name "set_v10_number_478"
+    (- (log (+ (* (exp a) an) (* (exp c) cn))) (log (+ an cn))))
+
+(FPCore (a an c cn)
+    :description "herbie web query"
+    :name "set_v10_number_479"
+    (log (/ (+ (* (exp a) an) (* (exp c) cn)) (+ an cn))))
+
+(FPCore (a an c cn bn)
+    :description "herbie web query"
+    :name "set_v10_number_480"
+    (log (/ (+ (* (exp a) an) (* (exp c) cn)) (+ an bn))))
+
+(FPCore (a c)
+    :description "herbie web query"
+    :name "set_v10_number_481"
+    (- (log (+ (* (exp a) an) (* (exp c) cn))) (log (+ an bn))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_482"
+    (- (sqrt (sin x)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_483"
+    (- (sin (sqrt x)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_484"
+    (+ (sqrt (+ x 1)) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_485"
+    (log (+ 1 x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_486"
+    (+ 1 (log x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_487"
+    (log x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_488"
+    (exp (- x (* (* 2 x) x))))
+
+(FPCore (a b)
+    :description "herbie web query"
+    :name "set_v10_number_489"
+    (/ (* a b) (+ (- 1.0 b) (* a b))))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_490"
+    (/ 1.0 (+ 1.0 (exp (- a)))))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_491"
+    (/ a (+ 1 a)))
+
+(FPCore (a)
+    :description "herbie web query"
+    :name "set_v10_number_492"
+    (/ 1 (+ 1 (/ 1 a))))
+
+(FPCore (b a)
+    :description "herbie web query"
+    :name "set_v10_number_493"
+    (* b (sqrt (+ (* a a) 1.0))))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_494"
+    (sqrt (+ (+ x y) z)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_496"
+    (* (* x y) (/ (* x pi) y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_497"
+    (* x (/ (* 0.2 pi) 180)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_498"
+    (* x 2))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_499"
+    (+ x 2))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_500"
+    (+ x 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_501"
+    (- (sqrt (+ x 1)) (* (/ (sqrt x) 4) (cos 5))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_502"
+    (+ (sqrt x) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_503"
+    (+ (+ (sqrt x) (* (sin x) x)) (log x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_504"
+    (+ (* 2 (* x (cos x))) (/ (sin x) (sqrt x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_505"
+    (+ (* (cos x) (sqrt x)) (sin (* 2 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_506"
+    (* (cos x) (sin x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_507"
+    (- (sqrt (+ x 1)) (sqrt (- x 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_508"
+    (* (cos (+ x 1)) (pow x 2)))
+
+(FPCore (b a)
+    :description "herbie web query"
+    :name "set_v10_number_509"
+    (* b (- (/ a b) (log (+ 1 (/ a b))))))
+
+(FPCore (b a)
+    :description "herbie web query"
+    :name "set_v10_number_510"
+    (* b (- (- (/ a b) 1) (log (/ a b)))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_511"
+    (* (/ 6 (pow x 99)) (pow x 101)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_512"
+    (* (/ 1 (pow x 99)) (pow x 101)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_513"
+    (* (/ 1 (pow x 100)) (pow x 100)))
+
+(FPCore (x y z)
+    :description "herbie web query"
+    :name "set_v10_number_514"
+    (cos (sqrt (+ (+ (* x x) (* y y)) (* z z)))))
+
+(FPCore ()
+    :description "herbie web query"
+    :name "set_v10_number_515"
+    (+ (+ (+ (sqrt (* sq_len1 sq_len2)) (* x1 x2)) (* y1 y2)) (* z1 z2)))
+
+(FPCore (w x y z)
+    :description "herbie web query"
+    :name "set_v10_number_516"
+    (sqrt (+ (+ (+ (* w w) (* x x)) (* y y)) (* z z))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_517"
+    (+ x (* y 5)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_518"
+    (+ x y))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_519"
+    (sqrt (+ (+ (sin (pow x 2)) (cos x)) (pow x 5))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_520"
+    (+ (/ 1 (pow x 4)) (pow x 4)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_521"
+    (sqrt (+ (sqrt (+ (pow x 2) 1)) 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_522"
+    (+ (sqrt (+ x 1)) (sqrt 1)))
+
+(FPCore (a k)
+    :description "herbie web query"
+    :name "set_v10_number_523"
+    (+ a (sqrt (- (* a a) k))))
+
+(FPCore (a k)
+    :description "herbie web query"
+    :name "set_v10_number_524"
+    (- (- a) (sqrt (- (* a a) k))))
+
+(FPCore (w a k)
+    :description "herbie web query"
+    :name "set_v10_number_525"
+    (+ (+ (* w w) (* (* 2 a) w)) k))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_526"
+    (sin x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_527"
+    (/ (sin x) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_528"
+    (+ (/ (sin x) (cos x)) (/ (cos x) (sin x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_529"
+    (exp (+ (sin x) (cos x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_530"
+    (+ (sin (exp x)) (cos (exp x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_531"
+    (+ (+ (+ (+ (+ (+ (+ x x) x) x) x) x) x) x))
+
+(FPCore (x a b)
+    :description "herbie web query"
+    :name "set_v10_number_532"
+    (+ (+ (* (* x x) a) (* x (+ a b))) (* x b)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_533"
+    (- (* (* x x) x) (* x x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_534"
+    (+ (+ (sin x) (sqrt (- x 1))) 1))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_535"
+    (/ (sqrt (+ 1 x)) (sqrt (- 1 x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_536"
+    (/ (pow (+ x x) 3) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_537"
+    (/ (* (/ x 2) 5) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_538"
+    (pow x 5))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_539"
+    (* (sqrt (+ x 1)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_540"
+    (* 2.0 (+ (sin x) (cos x))))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_541"
+    (/ (* 16 x) y))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_542"
+    (/ (sqrt (+ x 1)) (abs x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_543"
+    (sqrt (+ x 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_544"
+    (- (sqrt (+ x 1)) (sqrt 1)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_545"
+    (- (+ x 1) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_546"
+    (+ (sqrt (+ x 1)) (sin x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_547"
+    (- (sqrt (+ x 100)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_548"
+    (- (pow (+ x 1) 2) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_549"
+    (- (pow (+ x 1) 2) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_550"
+    (pow (+ x 1) 2))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_551"
+    (- 1.0 (cos x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_552"
+    (- (sqrt (+ x 10)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_553"
+    (+ (pow (sin x) 2) (pow (cos x) 2)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_554"
+    (+ (sin x) (cos x)))
+
+(FPCore (u v)
+    :description "herbie web query"
+    :name "set_v10_number_555"
+    (sqrt (- (sqrt (+ (pow u 2) (pow v 2))) u)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_556"
+    (exp (log x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_557"
+    (- (sqrt (- x 1)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_558"
+    (sqrt (* (sin x) (cos x))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_559"
+    (sin (cos x)))
+
+(FPCore (a b c d)
+    :description "herbie web query"
+    :name "set_v10_number_561"
+    (+ (- (+ a b) c) d))
+
+(FPCore (a b c d e f)
+    :description "herbie web query"
+    :name "set_v10_number_562"
+    (+ (- (+ (- (+ a b) c) d) e) f))
+
+(FPCore (x choose)
+    :description "herbie web query"
+    :name "set_v10_number_563"
+    (* (* x (* choose 5)) (* x (* choose 3))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_564"
+    (+ (- (sqrt (+ x 1)) (sqrt x)) (sin (- x 1))))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_565"
+    (- (+ x 100) x))
+
+(FPCore (y)
+    :description "herbie web query"
+    :name "set_v10_number_566"
+    (+ y (- 1 y)))
+
+(FPCore (x y)
+    :description "herbie web query"
+    :name "set_v10_number_567"
+    (+ (sinh (exp (pow x x))) y))
+
+(FPCore (x a b)
+    :description "herbie web query"
+    :name "set_v10_number_568"
+    (+ (+ (- (sqrt x) a) b) (sqrt (+ (- (pow x 2) (* (* x x) x)) (pow x x)))))
+
+(FPCore (y)
+    :description "herbie web query"
+    :name "set_v10_number_569"
+    (/ (log y) (- 1 y)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_570"
+    (* (/ (exp x) (sqrt (- (exp x) 1))) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_571"
+    (sqrt (exp x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_572"
+    (/ (- (exp x) 1) x))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_573"
+    (exp x))
+
+(FPCore (d)
+    :description "herbie web query"
+    :name "set_v10_number_574"
+    d)
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_575"
+    (- (sqrt (+ x 2)) (sqrt x)))
+
+(FPCore (x)
+    :description "herbie web query"
+    :name "set_v10_number_576"
+    (- (sqrt (+ x 1)) (sqrt x)))
+
