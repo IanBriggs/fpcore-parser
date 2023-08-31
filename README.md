@@ -23,23 +23,27 @@ __[SLY](https://sly.readthedocs.io/en/latest/)__, a lexer and parser generator.
 
 ## Things present in existing FPCores that are not supported
 
+Files indicated have been modified in this repo.
+
 ### [FPBench](https://github.com/FPBench/FPBench)
+
 * Using reserved names as variables
-  - `benchmarks/fptaylor-real2float.fpcore`
+  + `benchmarks/existing/FPBench/benchmarks/fptaylor-real2float.fpcore`
 
 ### [Herbie](https://github.com/herbie-fp/herbie)
+
 * Using parenthesis for let bindings
-  - `bench/mathematics/latlong.fpcore`
-  - `bench/libraries/jmatjs.fpcore`
-  - `bench/libraries/octave/CollocWt.fpcore`
-  - `bench/libraries/octave/randgamma.fpcore`
-  - `bench/numerics/rosa.fpcore`
-  - `bench/numerics/martel.fpcore`
-  - `bench/numerics/every-cs.fpcore`
-  - `bench/demo.fpcore`
-  - `bench/hamming/quadratic.fpcore`
-  - `bench/physics/tea-flows.fpcore`
-  - `bench/physics/tea-whistle.fpcore`
+	+ `benchmarks/existing/herbie/bench/demo.fpcore`
+	+ `benchmarks/existing/herbie/bench/hamming/quadratic.fpcore`
+	+ `benchmarks/existing/herbie/bench/libraries/jmatjs.fpcore`
+	+ `benchmarks/existing/herbie/bench/libraries/octave/CollocWt.fpcore`
+	+ `benchmarks/existing/herbie/bench/libraries/octave/randgamma.fpcore`
+	+ `benchmarks/existing/herbie/bench/mathematics/latlong.fpcore`
+	+ `benchmarks/existing/herbie/bench/numerics/every-cs.fpcore`
+	+ `benchmarks/existing/herbie/bench/numerics/martel.fpcore`
+	+ `benchmarks/existing/herbie/bench/numerics/rosa.fpcore`
+	+ `benchmarks/existing/herbie/bench/physics/tea-flows.fpcore`
+	+ `benchmarks/existing/herbie/bench/physics/tea-whistle.fpcore`
 
 #### etc
 * ascii font used in header comments is "Graceful" from
