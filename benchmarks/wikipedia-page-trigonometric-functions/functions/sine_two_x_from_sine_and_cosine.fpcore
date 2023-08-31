@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "sine two x from sine and cosine"
+  :pre (< (- INFINITY) x INFINITY)
+  :spec (sin (* 2 x))
+
+  (* (* 2 (sin x)) (cos x)))

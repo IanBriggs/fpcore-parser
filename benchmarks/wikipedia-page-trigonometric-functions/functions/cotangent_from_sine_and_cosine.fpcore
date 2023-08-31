@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "cotangant from sine and cosine"
+  :pre (and (< (- INFINITY) x INFINITY)
+            (!= (sin x) 0))
+
+  (/ (cos x) (sin x)))

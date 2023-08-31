@@ -1,0 +1,7 @@
+(FPCore (x)
+  :name "tangent from sine and cosine"
+  :pre (and (< (- INFINITY) x INFINITY)
+            (!= (cos x) 0))
+  :spec (tan x)
+
+  (/ (sin x) (cos x)))

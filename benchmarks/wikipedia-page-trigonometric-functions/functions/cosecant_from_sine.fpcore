@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "cosecant from sine"
+  :pre (and (< (- INFINITY) x INFINITY)
+            (!= (sin x) 0))
+
+  (/ 1 (sin x)))

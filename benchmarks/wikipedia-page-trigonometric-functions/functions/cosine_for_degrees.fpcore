@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "cosine for degrees"
+  :pre (< (- INFINITY) x INFINITY)
+
+  (cos (* (/ 180 PI) x)))

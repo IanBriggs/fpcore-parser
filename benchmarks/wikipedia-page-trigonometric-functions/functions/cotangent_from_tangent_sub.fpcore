@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "cotangant from tangent sub"
+  :pre (and (< (- INFINITY) x INFINITY)
+            (!= (sin x) 0))
+
+  (tan (- (/ pi 2) x)))

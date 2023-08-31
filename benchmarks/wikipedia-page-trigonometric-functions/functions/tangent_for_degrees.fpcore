@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "tangent for degrees"
+  :pre (and (< (- INFINITY) x INFINITY)
+            (!= (cos (* (/ 180 PI)) x)) 0)
+
+  (tan (* (/ 180 PI) x)))

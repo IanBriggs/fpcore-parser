@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "sine two x from tangent"
+  :pre (< (- INFINITY) x INFINITY)
+  :spec (sin (* 2 x))
+
+  (/ (* 2 (tan x)) (+ 1 (* (tan x) (tan x)))))

@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "tangent x minus y"
+  :pre (< (- INFINITY) x INFINITY)
+  :spec (tan (- x y))
+
+  (/ (- (tan x) (tan y)) (+ 1 (* (tan x) (tan y)))))

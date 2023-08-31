@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "cosine two x from tangent"
+  :pre (< (- INFINITY) x INFINITY)
+  :spec (cos (* 2 x))
+
+  (/ (- 1 (* (tan x) (tan x))) (+ 1 (* (tan x) (tan x)))))

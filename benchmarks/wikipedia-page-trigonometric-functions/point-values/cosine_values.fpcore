@@ -1,0 +1,42 @@
+(FPCore ()
+  :name "cosine zero"
+  :spec 1
+
+  (cos 0))
+
+(FPCore ()
+  :name "cosine pi over twelve"
+  :spec (/ (+ (sqrt 6) (sqrt 2)) 4)
+
+  (cos (/ PI 12)))
+
+(FPCore ()
+  :name "cosine pi over six"
+  :spec (/ (sqrt 3) 2)
+
+  (cos (/ PI 6)))
+
+(FPCore ()
+  :name "cosine pi over four"
+  :spec (/ (sqrt 2) 2)
+
+  (cos (/ PI 4)))
+
+(FPCore ()
+  :name "cosine pi over three"
+  :spec (/ 1 2)
+
+  (cos (/ PI 3)))
+
+(FPCore ()
+  :name "cosine five pi over twelve"
+  :spec (/ (- (sqrt 6) (sqrt 2)) 4)
+
+  (cos (/ (* 5 PI) 12)))
+
+
+(FPCore ()
+  :name "cosine pi over two"
+  :spec 0
+
+  (cos (/ PI 2)))

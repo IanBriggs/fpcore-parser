@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "cosine from sine"
+  :pre (< (- INFINITY) x INFINITY)
+  :spec (cos x)
+
+  (sin (- (/ PI 2) x)))

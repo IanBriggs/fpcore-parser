@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "chord from sine"
+  :pre (< (- INFINITY) x INFINITY)
+
+  (* 2 (sin (/ x 2))))

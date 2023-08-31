@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "cotangant from tangent div"
+  :pre (and (< (- INFINITY) x INFINITY)
+            (!= (sin x) 0))
+
+  (/ 1 (tan x)))

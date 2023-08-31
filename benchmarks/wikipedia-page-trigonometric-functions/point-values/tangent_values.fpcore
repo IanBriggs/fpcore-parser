@@ -1,0 +1,35 @@
+(FPCore ()
+  :name "tangent zero"
+  :spec 0
+
+  (tan 0))
+
+(FPCore ()
+  :name "tangent pi over twelve"
+  :spec (- 2 (sqrt 3))
+
+  (tan (/ PI 12)))
+
+(FPCore ()
+  :name "tangent pi over six"
+  :spec (/ (sqrt 3) 3)
+
+  (tan (/ PI 6)))
+
+(FPCore ()
+  :name "tangent pi over four"
+  :spec 1
+
+  (tan (/ PI 4)))
+
+(FPCore ()
+  :name "tangent pi over three"
+  :spec (sqrt 3)
+
+  (tan (/ PI 3)))
+
+(FPCore ()
+  :name "tangent five pi over twelve"
+  :spec (+ 2 (sqrt 3))
+
+  (tan (/ (* 5 PI) 12)))

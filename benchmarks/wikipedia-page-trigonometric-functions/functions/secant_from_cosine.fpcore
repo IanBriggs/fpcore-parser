@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "secant"
+  :pre (and (< (- INFINITY) x INFINITY)
+            (!= (cos x) 0))
+
+  (/ 1 (cos x)))

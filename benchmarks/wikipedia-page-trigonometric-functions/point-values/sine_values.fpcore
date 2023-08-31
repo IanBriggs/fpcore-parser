@@ -1,0 +1,42 @@
+(FPCore ()
+  :name "sine zero"
+  :spec 0
+
+  (sin 0))
+
+(FPCore ()
+  :name "sine pi over twelve"
+  :spec (/ (- (sqrt 6) (sqrt 2)) 4)
+
+  (sin (/ PI 12)))
+
+(FPCore ()
+  :name "sine pi over six"
+  :spec (/ 1 2)
+
+  (sin (/ PI 6)))
+
+(FPCore ()
+  :name "sine pi over four"
+  :spec (/ 1 (sqrt 2))
+
+  (sin (/ PI 4)))
+
+(FPCore ()
+  :name "sine pi over three"
+  :spec (/ (sqrt 3) 2)
+
+  (sin (/ PI 3)))
+
+(FPCore ()
+  :name "sine five pi over twelve"
+  :spec (/ (+ (sqrt 6) (sqrt 2)) 4)
+
+  (sin (/ (* 5 PI) 12)))
+
+
+(FPCore ()
+  :name "sine pi over two"
+  :spec 1
+
+  (sin (/ PI 2)))

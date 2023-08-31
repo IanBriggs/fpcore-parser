@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "sine x minus y"
+  :pre (< (- INFINITY) x INFINITY)
+  :spec (sin (- x y))
+
+  (- (* (sin x) (cos y)) (* (cos x) (sin y))))
