@@ -26,5 +26,6 @@ from . import base_ast
 from .ast_methods import (
     dunder_repr,
     dunder_str,
+    dunder_math_operations,
     extract_name,
 )
