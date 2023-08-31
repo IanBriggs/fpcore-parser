@@ -1,0 +1,183 @@
+;;; Preconditions (range table)
+
+(FPCore (x) 
+  :name "Single interval (1/4)" 
+  :pre (< 1 x 1.000001) 
+  :spec 1.0 
+  (if (< 1 x 1.000001) 1 0))
+
+(FPCore (x) 
+  :name "Single interval (2/4)" 
+  :pre (== x 1) 
+  :spec 1.0 
+  (if (== x 1) 1 0))
+
+(FPCore (x) 
+  :name "Single interval (3/4)"
+  :pre (< -1e-320 x 1e-320)
+  :spec 1.0 
+  (if (< -1e-320 x 1e-320) 1 0))
+
+(FPCore (x) 
+  :name "Single interval (4/4)"
+  :pre (< 1.797693134862315e308 x INFINITY)
+  :precision binary64 :spec 1.0 
+  (if (< 1.797693134862315e308 x INFINITY) 1 0))
+
+(FPCore (x) 
+  :name "Multiple intervals (1/2)" 
+  :pre (or (< -5 x -1) (< 1 x 5))
+  :spec 1.0 
+  (if (or (< -5 x -1) (< 1 x 5)) 1 0))
+
+(FPCore (x) 
+  :name "Multiple intervals (2/2)" 
+  :pre (or (< 1 x 1.00001) (< 1.7e308 x INFINITY)) 
+  :spec 1.0 
+  (if (or (< 1 x 1.00001) (< 1.7e308 x INFINITY)) 1 0))
+
+;;; Preconditions (by rejection) ;; FPTaylor does not like these preconditions
+
+; (FPCore (x y) :name "Dependent preconditions (1/3)" :pre (< x y) :spec 1.0 1.0)
+; (FPCore (x y) :name "Dependent preconditions (2/3)" :pre (< 1 x y 1.00001) :spec 1.0 1.0)
+; (FPCore (x y) :name "Dependent preconditions (3/3)" :pre (== x y) :spec 1.0 1.0)
+; (FPCore (x) :name "Extra preconditions (1/1)" :pre (< (pow x 2) 1) :spec 1.0 1.0)
+
+;;; Annotations
+
+(FPCore (x)
+ :name "Round with addition"
+ :pre (< 1 x 1e15)
+ :spec (round x)
+ (let ([n (! :precision binary64 6755399441055744)])
+   (! :precision binary64 :round nearestEven (- (+ x n) n))))
+
+(FPCore (x)
+  :name "FPBench precision example"
+  :precision binary64
+  :pre (< 1 x 100)
+  :spec (+ x ε)
+  (let ([ y (! :precision binary32 (- x 1))])
+    (+ y 1)))
+
+(FPCore (x)
+  :name "FPBench precision example w/ rounding mode"
+  :precision binary64
+  :pre (< 1 x 100)
+  :spec (+ x ε)
+  (let ([ y (! :precision binary32 :round toPositive (- x 1))])
+    (+ y 1)))
+
+(FPCore (x y)
+  :name "FPBench rounding mode example"
+  :pre (and (< 1 x 100)
+            (< 1 y 100))
+  (! :precision binary64 
+    (- (! :round toPositive (+ x y)) 
+       (! :round toNegative (+ x y)))))
+
+(FPCore (x y)
+  :name "Adapted example with mixed-precision (1/2)"
+  :pre (and (< 1 x 100)
+            (< 1 y 100))
+  (! :precision binary64 
+    (- (! :precision binary32 (+ x y)) 
+       (! :precision binary32 (- x y)))))
+
+(FPCore (x y)
+  :name "Adapted example with mixed-precision (2/2)"
+  :pre (and (< 1 x 100)
+            (< 1 y 100))
+  (! :precision binary32
+    (- (! :precision binary64 (+ x y)) 
+       (! :precision binary64 (- x y)))))
+
+(FPCore (x)
+  :name "FPBench casting example"
+  :pre (< 1 x 100)
+  (cast (! :precision binary32 (cast x))))
+
+(FPCore (x)
+ :name "monadius 1"
+ :precision binary64
+ (! :precision binary32 x))
+
+(FPCore (x)
+ :name "monadius 2"
+ :precision binary64
+ (! :precision binary32
+  (! :precision binary32 x)))
+
+(FPCore (x)
+ :name "monadius 3"
+ :precision binary64
+ (! :precision binary32
+  (let ([y x]) y)))
+
+(FPCore (x)
+  :name "monadius 4"
+  :precision binary32
+  :pre (< 1 x 100)
+  (! :precision binary64 (exp x)))
+
+; Can't be faithfully translated to C
+; (FPCore (x)
+;  :name "monadius 4 (bad)"
+;  :precision binary64
+;  :pre (< 1 x 100)
+;  (! :precision binary32 (exp x)))
+;
+; (FPCore ()
+; :name "monadius no-double-rounding"
+; :precision binary64
+; (let ([x 0x1.000002p-1]
+;       [y 0x1.ffffffffp-26])
+;  (! :precision binary32 (+ x y))))
+
+(FPCore ()
+ :name "monadius double-rounding"
+ :precision binary64
+ (let ([x 0x1.000002p-1]
+       [y 0x1.ffffffffp-26])
+  (! :precision binary32 (cast (! :precision binary64 (+ x y))))))
+
+(FPCore ()
+ :name "monadius approx 1"
+ :precision binary32
+ (let ([x 0x1p0]
+       [y 0x1p-30])
+  (! :precision binary64 (+ x y))))
+
+(FPCore ((! :precision binary32 x))
+ :name "variable annotations"
+ :precision binary64
+ x)
+
+(FPCore ((! :precision binary32 x) y)
+ :name "variable annotations 2"
+ :precision binary64
+ (+ x y))
+
+(FPCore ((! :precision binary32 x))
+ :name "monadius variable annotations"
+ :precision binary64
+ (let ([y x])  ; y should be binary32 despite global precision
+  (+ y x)))
+
+(FPCore (x)
+ :name "if mixed-precision"
+ :precision binary64
+ (! :precision binary32
+  (if (< x 0) (+ E x) (- E x))))
+
+(FPCore (x)
+ :name "let mixed-precision"
+ :precision binary64
+ (! :precision binary32
+  (let ([y (+ x 1)]
+        [z (- x 1)])
+    (! :precision binary64
+     (let ([y (+ x y)]
+           [z (+ x z)])
+      (+ y z))))))
+
