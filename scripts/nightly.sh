@@ -30,6 +30,6 @@ export PYTHONPATH="${GIT_DIR}/src"
 
 for f in $(find benchmarks -name "*.fpcore" | sort); do
     echo $f
-    python3 ${SCRIPTS_DIR}/parse_and_repr.py $f
+    ${SCRIPTS_DIR}/parse_and_repr.py $f
     echo -e "\n\n\n\n\n"
 done
