@@ -1,0 +1,7 @@
+(FPCore (a b c)
+  :name "fma"
+  :pre (and (< (- INFINITY) a INFINITY)
+            (< (- INFINITY) b INFINITY)
+            (< (- INFINITY) c INFINITY))
+
+  (fma a b c))

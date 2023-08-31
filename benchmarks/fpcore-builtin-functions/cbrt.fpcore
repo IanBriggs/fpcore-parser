@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "cbrt"
+  :pre (< (- INFINITY) x INFINITY)
+
+  (cbrt x))

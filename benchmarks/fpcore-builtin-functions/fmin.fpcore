@@ -1,0 +1,6 @@
+(FPCore (a b)
+  :name "fmin"
+  :pre (and (< (- INFINITY) a INFINITY)
+            (< (- INFINITY) b INFINITY))
+
+  (fmin a b))

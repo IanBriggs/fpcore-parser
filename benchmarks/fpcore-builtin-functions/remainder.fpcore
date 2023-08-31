@@ -1,0 +1,7 @@
+(FPCore (a b)
+  :name "remainder"
+  :pre (and (< (- INFINITY) a INFINITY)
+            (< (- INFINITY) b INFINITY)
+            (!= b 0))
+
+  (remainder a b))

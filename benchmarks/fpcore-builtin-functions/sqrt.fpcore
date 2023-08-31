@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "sqrt"
+  :pre (and (<= 0 x) (< x INFINITY))
+
+  (sqrt x))

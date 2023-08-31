@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "cos"
+  :pre (< (- INFINITY) x INFINITY)
+
+  (cos x))

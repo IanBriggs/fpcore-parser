@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "lgamma"
+  :pre (< 0 x INFINITY)
+
+  (lgamma x))

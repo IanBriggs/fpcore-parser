@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "exp"
+  :pre (< (- INFINITY) x INFINITY)
+
+  (exp x))

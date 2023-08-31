@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "sinh"
+  :pre (< (- INFINITY) x INFINITY)
+
+  (sinh x))

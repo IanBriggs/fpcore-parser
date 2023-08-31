@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "atanh"
+  :pre (< (- 1) x 1)
+
+  (atanh x))

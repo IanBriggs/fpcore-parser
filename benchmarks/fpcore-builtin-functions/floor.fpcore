@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "floor"
+  :pre (< (- INFINITY) x INFINITY)
+
+  (floor x))

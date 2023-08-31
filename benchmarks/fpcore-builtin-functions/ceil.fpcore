@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "ceil"
+  :pre (< (- INFINITY) x INFINITY)
+
+  (ceil x))

@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "asin"
+  :pre (<= (- 1) x 1)
+
+  (asin x))

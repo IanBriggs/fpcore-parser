@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "tgamma"
+  :pre (or (< 0 x INFINITY)
+           (!= (round x) x))
+
+  (tgamma x))

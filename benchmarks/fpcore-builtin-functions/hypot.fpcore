@@ -1,0 +1,6 @@
+(FPCore (a b)
+  :name "hypot"
+  :pre (and (< (- INFINITY) a INFINITY)
+            (< (- INFINITY) b INFINITY))
+
+  (hypot a b))

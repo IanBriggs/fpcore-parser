@@ -1,0 +1,6 @@
+(FPCore (x)
+  :name "tan"
+  :pre (and (< (- INFINITY) x INFINITY)
+            (!= (cos x) 0))
+
+  (tan x))

@@ -1,0 +1,6 @@
+(FPCore (a b)
+  :name "sub"
+  :pre (and (< (- INFINITY) a INFINITY)
+            (< (- INFINITY) b INFINITY))
+
+  (- a b))

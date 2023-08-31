@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "acosh"
+  :pre (and (<= 1 x) (< x INFINITY))
+
+  (acosh x))

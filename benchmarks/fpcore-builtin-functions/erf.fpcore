@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "erf"
+  :pre (< (- INFINITY) x INFINITY)
+
+  (erf x))

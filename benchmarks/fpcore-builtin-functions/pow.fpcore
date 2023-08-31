@@ -1,0 +1,9 @@
+(FPCore (a b)
+  :name "pow"
+  :pre (and (< (- INFINITY) a INFINITY)
+            (< (- INFINITY) b INFINITY)
+            (or (and (<= 0 a)
+                     (!= b 0))
+                (< 0 a)))
+
+  (pow a b))

@@ -1,0 +1,5 @@
+(FPCore (x)
+  :name "log10"
+  :pre (< 0 x INFINITY)
+
+  (log10 x))

@@ -1,0 +1,6 @@
+(FPCore (a b)
+  :name "add"
+  :pre (and (< (- INFINITY) a INFINITY)
+            (< (- INFINITY) b INFINITY))
+
+  (+ a b))

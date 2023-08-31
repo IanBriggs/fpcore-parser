@@ -1,0 +1,6 @@
+(FPCore (a b)
+  :name "copysign"
+  :pre (and (< (- INFINITY) a INFINITY)
+            (< (- INFINITY) b INFINITY))
+
+  (copysign a b))
