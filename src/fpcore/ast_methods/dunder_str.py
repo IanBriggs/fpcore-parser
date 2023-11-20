@@ -170,8 +170,10 @@ def __str__(self: Array) -> str:
 def __str__(self: FPCore) -> str:
     name_str = "" if self.operation_name is None else self.operation_name + " "
     arguments_str = " ".join([str(a) for a in self.arguments])
-    prop = " ".join([f":{sym} {data}" for sym,
-                    data in self.properties.items()])
+    prop = " ".join([(f':{sym} "{data}"'
+                     if type(data) == str
+                     else f':{sym} {data}')
+                     for sym,data in self.properties.items()])
     return "(FPCore {}({}) {} {})".format(name_str,
                                           arguments_str,
                                           prop,
