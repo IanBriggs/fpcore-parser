@@ -27,6 +27,7 @@ from .ast_methods import (
     dunder_repr,
     dunder_str,
     dunder_math_operations,
+    pretty_str,
     eval,
     extract_name,
 )
