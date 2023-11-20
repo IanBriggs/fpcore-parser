@@ -80,17 +80,6 @@ def parse_arguments(argv):
     return args
 
 
-def constant_to_fpcore_ast(const):
-    logger("Converting constant: '{}'", const)
-    match const:
-        case int():
-            return fpcore.base_ast.Decnum(str(const))
-        case float():
-            return fpcore.base_ast.Decnum(str(const))
-        case _:
-            raise NotImplementedError(f"Unhandled constant: '{const}'")
-
-
 def binop_to_fpcore_op(binop):
     match binop:
         case ast.Add():
@@ -121,35 +110,97 @@ def unop_to_fpcore_op(unop):
             raise NotImplementedError(f"{type(unop)} not implemented")
 
 
-def node_to_fpcore_ast(node):
+def comparison_to_str(comp):
+    match comp:
+        case ast.Eq():
+            return "=="
+        case ast.NotEq():
+            return "!="
+        case ast.Lt():
+            return "<"
+        case ast.LtE():
+            return "<="
+        case ast.Gt():
+            return ">"
+        case ast.GtE():
+            return ">="
+        case _:
+            raise NotImplementedError(f"Comparison not supported: '{comp}'")
+
+
+def node_to_fpcore_ast(source, node):
     logger("Converting node: '{}'", node)
     match node:
         case [inner_node]:
-            return node_to_fpcore_ast(inner_node)
+            return node_to_fpcore_ast(source, inner_node)
+        case [car, *cdr]:
+            if type(car) == ast.Assign:
+                var = node_to_fpcore_ast(source, car.targets)
+                val = node_to_fpcore_ast(source, car.value)
+                inner = node_to_fpcore_ast(source, cdr)
+                return fpcore.base_ast.Let({var: val}, inner)
+            else:
+                raise NotImplementedError(f"Unhandled node: '{car}'")
+        case ast.Expr():
+            return node_to_fpcore_ast(source, node.value)
         case ast.Return():
-            return node_to_fpcore_ast(node.value)
+            return node_to_fpcore_ast(source, node.value)
         case ast.BinOp():
             op = binop_to_fpcore_op(node.op)
-            left = node_to_fpcore_ast(node.left)
-            right = node_to_fpcore_ast(node.right)
+            left = node_to_fpcore_ast(source, node.left)
+            right = node_to_fpcore_ast(source, node.right)
             return fpcore.base_ast.Operation(op, left, right)
         case ast.UnaryOp():
             op = unop_to_fpcore_op(node.op)
-            arg = node_to_fpcore_ast(node.operand)
+            arg = node_to_fpcore_ast(source, node.operand)
             return fpcore.base_ast.Operation(op, arg)
         case ast.Constant():
-            return constant_to_fpcore_ast(node.value)
+            const = ast.get_source_segment(source, node)
+            return fpcore.base_ast.Decnum(const)
         case ast.Name():
             return fpcore.base_ast.Variable(node.id)
+        case ast.IfExp():
+            cond = node_to_fpcore_ast(source, node.test)
+            true_path = node_to_fpcore_ast(source, node.body)
+            false_path = node_to_fpcore_ast(source, node.orelse)
+            return fpcore.base_ast.If(cond, true_path, false_path)
+        case ast.Compare():
+            if len(node.comparators) != 1:
+                msg = "Only single comparisons are supported"
+                raise NotImplementedError(msg)
+            left = node_to_fpcore_ast(source, node.left)
+            right = node_to_fpcore_ast(source, node.comparators[0])
+            op = comparison_to_str(node.ops[0])
+            return fpcore.base_ast.Operation(op, left, right)
         case ast.Call():
             if not isinstance(node.func, ast.Name):
-                raise NotImplementedError(
-                    f"Unhandled call type: '{ast.dump(node.func)}'")
+                msg = f"Unhandled call type: '{ast.dump(node.func)}'"
+                raise NotImplementedError(msg)
             name = node.func.id
-            args = (node_to_fpcore_ast(a) for a in node.args)
+            args = (node_to_fpcore_ast(source, a) for a in node.args)
             return fpcore.base_ast.Operation(name, *args)
         case _:
-            raise NotImplementedError(f"Unhandled node: '{node}'")
+            src = ast.get_source_segment(source, node)
+            msg = f"Unhandled node: '{node}'\nsource: '{src}'"
+            raise NotImplementedError(msg)
+
+
+def get_pre(source, args):
+    leqs = list()
+    fpc_args = list()
+    for arg in args.args:
+        fpc_arg = fpcore.base_ast.Variable(arg.arg)
+        fpc_args.append(fpc_arg)
+        if (hasattr(arg, "annotation")
+            and type(arg.annotation) == ast.List
+            and len(arg.annotation.elts) == 2):
+            lower = node_to_fpcore_ast(source, arg.annotation.elts[0])
+            upper = node_to_fpcore_ast(source, arg.annotation.elts[1])
+            leqs.append(fpcore.base_ast.Operation("<=", lower, fpc_arg, upper))
+    andop = None
+    if len(leqs) != 0:
+        andop = fpcore.base_ast.Operation("and", *tuple(leqs))
+    return fpc_args, andop
 
 
 def process_file(filename):
@@ -164,13 +215,18 @@ def process_file(filename):
 
     for node in python_ast.body:
         logger("Input node: {}", node)
+        if isinstance(node, ast.ImportFrom):
+            continue
         if not isinstance(node, ast.FunctionDef):
             logger.warning("Skipping unhandled node: '{}'", node)
             continue
         name = node.name
-        args = [fpcore.base_ast.Variable(item.arg) for item in node.args.args]
-        body = node_to_fpcore_ast(node.body)
-        fpc = fpcore.base_ast.FPCore(name, args, list(), body)
+        properties = {"name": name.replace("_", " ")}
+        args, pre = get_pre(text, node.args)
+        if pre is not None:
+            properties["pre"] = pre
+        body = node_to_fpcore_ast(text, node.body)
+        fpc = fpcore.base_ast.FPCore(name, args, properties, body)
         fpcores.append(fpc)
 
     return fpcores
@@ -206,7 +262,8 @@ def main(argv):
         fpcores += process_input(name)
 
     for fpc in fpcores:
-        print(fpc)
+        print(fpc.pretty_str())
+        print()
 
     return 0
 

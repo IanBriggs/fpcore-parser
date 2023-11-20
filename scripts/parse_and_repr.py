@@ -88,7 +88,18 @@ def main(argv):
         with open(args.input, "r") as f:
             text = f.read()
 
-    fpcores = fpcore.parse(text)
+    try:
+        fpcores = fpcore.parse(text)
+    except fpcore.parser.FPCoreParseError as e:
+        # If a parse fails check for empty input
+        lines = text.splitlines()
+        lines = [line.strip() for line in lines]
+        lines = [line for line in lines if not line.startswith(";")]
+        lines = [line for line in lines if not line == ""]
+        if len(lines) == 0:
+            print("Input contained no FPCores")
+            return 0
+        raise e
 
     # Convert to string uses python's stack, so increase the size
     sys.setrecursionlimit(100_000)
