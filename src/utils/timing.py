@@ -10,12 +10,14 @@ from __future__ import annotations
 
 import statistics
 import time
-from typing import Any, List, Optional, Union
+from typing import Any, Optional, Union
 
 NS_PER_SEC = 1_000_000_000
 
-def ns_to_sec(ns:float) -> float:
+
+def ns_to_sec(ns: float) -> float:
     return ns / NS_PER_SEC
+
 
 class TimerRunningError(Exception):
     """Raised when an improper method is called while a Timer is running"""
@@ -49,7 +51,7 @@ class Timer:
 
     def __init__(self) -> None:
         # A list of session times in nanoseconds
-        self._times_ns: List[int] = list()
+        self._times_ns: list[int] = list()
         # Either the current start point when active or None when inactive
         self._start_ns: Optional[int] = None
 
@@ -66,9 +68,11 @@ class Timer:
         return None
 
     def __len__(self) -> int:
+        """Number of timing sessions"""
         return len(self._times_ns)
 
-    def __getitem__(self, key: Any) -> Union(float, List[float]):
+    def __getitem__(self, key: Any) -> Union(float, list[float]):
+        """Get specific elapsed time in seconds"""
         if self._start_ns is not None:
             raise TimerRunningError("__getitem__")
         res = self._times_ns[key]
@@ -137,10 +141,9 @@ class Timer:
         return ns_to_sec(median_ns)
 
 
-
-def main(argv) -> int:
+def main(argv: list[str]) -> int:
     # Get iteration count
-    target_iterations = 10_000
+    target_iterations = 1_000_000
     try:
         target_iterations = int(argv[1])
     except IndexError:
