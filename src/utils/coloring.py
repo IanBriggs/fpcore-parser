@@ -62,7 +62,6 @@ ANSI_COLOR_RE = re.compile(re_str)
 def strip_color(text: str) -> str:
     return ANSI_COLOR_RE.sub("", text)
 
-def 
 
 black = make_colorizer("black")
 red = make_colorizer("red")
