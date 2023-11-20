@@ -1,0 +1,34 @@
+;; Bronstein
+;;
+;; Origin: COCONUT
+;; 3 equations defined by:
+;;
+;; x^2 + y^2 + z^2 - 36=0
+;; x+y - z=0
+;; x*y + z^2 - 1=0
+;;
+;; Ranges: for all unknowns [-1e8,1e8]
+;;
+;; Solving method: GradientSolve+HullConsistencyStrong+3B
+;; Solutions:: 4 (exact)
+;; Computation time (May 2004)
+;; DELL D400 (1.7 GHz) 	0.01s
+
+(FPCore bronstein_1 (x y z)
+        :name "bronstein 1"
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (+ (+ (pow x 2) (pow y 2)) (pow z 2)) 36))
+
+(FPCore bronstein_2 (x y z)
+        :name "bronstein 2"
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (+ x y) z))
+
+(FPCore bronstein_3 (x y z)
+        :name "bronstein 3"
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (+ (* x y) (pow z 2)) 1))
+

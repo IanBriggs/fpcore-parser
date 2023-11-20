@@ -1,0 +1,19 @@
+;;  Branin
+;; Origin: [5]
+;; Minimize
+;;
+;; \begin{displaymath} 10+\left ({\it x2}- 0.12918450914398065859 {{\it x1}}^{2}+ ... ...{\it x1}-6\right )^{2}+ 9.6021126422702616606 \cos({\it x1}) \end{displaymath}
+;;
+;; for $x1$ in [-5,10], $x2$ in [10,15]
+;;
+;; Method: MinimizeGradient
+;; Solutions:: 1 (approximate)
+;; Computation time (September 2006):
+;; DELL D400 (1.7Ghz) 	0.01s
+
+(FPCore branin (x_1 x_2)
+        :name "branin"
+        :cite (Myatt:2004)
+        :pre (and (<= (- 5) x_1 10) (<= 10 x_2 15))
+
+        (+ (+ 10 (pow (- (+ (- x_2 (* 0.12918450914398065859 (pow x_1 2))) (* 1.5915494309189533577 x_1)) 6) 2)) (* 9.6021126422702616606 (cos x_1))))

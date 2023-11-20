@@ -1,0 +1,21 @@
+;;  Collins
+;;
+;; Origin: [2]
+;;
+;; Physical meaning: allows to determine the configuration of a parallel robot being given its joint coordinates
+;;
+;; \begin{displaymath} 3.9852- 10.039 {q_4}^{2}+ 7.2338 {q_4}^{4}- 1.17775 {q_4... ...0.091 {q_4}^{3}- 11.177 {q_4}^{5}\right )\sqrt {1-{q_4}^{2}} \end{displaymath}
+;;
+;; Range: [-1,1]
+;;
+;; Solving method: GradientSolve,HullConsistency
+;; Solutions:: 6 (exact)
+;; Computation time (April 2003):
+;; EVO 410C (1.2GHz) 	0.2s
+
+(FPCore collins (q_4)
+        :name "collins"
+        :cite (Collins:2002)
+        :pre (and (<= (- 1) q_4 1))
+
+        (+ (- (+ (- 3.9852 (* 10.039 (pow q_4 2))) (* 7.2338 (pow q_4 4))) (* 1.17775 (pow q_4 6))) (* (- (+ (* (- 8.8575) q_4) (* 20.091 (pow q_4 3))) (* 11.177 (pow q_4 5))) (sqrt (- 1 (pow q_4 2))))))

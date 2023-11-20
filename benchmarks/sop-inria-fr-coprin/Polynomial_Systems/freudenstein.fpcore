@@ -1,0 +1,31 @@
+;; Freudenstein
+;;
+;; Origin: [9]
+;; Physical meaning: none
+;; 2 equations
+;;
+;; \begin{eqnarray*} eq1&=&-13+x1+((5-x2)x2-2)x2\\ eq2&=&-29+x1+((x2+1)x2-14)x2\\ \end{eqnarray*}
+;;
+;; -13+x1+((5-x2)*x2-2)*x2
+;; -29+x1+((x2+1)*x2-14)*x2
+;;
+;; Ranges: [-1e8,1e8] for x1, x2
+;; Solving method: HessianSolve+HullConsistency+3B
+;; Note that we don't use the difference between the two equations
+;; Solutions:: 1 (exact)
+;; Computation time (April 2003):
+;; EVO 410C (1.2Ghz) 	0.04s
+
+(FPCore freudenstein_1 (x1 x2)
+        :name "freudenstein 1"
+        :cite (More:1981)
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8))
+
+        (+ (+ (- 13) x1) (* (- (* (- 5 x2) x2) 2) x2)))
+
+(FPCore freudenstein_2 (x1 x2)
+        :name "freudenstein 2"
+        :cite (More:1981)
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8))
+
+        (+ (+ (- 29) x1) (* (- (* (+ x2 1) x2) 14) x2)))

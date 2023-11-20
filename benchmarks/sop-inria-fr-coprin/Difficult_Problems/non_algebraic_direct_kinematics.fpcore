@@ -1,0 +1,132 @@
+;;  Non Algebraic: Direct kinematics
+;; Origin: COPRIN
+;; Physical meaning: determine the pose parameters of the platform of a parallel robot
+;;
+;; 11 equations with 11 unknowns defined by:
+;;
+;; xc^2+yc^2+zc^2-164=0
+;;
+;; 304.0192-20*xc-300*cos(p)+100*sin(p)*cos(t)-10*yc-150*sin(p)
+;; -50*cos(p)*cos(t)+30*xc*cos(p)-10*xc*sin(p)*cos(t)+30*yc*sin(p)
+;; +10*yc*cos(p)*cos(t)+10*zc*sin(t)=0
+;;
+;; 304.0192+20*xc-300*cos(p)-100*sin(p)*cos(t)-10*yc+150*sin(p)
+;; -50*cos(p)*cos(t)-30*xc*cos(p)-10*xc*sin(p)*cos(t)-30*yc*sin(p)
+;; +10*yc*cos(p)*cos(t)+10*zc*sin(t)=0
+;;
+;; (x1+7)^2+(y1-15)^2+z1^2-25=0
+;;
+;; (cos(p)*(x1-xc)+sin(p)*(y1-yc)+7.000000)^2+(-sin(p)*cos(t)*(x1-xc)
+;; +cos(p)*cos(t)*(y1-yc)+sin(t)*(z1-zc)-7.011678)^2+(sin(p)*sin(t)*(x1-xc)
+;; -cos(p)*sin(t)*(y1-yc)+cos(t)*(z1-zc)+4.065716)^2-25.46010=0
+;;
+;; (x2-7)^2+(y2-15)^2+z2^2-25=0
+;;
+;; (cos(p)*(x2-xc)+sin(p)*(y2-yc)-7.000000)^2+(-sin(p)*cos(t)*(x2-xc)
+;; +cos(p)*cos(t)*(y2-yc)+sin(t)*(z2-zc)-7.011678)^2+(sin(p)*sin(t)*(x2-xc)
+;; -cos(p)*sin(t)*(y2-yc)+cos(t)*(z2-zc)+4.065716)^2-25.46010=0
+;;
+;; 60.*z1-4.*z1*yc+(28.04672*y1-420.7008)*sin(t)+(243.9430-16.26286*y1)*cos(t)
+;; +28.*z1*sin(p)+(-16.26286*sin(t)*z1-28.04672*cos(t)*z1)*cos(p)
+;; +(-60.+4.*y1)*zc=0
+;;
+;; 28.*z1+4.*z1*xc+(-196.3270-28.04672*x1)*sin(t)+(113.8400+16.26286*x1)*cos(t)
+;; +(-16.26286*sin(t)*z1-28.04672*cos(t)*z1)*sin(p)-28.*z1*cos(p)
+;; +(-4.*x1-28.)*zc=0
+;;
+;; 60.*z2-4.*z2*yc+(-420.7008+28.04672*y2)*sin(t)+(243.9430-16.26286*y2)*cos(t)
+;; -28.*z2*sin(p)+(-28.04672*cos(t)*z2-16.26286*sin(t)*z2)*cos(p)+(4.*y2-60.)*zc=0
+;;
+;; -28.*z2+4.*z2*xc+(196.3270-28.04672*x2)*sin(t)+(-113.8400+16.26286*x2)*cos(t)
+;; +(-28.04672*cos(t)*z2-16.26286*sin(t)*z2)*sin(p)+28.*z2*cos(p)+(-4.*x2+28.)*zc=0
+;;
+;; Unknowns:
+;;
+;; [xc, yc, zc, p, t, x1, y1, z1, x2, y2, z2]
+;;
+;; Ranges:
+;;
+;; [-12.80624847, 12.80624847]
+;; [-12.80624847, 12.80624847]
+;; [0, 12.80624847]
+;; [-1.570796327, 1.570796327]
+;; [-1.570796327, 1.570796327]
+;; [-12., -2.]
+;; [10., 20.]
+;; [-5., 5.]
+;; [2., 12.]
+;; [10., 20.]
+;; [-5., 5.]
+;;
+;; Solving method: GradientSolve or HessianSolve+HullConsistency+ 3B
+;; Solutions:: 2 (exact with HessianSolve, approximate with GradientSolve))
+;; Computation time (May 2004):
+;; DELL D400 (1.7GHz) 	48mn (GradientSolve)
+;; DELL D400 (1.7GHz) 	2h17mn (HessianSolve)
+;; Cluster (15 PC's) 	38mn (HessianSolve)
+
+(FPCore non_algebraic_direct_kinematics_01 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 01"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (- (+ (+ (pow xc 2) (pow yc 2)) (pow zc 2)) 164))
+
+(FPCore non_algebraic_direct_kinematics_02 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 02"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (+ (+ (+ (- (+ (- (- (- (+ (- (- 304.0192 (* 20 xc)) (* 300 (cos p))) (* (* 100 (sin p)) (cos t))) (* 10 yc)) (* 150 (sin p))) (* (* 50 (cos p)) (cos t))) (* (* 30 xc) (cos p))) (* (* (* 10 xc) (sin p)) (cos t))) (* (* 30 yc) (sin p))) (* (* (* 10 yc) (cos p)) (cos t))) (* (* 10 zc) (sin t))))
+
+(FPCore non_algebraic_direct_kinematics_03 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 03"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (+ (+ (- (- (- (- (+ (- (- (- (+ 304.0192 (* 20 xc)) (* 300 (cos p))) (* (* 100 (sin p)) (cos t))) (* 10 yc)) (* 150 (sin p))) (* (* 50 (cos p)) (cos t))) (* (* 30 xc) (cos p))) (* (* (* 10 xc) (sin p)) (cos t))) (* (* 30 yc) (sin p))) (* (* (* 10 yc) (cos p)) (cos t))) (* (* 10 zc) (sin t))))
+
+(FPCore non_algebraic_direct_kinematics_04 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 04"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (- (+ (+ (pow (+ x1 7) 2) (pow (- y1 15) 2)) (pow z1 2)) 25))
+
+(FPCore non_algebraic_direct_kinematics_05 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 05"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (- (+ (+ (pow (+ (+ (* (cos p) (- x1 xc)) (* (sin p) (- y1 yc))) 7.000000) 2) (pow (- (+ (+ (* (* (- (sin p)) (cos t)) (- x1 xc)) (* (* (cos p) (cos t)) (- y1 yc))) (* (sin t) (- z1 zc))) 7.011678) 2)) (pow (+ (+ (- (* (* (sin p) (sin t)) (- x1 xc)) (* (* (cos p) (sin t)) (- y1 yc))) (* (cos t) (- z1 zc))) 4.065716) 2)) 25.46010))
+
+(FPCore non_algebraic_direct_kinematics_06 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 06"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (- (+ (+ (pow (- x2 7) 2) (pow (- y2 15) 2)) (pow z2 2)) 25))
+
+(FPCore non_algebraic_direct_kinematics_07 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 07"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (- (+ (+ (pow (- (+ (* (cos p) (- x2 xc)) (* (sin p) (- y2 yc))) 7.000000) 2) (pow (- (+ (+ (* (* (- (sin p)) (cos t)) (- x2 xc)) (* (* (cos p) (cos t)) (- y2 yc))) (* (sin t) (- z2 zc))) 7.011678) 2)) (pow (+ (+ (- (* (* (sin p) (sin t)) (- x2 xc)) (* (* (cos p) (sin t)) (- y2 yc))) (* (cos t) (- z2 zc))) 4.065716) 2)) 25.46010))
+
+(FPCore non_algebraic_direct_kinematics_08 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 08"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (+ (+ (+ (+ (+ (- (* 60. z1) (* (* 4. z1) yc)) (* (- (* 28.04672 y1) 420.7008) (sin t))) (* (- 243.9430 (* 16.26286 y1)) (cos t))) (* (* 28. z1) (sin p))) (* (- (* (* (- 16.26286) (sin t)) z1) (* (* 28.04672 (cos t)) z1)) (cos p))) (* (+ (- 60.) (* 4. y1)) zc)))
+
+(FPCore non_algebraic_direct_kinematics_09 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 09"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (+ (- (+ (+ (+ (+ (* 28. z1) (* (* 4. z1) xc)) (* (- (- 196.3270) (* 28.04672 x1)) (sin t))) (* (+ 113.8400 (* 16.26286 x1)) (cos t))) (* (- (* (* (- 16.26286) (sin t)) z1) (* (* 28.04672 (cos t)) z1)) (sin p))) (* (* 28. z1) (cos p))) (* (- (* (- 4.) x1) 28.) zc)))
+
+(FPCore non_algebraic_direct_kinematics_10 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 10"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (+ (+ (- (+ (+ (- (* 60. z2) (* (* 4. z2) yc)) (* (+ (- 420.7008) (* 28.04672 y2)) (sin t))) (* (- 243.9430 (* 16.26286 y2)) (cos t))) (* (* 28. z2) (sin p))) (* (- (* (* (- 28.04672) (cos t)) z2) (* (* 16.26286 (sin t)) z2)) (cos p))) (* (- (* 4. y2) 60.) zc)))
+
+(FPCore non_algebraic_direct_kinematics_11 (xc yc zc p t x1 y1 z1 x2 y2 z2)
+        :name "non algebraic direct kinematics 11"
+        :pre (and (<= (- 12.80624847) xc 12.80624847) (<= (- 12.80624847) yc 12.80624847) (<= 0 zc 12.80624847) (<= (- 1.570796327) p 1.570796327) (<= (- 1.570796327) t 1.570796327) (<= (- 12.) x1 (- 2.)) (<= 10. y1 20.) (<= (- 5.) z1 5.) (<= 2. x2 12.) (<= 10. y2 20.) (<= (- 5.) z2 5.))
+
+        (+ (+ (+ (+ (+ (+ (* (- 28.) z2) (* (* 4. z2) xc)) (* (- 196.3270 (* 28.04672 x2)) (sin t))) (* (+ (- 113.8400) (* 16.26286 x2)) (cos t))) (* (- (* (* (- 28.04672) (cos t)) z2) (* (* 16.26286 (sin t)) z2)) (sin p))) (* (* 28. z2) (cos p))) (* (+ (* (- 4.) x2) 28.) zc)))

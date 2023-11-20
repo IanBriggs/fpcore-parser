@@ -1,0 +1,41 @@
+;; Kincox
+;;
+;; Origin: COCONUT
+;; 4 equations with 4 unknowns with a =1, b=4, l1=10, l2=6
+;;
+;;  -a + l2*(c1*c2 - s1*s2) + l1*c1=0
+;;  -b + l2*(c1*s2 + c2*s1) + l1*s1=0
+;;  c1^2 + s1^2 - 1=0
+;;  c2^2 + s2^2 - 1=0
+;;
+;; Ranges: [-1,1] for all unknowns
+;;
+;; Solving method: GradientSolve+HullConsistencyStrong+ +3B
+;; Solutions:: 2 (exact)
+;; Computation time (May 2004):
+;; DELL D400 (1.7GHz) 	0.01s
+;; See also the non-algebraic version of this problem
+
+(FPCore kincox_1 (c1 s1 c2 s2)
+        :name "kincox 1"
+        :pre (and (<= (- 1) c1 1) (<= (- 1) s1 1) (<= (- 1) c2 1) (<= (- 1) s2 1))
+
+        (let ([a 1]) (let ([b 4]) (let ([l1 10]) (let ([l2 6]) (+ (+ (- a) (* l2 (- (* c1 c2) (* s1 s2)))) (* l1 c1)))))))
+
+(FPCore kincox_2 (c1 s1 c2 s2)
+        :name "kincox 2"
+        :pre (and (<= (- 1) c1 1) (<= (- 1) s1 1) (<= (- 1) c2 1) (<= (- 1) s2 1))
+
+        (let ([a 1]) (let ([b 4]) (let ([l1 10]) (let ([l2 6]) (+ (+ (- b) (* l2 (+ (* c1 s2) (* c2 s1)))) (* l1 s1)))))))
+
+(FPCore kincox_3 (c1 s1 c2 s2)
+        :name "kincox 3"
+        :pre (and (<= (- 1) c1 1) (<= (- 1) s1 1) (<= (- 1) c2 1) (<= (- 1) s2 1))
+
+        (let ([a 1]) (let ([b 4]) (let ([l1 10]) (let ([l2 6]) (- (+ (pow c1 2) (pow s1 2)) 1))))))
+
+(FPCore kincox_4 (c1 s1 c2 s2)
+        :name "kincox 4"
+        :pre (and (<= (- 1) c1 1) (<= (- 1) s1 1) (<= (- 1) c2 1) (<= (- 1) s2 1))
+
+        (let ([a 1]) (let ([b 4]) (let ([l1 10]) (let ([l2 6]) (- (+ (pow c2 2) (pow s2 2)) 1))))))

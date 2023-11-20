@@ -1,0 +1,70 @@
+;;  SchoolBuilding
+;;
+;; Origin: COCONUT, taken from SpaceSolver, LIA/EPFL, http://liawww.epfl.ch/$\sim$lottaz/SpaceSolver/
+;; We have 6 inequalities for 5 unknowns:
+;;
+;; .1666666667e-2*u-(.318e-4*H_s+.54e-2)*S+.1e-11 <= 0
+;;
+;; 137.7-.8633e-1*S+.5511e-4*S^2-.8358e-8*S^3-H_s <= 0
+;;
+;; .77e-1*((.1666666667e-2*u+.7783292378e-6*W^1.5161)*W^2)^.3976+.1e-11-H_b <= 0
+;;
+;; .168e-1*(S*W^3)^.2839+.1e-11-H_b <= 0
+;;
+;; .1666666667e-2*u+.7783292378e-6*W^1.5161-50 <= 0
+;;
+;; 15-.1666666667e-2*u-.7783292378e-6*W^1.5161 <= 0
+;;
+;; The unknowns are:
+;;
+;; [H_b, H_s, S, W, u]
+;;
+;; Range:: [150, 400], [50, 200], [1500., 2200], [3000, 13500], [6000, 36000]
+;; The original problem is to find one value for each of the unknowns so that the inequalities are satisfied. But with our interval analysis solver we are able to calculate not one value but a set of sets of possible values. Each set is provided as a range for each unknown and any value for the unknowns in this range will satisfy the inequalities. For example we get the set:
+;;
+;; [306.9,400],[132.14344,137.53982],[2112.5,2200],
+;; [5625,6937.5],[10397.0999992237,12105.3999984474]
+;;
+;; Hence examples of possible value of the unknowns is (307, 133, 2113, 5700, 10398) or (399,136, 2199,600,12000).
+;;
+;; Hence we obtain an approximation of the solution variety and furthermore we obtain an information of the quality of this approximation: we may compute the total volume of the approximation and we have also an upper bound of the total volume of the variety. For example we get here that the total volume of the variety volume is 1.20477e+12+ [0,2.66039e+14] or for a better approximation 2.04418e+12+ [0,2.51944e+14]. Furthermore we can adjust the accuracy of the approximation incrementally.
+;;
+;; Solving method: GradientSolve +HullIConsistency+ 3B
+;; Computation time (May 2004):
+;; DELL D400 (1.7Ghz) 	1.74s (Vol=1.20477e+12), 5.41s (Vol=2.04418e+12)
+
+(FPCore schoolbuilding_1 (H_b H_s S W u)
+        :name "schoolbuilding 1"
+        :pre (and (<= 150 H_b 400) (<= 50 H_s 200) (<= 1500 S 2200) (<= 3000 W 13500) (<= 6000 u 36000))
+
+        (+ (- (* .1666666667e-2 u) (* (+ (* .318e-4 H_s) .54e-2) S)) .1e-11))
+
+(FPCore schoolbuilding_ (H_b H_s S W u)
+        :name "schoolbuilding "
+        :pre (and (<= 150 H_b 400) (<= 50 H_s 200) (<= 1500 S 2200) (<= 3000 W 13500) (<= 6000 u 36000))
+
+        (- (- (+ (- 137.7 (* .8633e-1 S)) (* .5511e-4 (pow S 2))) (* .8358e-8 (pow S 3))) H_s))
+
+(FPCore schoolbuilding_ (H_b H_s S W u)
+        :name "schoolbuilding "
+        :pre (and (<= 150 H_b 400) (<= 50 H_s 200) (<= 1500 S 2200) (<= 3000 W 13500) (<= 6000 u 36000))
+
+        (- (+ (* .77e-1 (pow (* (+ (* .1666666667e-2 u) (* .7783292378e-6 (pow W 1.5161))) (pow W 2)) .3976)) .1e-11) H_b))
+
+(FPCore schoolbuilding_ (H_b H_s S W u)
+        :name "schoolbuilding "
+        :pre (and (<= 150 H_b 400) (<= 50 H_s 200) (<= 1500 S 2200) (<= 3000 W 13500) (<= 6000 u 36000))
+
+        (- (+ (* .168e-1 (pow (* S (pow W 3)) .2839)) .1e-11) H_b))
+
+(FPCore schoolbuilding_ (H_b H_s S W u)
+        :name "schoolbuilding "
+        :pre (and (<= 150 H_b 400) (<= 50 H_s 200) (<= 1500 S 2200) (<= 3000 W 13500) (<= 6000 u 36000))
+
+        (- (+ (* .1666666667e-2 u) (* .7783292378e-6 (pow W 1.5161))) 50))
+
+(FPCore schoolbuilding_ (H_b H_s S W u)
+        :name "schoolbuilding "
+        :pre (and (<= 150 H_b 400) (<= 50 H_s 200) (<= 1500 S 2200) (<= 3000 W 13500) (<= 6000 u 36000))
+
+        (- (- 15 (* .1666666667e-2 u)) (* .7783292378e-6 (pow W 1.5161))))

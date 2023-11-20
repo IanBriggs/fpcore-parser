@@ -1,0 +1,18 @@
+;;  Eisenberg
+;; Origin: Maple news group
+;; Maximize
+;;
+;; \begin{displaymath} \left \vert 0.592 {\frac {x\left ({e^{1}}-1\right )}{\left (- 0.408 x+1\right )\left ({e^{x}}-1\right )}}-1\right \vert \end{displaymath}
+;;
+;; for x in the range [0.5,0.8]
+;;
+;; Method: Maximize
+;; Solutions:: 1 (approximate)
+;; Computation time (January 2005):
+;; Sun Blade 	7.3s
+
+(FPCore eisenberg (x)
+        :name "eisenberg"
+        :pre (and (<= (- .5) x 0.8))
+
+        (- (/ (* 0.592 (* x (- (pow e 1) 1))) (* (+ (* (- 0.408) x) 1) (- (pow e x) 1))) 1))

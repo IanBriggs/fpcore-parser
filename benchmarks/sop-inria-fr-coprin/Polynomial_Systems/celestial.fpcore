@@ -1,0 +1,47 @@
+;; Celestial
+;;
+;; Origin: FRISCO
+;; 3 equations
+;;
+;; \begin{eqnarray*} eq1&=&-6 p^3+4 p^3 phi^3+15 phi^3 s^3 p-3 phi^3 s^5-12 phi^3 s... ...3 s^4+5 phi^3 p\\ eq3&=&-12 s^2 p-6 s^2+3 s^4+4 phi^2+3+12 p\\ \end{eqnarray*}
+;;
+;; -6 p^3+4 p^3 phi^3+15 phi^3 s^3 p-3 phi^3 s^5-12 phi^3 s p^2
+;; -3 phi^3 s p+phi^3 s^3=0
+;; -9 phi^3 s^2 p-5 phi^3 s^2-6 s p^3+3 phi^3 s^4+5 phi^3 p=0
+;; -12 s^2 p-6 s^2+3 s^4+4 phi^2+3+12 p=0
+;;
+;; Unknown 	Range
+;; p 	[0.001,1000]
+;; s 	[0.001,1000]
+;; phi 	[0.001,1000]
+;; Solving method: GradientSolve+HullConsistency+3B
+;; Solutions:: 2 (exact)
+;; Computation time (April 2003):
+;; Sun Blade 	9.69s (April 2003)
+;; EVO 410C (1.2Ghz) 	2.43s (April 2003)
+;; DELL D400 (1.7Ghz) 	0.75s (May 2004)
+
+(FPCore celestial_1 (p s phi)
+        :name "celestial 1"
+        :pre (and (<= 0.001 p 1000) (<= 0.001 s 1000) (<= 0.001 phi 1000))
+
+        (- (- (+ (+ (* (- 6) (pow p 3)) (* (* 4 (pow p 3)) (pow phi 3))) (* (* (* 15 (pow phi 3)) (pow s 3)) p)) (* (* 3 (pow phi 3)) (pow s 5))) (* (* (* 12 (pow phi 3)) s) p)))
+
+(FPCore celestial_2 (p s phi)
+        :name "celestial 2"
+        :pre (and (<= 0.001 p 1000) (<= 0.001 s 1000) (<= 0.001 phi 1000))
+
+        (+ (* (* (* (- 3) (pow phi 3)) s) p) (* (pow phi 3) (pow s 3))))
+
+(FPCore celestial_3 (p s phi)
+        :name "celestial 3"
+        :pre (and (<= 0.001 p 1000) (<= 0.001 s 1000) (<= 0.001 phi 1000))
+
+        (+ (+ (- (- (* (* (* (- 9) (pow phi 3)) (pow s 2)) p) (* (* 5 (pow phi 3)) (pow s 2))) (* (* 6 s) (pow p 3))) (* (* 3 (pow phi 3)) (pow s 4))) (* (* 5 (pow phi 3)) p)))
+
+(FPCore celestial_4 (p s phi)
+        :name "celestial 4"
+        :pre (and (<= 0.001 p 1000) (<= 0.001 s 1000) (<= 0.001 phi 1000))
+
+        (+ (+ (+ (+ (- (* (* (- 12) (pow s 2)) p) (* 6 (pow s 2))) (* 3 (pow s 4))) (* 4 (pow phi 2))) 3) (* 12 p)))
+

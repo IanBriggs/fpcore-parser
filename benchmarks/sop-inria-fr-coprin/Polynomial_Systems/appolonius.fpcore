@@ -1,0 +1,92 @@
+;;  Appolonius
+;;
+;; Origin: D. Cox, Ideals, Varieties and Algorithms, Springer-Verlag, 1992
+;; 10 equations for 8 unknowns defined by:
+;;
+;; 2*x1-2=0
+;;  2*x2-1=0
+;;  2*x3-2=0
+;;  2*x4-1=0
+;;  2*x5-x6=0
+;;  x5+2*x6-2=0
+;;  (x1-x7)^2+x8^2-x7^2-(x8-x2)^2=0
+;;  (x1-x7)^2+x8^2-(x3-x7)^2-(x4-x8)^2=0
+;;  x1^2+x2^2-2*x1*x7+2*x2*x8=0
+;;  x1^2-x3^3-x4^2-2*x7*(x1-x3)+2*x4*x8=0
+;;
+;; Ranges: for all unknowns [-1e8,1e8]
+;;
+;; Solving method: GradientSolve+HullConsistencyStrong+ SimplexConsistency+3B
+;; Solutions:: 0
+;; Computation time (May 2004):
+;; DELL D400 (1.7Ghz) 	0s
+
+(FPCore appolonius_01 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 01"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (- (* 2 x_1) 2))
+
+(FPCore appolonius_02 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 02"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (- (* 2 x_2) 1))
+
+(FPCore appolonius_03 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 03"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (- (* 2 x_3) 2))
+
+(FPCore appolonius_04 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 04"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (- (* 2 x_4) 1))
+
+(FPCore appolonius_05 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 05"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (- (* 2 x_5) x_6))
+
+(FPCore appolonius_06 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 06"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (- (+ x_5 (* 2 x_6)) 2))
+
+(FPCore appolonius_07 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 07"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (- (- (+ (pow (- x_1 x_7) 2) (pow x_8 2)) (pow x_7 2)) (pow (- x_8 x_2) 2)))
+
+(FPCore appolonius_08 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 08"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (- (- (+ (pow (- x_1 x_7) 2) (pow x_8 2)) (pow (- x_3 x_7) 2)) (pow (- x_4 x_8) 2)))
+
+(FPCore appolonius_09 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 09"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (+ (- (+ (pow x_1 2) (pow x_2 2)) (* (* 2 x_1) x_7)) (* (* 2 x_2) x_8)))
+
+(FPCore appolonius_10 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "appolonius 10"
+        :cite (Cox:1992)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8) (<= (- 1e8) x_4 1e8) (<= (- 1e8) x_5 1e8) (<= (- 1e8) x_6 1e8) (<= (- 1e8) x_7 1e8) (<= (- 1e8) x_8 1e8))
+
+        (+ (- (- (- (pow x_1 2) (pow x_3 3)) (pow x_4 2)) (* (* 2 x_7) (- x_1 x_3))) (* (* 2 x_4) x_8)))

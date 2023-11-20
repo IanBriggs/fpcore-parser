@@ -1,0 +1,36 @@
+;;  Sjirk-Boon
+;;
+;; Origin: news from Sjirk-Boon, modified by COPRIN
+;;
+;; \begin{eqnarray*} &&5 + C1 cos(3 phi1) + C2 cos(3 phi2)\\ && -3 + C1 cos(phi1) ... ...phi1) + C2 sin(3 phi2)\\ && -4 + C1 sin(phi1) + C2 sin(phi2)\\ \end{eqnarray*}
+;;
+;; Range: [-100,100] for $C1,C2$, $[0, 2\pi]$ for $phi1, phi2$
+;;
+;; Solving method: GradientSolve,Simp2B, 3B
+;; Solutions:: 8 (exact)
+;; Computation time:
+;; Dell D620 (1.7GHz) (May 2007) 	94s
+
+(FPCore sjirk_boon_1 (C1 C2 phi1 phi2)
+        :name "sjirk boon 1"
+        :pre (and (<= (- 100) C1 100) (<= (- 100) C2 100) (<= 0 phi1 (* 2 pi)) (<= 0 phi2 (* 2 pi)))
+
+        (+ (+ 5 (* C1 (cos (* 3 phi1)))) (* C2 (cos (* 3 phi2)))))
+
+(FPCore sjirk_boon_2 (C1 C2 phi1 phi2)
+        :name "sjirk boon 2"
+        :pre (and (<= (- 100) C1 100) (<= (- 100) C2 100) (<= 0 phi1 (* 2 pi)) (<= 0 phi2 (* 2 pi)))
+
+        (+ (+ (- 3) (* C1 (cos phi1))) (* C2 (cos phi2))))
+
+(FPCore sjirk_boon_3 (C1 C2 phi1 phi2)
+        :name "sjirk boon 3"
+        :pre (and (<= (- 100) C1 100) (<= (- 100) C2 100) (<= 0 phi1 (* 2 pi)) (<= 0 phi2 (* 2 pi)))
+
+        (+ (* C1 (sin (* 3 phi))) (* C2 (sin (* 3 phi2)))))
+
+(FPCore sjirk_boon_4 (C1 C2 phi1 phi2)
+        :name "sjirk boon 4"
+        :pre (and (<= (- 100) C1 100) (<= (- 100) C2 100) (<= 0 phi1 (* 2 pi)) (<= 0 phi2 (* 2 pi)))
+
+        (+ (+ (- 4) (* C1 (sin phi1))) (* C2 (sin phi2))))

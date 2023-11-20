@@ -1,0 +1,22 @@
+;;  Electrical circuit
+;;
+;; Origin:Quateroni A, Sacco, R. and Saleri, F., Numerical mathematics, Springer 2000, pp. 413
+;;
+;; Solve in $v$:
+;;
+;; \begin{displaymath} v(1/R+\mu \gamma)-\mu v^2+\alpha*(e^{v/\beta}-1)-E/R =0 \end{displaymath}
+;;
+;; with $R=1$, $\mu =1e-3$, $\gamma = 0.4$ $\alpha = 1e-12$, $E=1.2 e-4$, $\beta = 1/40$
+;;
+;; Ranges: [-1e8,1e8]
+;; Solving method: HessianSolve+HullConsistencyStrong
+;; Solutions:: 1 (exact)
+;; Computation time:
+;; DELL D400 (1.7GHz) 	0.003s (February 2006)
+
+(FPCore electrical_circuit (v)
+        :name "electrical circuit"
+        :cite (Quarteroni:2007)
+        :pre (and (<= (- 1e8) v 1e8))
+
+        (let ([R 1]) (let ([mu 1e-3]) (let ([gamma 0.4]) (let ([alpha 1e-12]) (let ([EE 1.2e-4]) (let ([beta (/ 1 40)]) (- (+ (- (* v (+ (/ 1 R) (* mu gamma))) (* mu (pow v 2))) (* alpha (- (pow e (/ v beta)) 1))) (/ EE R)))))))))

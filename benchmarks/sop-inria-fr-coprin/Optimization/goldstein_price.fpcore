@@ -1,0 +1,25 @@
+;;  Goldstein-Price
+;; Origin: [5]
+;; Let
+;;
+;; \begin{displaymath} a = 1+\left ({\it x1}+{\it x2}+1\right )^{2}\left (19-14 {\... ...-14 {\it x2}+6 {\it x1} {\it x2}+3 {{\it x2}}^{2} \right ) \end{displaymath}
+;;
+;; \begin{displaymath} b=30+\left (2 {\it x1}-3 {\it x2}\right )^{2}\left (18-32\... ...\it x1}}^{2}+75 {{\it x2}}^{2}-36 {\it x1} {\it x2}\right ) \end{displaymath}
+;;
+;; and the function to be minimized:
+;;
+;; \begin{displaymath} f=a b \end{displaymath}
+;;
+;; where all $x_i$ are in [-2,2]
+;;
+;; Method: MinimizeGradient
+;; Solutions:: 1 (approximate)
+;; Computation time (September 2006):
+;; DELL D400 (1.7Ghz) 	0.86s
+
+(FPCore goldstein_price (x_1 x_2)
+        :name "goldstein price"
+        :cite (Myatt:2004)
+        :pre (and (<= (- 2) x_1 2) (<= (- 2) x_2 2))
+
+        (let ([a (+ 1 (* (pow (+ (+ x_1 x_2) 1) 2) (+ (+ (- (+ (- 19 (* 14 x_1)) (* 3 (pow x_1 2))) (* 14 x_2)) (* (* 6 x_1) x_2)) (* 3 (pow x_2 2)))))]) (let ([b (+ 30 (* (pow (- (* 2 x_1) (* 3 x_2)) 2) (- (+ (+ (- 18 (* 32 x_1)) (* 12 (pow x_1 2))) (* 75 (pow x_2 2))) (* (* 36 x_1) x_2))))]) (* a b))))

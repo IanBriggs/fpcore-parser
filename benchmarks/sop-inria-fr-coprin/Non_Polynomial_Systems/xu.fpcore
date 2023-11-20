@@ -1,0 +1,27 @@
+;;  Xu
+;;
+;; Origin: [14]
+;; 2 equations
+;;
+;; \begin{eqnarray*} &&2 \sin \left( x_1 \right) + 0.8 \cos \left( 2 x_1 \right)... ...\left( 3 x_2 \right) + 3.1 \cos \left( 2 x_2 \right) -x_2\\ \end{eqnarray*}
+;;
+;; Ranges: [-20,20] for $x_1, x_2$
+;;
+;; Solving method: GradientSolve+Simp2B+3B
+;; Solutions:: 29 (exact)
+;; Computation time:
+;; DELL D620 (1.7GHz), (July 2007) 	0.037s
+
+(FPCore xu_1 (x_1 x_2)
+        :name "xu 1"
+        :cite (Xu:1996)
+        :pre (and (<= (- 20) x_1 20) (<= (- 20) x_2 20))
+
+        (- (+ (+ (* 2 (sin x_1)) (* 0.8 (cos (* 2 x_1)))) (* 7 (sin x_2))) x_1))
+
+(FPCore xu_2 (x_1 x_2)
+        :name "xu 2"
+        :cite (Xu:1996)
+        :pre (and (<= (- 20) x_1 20) (<= (- 20) x_2 20))
+
+        (- (+ (+ (* 4 (sin (* 2 x_1))) (* 1.4 (sin (* 3 x_2)))) (* 3.1 (cos (* 2 x_2)))) x_2))

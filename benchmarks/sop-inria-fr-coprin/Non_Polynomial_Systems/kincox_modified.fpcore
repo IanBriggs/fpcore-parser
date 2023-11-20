@@ -1,0 +1,26 @@
+;;  Kincox modified
+;;
+;; Origin: COPRIN, derived from Kincox COCONUT
+;; 2 equations with 2 unknowns with a =1, b=4, l1=10, l2=6
+;;
+;; -1.+6.*cos(t1)*cos(t2)-6.*sin(t1)*sin(t2)+10.*cos(t1)=0
+;;  -4.+6.*cos(t1)*sin(t2)+6.*cos(t2)*sin(t1)+10.*sin(t1)=0
+;;
+;; Ranges: [0,2$\pi$] for all unknowns
+;;
+;; Solving method: GradientSolve+HullConsistencyStrong+ +3B
+;; Solutions:: 2 (exact)
+;; Computation time (May 2004):
+;; DELL D400 (1.7GHz) 	0.04s
+
+(FPCore kincox_modified_1 (t1 t2)
+        :name "kincox modified 1"
+        :pre (and (<= 0 t1 (* 2 pi)) (<= 0 t2 (* 2 pi)))
+
+        (+ (- (+ (- 1.) (* (* 6. (cos t1)) (cos t2))) (* (* 6. (sin t1)) (sin t2))) (* 10. (cos t1))))
+
+(FPCore kincox_modified_2 (t1 t2)
+        :name "kincox modified 2"
+        :pre (and (<= 0 t1 (* 2 pi)) (<= 0 t2 (* 2 pi)))
+
+        (+ (+ (+ (- 4.) (* (* 6. (cos t1)) (sin t2))) (* (* 6. (cos t2)) (sin t1))) (* 10. (sin t1))))

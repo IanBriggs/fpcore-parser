@@ -1,0 +1,41 @@
+;;  Zufiris
+;;
+;; Origin: [16]
+;; 4 equations
+;;
+;; \begin{eqnarray*} &&0.742476763140869227613777849835 x_3- 3.712383815704346138... ...57784299212 \cos \left( x_1 \right) \sin \left( x_2 \right)\\ \end{eqnarray*}
+;;
+;; Ranges: [$-\pi,\pi$] for $x_1, x_2$, [-1.5,1.5] for $x_3, x_4$
+;;
+;; Solving method: HessianSolve+Simp2B+3B
+;; Solutions:: 13 (exact)
+;; Computation time:
+;; DELL D620 (1.7GHz), (July 2007) 	0.07s
+
+(FPCore zufiris_1 (x_1 x_2 x_3 x_4)
+        :name "zufiris 1"
+        :cite (Zufria:1990)
+        :pre (and (<= (- pi) x_1 pi) (<= (- pi) x_2 pi) (<= (- 1.5) x_3 1.5) (<= (- 1.5) x_4 1.5))
+
+        (- (* 0.742476763140869227613777849835 x_3) (* (* 3.71238381570434613806888924918 (sin x_1)) (cos x_2))))
+
+(FPCore zufiris_2 (x_1 x_2 x_3 x_4)
+        :name "zufiris 2"
+        :cite (Zufria:1990)
+        :pre (and (<= (- pi) x_1 pi) (<= (- pi) x_2 pi) (<= (- 1.5) x_3 1.5) (<= (- 1.5) x_4 1.5))
+
+        (- (* 0.569289637094196381489331623200 x_4) (* (* 2.84644818547098190744665811600 (cos x_1)) (sin x_2))))
+
+(FPCore zufiris_3 (x_1 x_2 x_3 x_4)
+        :name "zufiris 3"
+        :cite (Zufria:1990)
+        :pre (and (<= (- pi) x_1 pi) (<= (- pi) x_2 pi) (<= (- 1.5) x_3 1.5) (<= (- 1.5) x_4 1.5))
+
+        (- (* (- 0.466511908908896748824268697642) x_3) (* (* 2.66744045545551625587865651179 (sin x_1)) (cos x_2))))
+
+(FPCore zufiris_4 (x_1 x_2 x_3 x_4)
+        :name "zufiris 4"
+        :cite (Zufria:1990)
+        :pre (and (<= (- pi) x_1 pi) (<= (- pi) x_2 pi) (<= (- 1.5) x_3 1.5) (<= (- 1.5) x_4 1.5))
+
+        (- (* (- 0.715390456663970719884431401577) x_4) (* (* 1.42304771668014640057784299212 (cos x_1)) (sin x_2))))

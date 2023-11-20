@@ -1,0 +1,18 @@
+;;  AOL-log1
+;;
+;; Origin:AOL
+;;
+;; \begin{displaymath} n-8\frac{ln(n)}{ln(2)}=0 \end{displaymath}
+;;
+;; Range: [1,1000]
+;;
+;; Solving method: GradientSolve
+;; Solutions:: 2 (exact)
+;; Computation time (February 2005):
+;; Sun Blade 	0.06s
+
+(FPCore aol_log1 (n)
+        :name "aol log1"
+        :pre (and (<= 1 n 1000))
+
+        (- n (* 8 (/ (ln n) (ln 2)))))

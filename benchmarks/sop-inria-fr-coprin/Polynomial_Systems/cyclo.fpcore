@@ -1,0 +1,33 @@
+;; Cyclo
+;;
+;; Origin: FRISCO
+;; 3 equations defined by:
+;;
+;; -y^2*z^2-y^2+24*y*z-z^2-13=0
+;; -x^2*z^2-x^2+24*x*z-z^2-13=0
+;;  -x^2*y^2-x^2+24*x*y-y^2-13=0
+;;
+;; Ranges: for all unknowns [0,100000]
+;; Solving method: HessianSolve+HullConsistency+ SimplexConsistency
+;; Solutions:: 8 (exact)
+;; Computation time (April 2003):
+;; Sun Blade 	2.11s
+;; EVO 410C (1.2Ghz) 	0.38s
+
+(FPCore cyclo_1 (x y z)
+        :name "cyclo 1"
+        :pre (and (<= 0 x 100000) (<= 0 y 100000) (<= 0 z 100000))
+
+        (- (- (+ (- (* (- (pow y 2)) (pow z 2)) (pow y 2)) (* (* 24 y) z)) (pow z 2)) 13))
+
+(FPCore cyclo_2 (x y z)
+        :name "cyclo 2"
+        :pre (and (<= 0 x 100000) (<= 0 y 100000) (<= 0 z 100000))
+
+        (- (- (+ (- (* (- (pow x 2)) (pow z 2)) (pow x 2)) (* (* 24 x) z)) (pow z 2)) 13))
+
+(FPCore cyclo_3 (x y z)
+        :name "cyclo 3"
+        :pre (and (<= 0 x 100000) (<= 0 y 100000) (<= 0 z 100000))
+
+        (- (- (+ (- (* (- (pow x 2)) (pow y 2)) (pow x 2)) (* (* 24 x) y)) (pow y 2)) 13))

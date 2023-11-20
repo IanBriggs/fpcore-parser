@@ -1,0 +1,56 @@
+;;  MaxCylinder
+;; Origin: COPRIN
+;; Physical meaning: for a robot with 3 degree of freedom $x,y, \phi$ a function $F$ defines a singularity variety in which the robot cannot be controlled. We are looking for the maximal disc centered at a given point of coordinates $x_0, y_0$, such that the disc has not intersection with the singularity variety for any orientation in the range [-a,a]. The orientation may thus be written as $T=a \sin\alpha$ and the singularity variety is $F(x,y,\alpha)$, The problem is solved with a Lagrange multiplier $\lambda$ by writing
+;;
+;; \begin{displaymath} H=(x-x_0)^2+(y-y_0)^2+\lambda F \end{displaymath}
+;;
+;; The derivatives of $H$ with respect to $x, y$ are combined to eliminate $\lambda$. The optimality equations constitute then a system of 3 equations in $x, y, \alpha$. The roots $x_r, y_r$ of this system are used to calculate $(x_r-x_0)^2+(y_r-y_0)^2$ and the lowest value of this quantity is the square of the largest singularity-free disc.
+;;
+;; The 3 equations to solve are:
+;;
+;; -13626.359958*x-17242.663338*y+306.1030*y^2*sin(alpha)^4+1224.4120*y*sin(alpha)^3*x
+;; -327743.551830*sin(alpha)^4-2623771.960340*sin(alpha)^3+561700.662040*sin(alpha)^2
+;; -306.1030*x^2*sin(alpha)^4-1680682.162260*sin(alpha)+182179.510990-1256.4908*x^2*sin(alpha)^3+
+;; 1256.4908*y^2*sin(alpha)^3+1256.4908*y*x-48283.435536*x*sin(alpha)^2-16255.087100*y*sin(alpha)^2
+;; +306.1030*x^2-8129.699104*y*sin(alpha)+1224.4120*y*sin(alpha)*x-69790.833024*y*sin(alpha)^3
+;; -306.1030*y^2-1256.4908*sin(alpha)*x^2+129340.554748*sin(alpha)*x+151105.785340*sin(alpha)^3*x+
+;; 1256.4908*sin(alpha)*y^2+22752.806830*y*sin(alpha)^4
+;; -1256.4908*y*x*sin(alpha)^4+27004.058342*x*sin(alpha)^4 =0
+;;
+;; -4*(x-15)*cos(alpha)*(942.3681*sin(alpha)^2*x*y-19159.084776*x-15238.646187*y+306.1030*y*sin(alpha)^3*x
+;; +40242.36852580*sin(alpha)^3+197386.15916499*sin(alpha)^2-66170.43895050*sin(alpha)+
+;; 1857.6978*sin(alpha)^2*x^2+172248.32737589-246.6856*x^2*sin(alpha)^3+381.5598*y^2*sin(alpha)^3+
+;; 314.1227*y*x-103723.104768*x*sin(alpha)^2-62039.861505*y*sin(alpha)^2+619.2326*x^2+
+;; 24141.717768*y*sin(alpha)-27346.225342*y*sin(alpha)^3+466.1811*y^2-8127.543550*sin(alpha)*x+
+;; 8244.982830*sin(alpha)^3*x+1398.5433*sin(alpha)^2*y^2) = 0
+;;
+;; -1367.419669*x+6984.263479*y+190.7799*y^2*sin(alpha)^4+628.2454*y*sin(alpha)^3*x+
+;; 20121.18426290*sin(alpha)^4+131590.77277666*sin(alpha)^3-66170.43895050*sin(alpha)^2
+;; -123.3428*x^2*sin(alpha)^4+344496.65475178*sin(alpha)+1238.4652*x^2*sin(alpha)^3+
+;; 932.3622*y^2*sin(alpha)^3-153.0515*y*x-29221.45558380-8127.543550*x*sin(alpha)^2+
+;; 24141.717768*y*sin(alpha)^2+123.3428*x^2-30477.292374*y*sin(alpha)+628.2454*y*sin(alpha)*x
+;; -41359.907670*y*sin(alpha)^3-190.7799*y^2+1238.4652*sin(alpha)*x^2-38318.169552*sin(alpha)*x
+;; -69148.736512*sin(alpha)^3*x+932.3622*sin(alpha)*y^2-13673.112671*y*sin(alpha)^4+
+;; 153.0515*y*x*sin(alpha)^4+4122.491415*x*sin(alpha)^4 = 0
+;;
+;; the last one being the singularity condition.
+;;
+;; Method: GradientSolve+ a specific simplification procedure that allow to avoid determining roots leading to a largest disc than the minimal one already computed
+;; Solutions:: 1
+;; Computation time (August 2004):
+;; DELL D400 (1.7Ghz) 	2s
+
+(FPCore maxcylinder_1 (x y alpha)
+        :name "maxcylinder 1"
+
+        (+ (- (+ (+ (+ (+ (- (- (- (+ (- (+ (- (- (+ (+ (- (+ (- (- (+ (- (- (+ (+ (- (* (- 13626.359958) x) (* 17242.663338 y)) (* (* 306.1030 (pow y 2)) (pow (sin alpha) 4))) (* (* (* 1224.4120 y) (pow (sin alpha) 3)) x)) (* 327743.551830 (pow (sin alpha) 4))) (* 2623771.960340 (pow (sin alpha) 3))) (* 561700.662040 (pow (sin alpha) 2))) (* (* 306.1030 (pow x 2)) (pow (sin alpha) 4))) (* 1680682.162260 (sin alpha))) 182179.510990) (* (* 1256.4908 (pow x 2)) (pow (sin alpha) 3))) (* (* 1256.4908 (pow y 2)) (pow (sin alpha) 3))) (* (* 1256.4908 y) x)) (* (* 48283.435536 x) (pow (sin alpha) 2))) (* (* 16255.087100 y) (pow (sin alpha) 2))) (* 306.1030 (pow x 2))) (* (* 8129.699104 y) (sin alpha))) (* (* (* 1224.4120 y) (sin alpha)) x)) (* (* 69790.833024 y) (pow (sin alpha) 3))) (* 306.1030 (pow y 2))) (* (* 1256.4908 (sin alpha)) (pow x 2))) (* (* 129340.554748 (sin alpha)) x)) (* (* 151105.785340 (pow (sin alpha) 3)) x)) (* (* 1256.4908 (sin alpha)) (pow y 2))) (* (* 22752.806830 y) (pow (sin alpha) 4))) (* (* (* 1256.4908 y) x) (pow (sin alpha) 4))) (* (* 27004.058342 x) (pow (sin alpha) 4))))
+
+(FPCore maxcylinder_2 (x y alpha)
+        :name "maxcylinder 2"
+
+        (* (* (* (- 4) (- x 15)) (cos alpha)) (+ (+ (- (+ (- (+ (+ (- (- (+ (+ (- (+ (+ (- (+ (+ (+ (- (- (* (* (* 942.3681 (pow (sin alpha) 2)) x) y) (* 19159.084776 x)) (* 15238.646187 y)) (* (* (* 306.1030 y) (pow (sin alpha) 3)) x)) (* 40242.36852580 (pow (sin alpha) 3))) (* 197386.15916499 (pow (sin alpha) 2))) (* 66170.43895050 (sin alpha))) (* (* 1857.6978 (pow (sin alpha) 2)) (pow x 2))) 172248.32737589) (* (* 246.6856 (pow x 2)) (pow (sin alpha) 3))) (* (* 381.5598 (pow y 2)) (pow (sin alpha) 3))) (* (* 314.1227 y) x)) (* (* 103723.104768 x) (pow (sin alpha) 2))) (* (* 62039.861505 y) (pow (sin alpha) 2))) (* 619.2326 (pow x 2))) (* (* 24141.717768 y) (sin alpha))) (* (* 27346.225342 y) (pow (sin alpha) 3))) (* 466.1811 (pow y 2))) (* (* 8127.543550 (sin alpha)) x)) (* (* 8244.982830 (pow (sin alpha) 3)) x)) (* (* 1398.5433 (pow (sin alpha) 2)) (pow y 2)))))
+
+(FPCore maxcylinder_3 (x y alpha)
+        :name "maxcylinder 3"
+
+        (+ (+ (- (+ (- (- (+ (- (- (+ (- (+ (+ (- (- (- (+ (+ (+ (- (- (+ (+ (+ (+ (+ (* (- 1367.419669) x) (* 6984.263479 y)) (* (* 190.7799 (pow y 2)) (pow (sin alpha) 4))) (* (* (* 628.2454 y) (pow (sin alpha) 3)) x)) (* 20121.18426290 (pow (sin alpha) 4))) (* 131590.77277666 (pow (sin alpha) 3))) (* 66170.43895050 (pow (sin alpha) 2))) (* (* 123.3428 (pow x 2)) (pow (sin alpha) 4))) (* 344496.65475178 (sin alpha))) (* (* 1238.4652 (pow x 2)) (pow (sin alpha) 3))) (* (* 932.3622 (pow y 2)) (pow (sin alpha) 3))) (* (* 153.0515 y) x)) 29221.45558380) (* (* 8127.543550 x) (pow (sin alpha) 2))) (* (* 24141.717768 y) (pow (sin alpha) 2))) (* 123.3428 (pow x 2))) (* (* 30477.292374 y) (sin alpha))) (* (* (* 628.2454 y) (sin alpha)) x)) (* (* 41359.907670 y) (pow (sin alpha) 3))) (* 190.7799 (pow y 2))) (* (* 1238.4652 (sin alpha)) (pow x 2))) (* (* 38318.169552 (sin alpha)) x)) (* (* 69148.736512 (pow (sin alpha) 3)) x)) (* (* 932.3622 (sin alpha)) (pow y 2))) (* (* 13673.112671 y) (pow (sin alpha) 4))) (* (* (* 153.0515 y) x) (pow (sin alpha) 4))) (* (* 4122.491415 x) (pow (sin alpha) 4))))

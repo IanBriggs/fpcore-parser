@@ -1,0 +1,46 @@
+;; Rose
+;;
+;; Origin: COCONUT, Shoven :"Applied general equilibrium modelling", IMF Staff Papers, pages 394-419, 1983
+;; Physical meaning: a general economic equilibrium model
+;;
+;; 3 equations defined by:
+;;
+;; y^4-20/7*x^2 =0
+;;
+;; x^2*z^4+7/10*x*z^4+7/48*z^4-50/27*x^2-35/27*x-49/216 =0
+;;
+;; 3/5*x^6*y^2*z+x^5*y^3+3/7*x^5*y^2*z+7/5*x^4*y^3-7/20*x^4*y*z^2-
+;;    3/20*x^4*z^3+609/1000*x^3*y^3+63/200*x^3*y^2*z-77/125*x^3*y*z^2-
+;;    21/50*x^3*z^3+49/1250*x^2*y^3+147/2000*x^2*y^2*z-
+;;    23863/60000*x^2*y*z^2-91/400*x^2*z^3-27391/800000*x*y^3+
+;;    4137/800000*x*y^2*z-1078/9375*x*y*z^2-5887/200000*x*z^3-1029/160000*y^3-
+;;    24353/1920000*y*z^2-343/128000*z^3 =0
+;;
+;; Ranges: for all unknowns [-1e8,1e8]
+;;
+;; Solving method: GradientSolve+HullConsistencyStrong+3B
+;; Solutions:: 16 (exact) +2 singular
+;; Computation time (May 2004)
+;; DELL D400 (1.7 GHz) 	2.87s
+
+
+(FPCore rose_1 (x y z)
+        :name "rose 1"
+        :cite (Shoven:1984)
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (pow y 4) (* (/ 20 7) (pow x 2))))
+
+(FPCore rose_2 (x y z)
+        :name "rose 2"
+        :cite (Shoven:1984)
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (- (- (+ (+ (* (pow x 2) (pow z 4)) (* (* (/ 7 10) x) (pow z 4))) (* (/ 7 48) (pow z 4))) (* (/ 50 27) (pow x 2))) (* (/ 35 27) x)) (/ 49 216)))
+
+(FPCore rose_3 (x y z)
+        :name "rose 3"
+        :cite (Shoven:1984)
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (- (- (- (- (+ (- (- (- (+ (+ (- (- (+ (+ (- (- (+ (+ (+ (* (* (* (/ 3 5) (pow x 6)) (pow y 2)) z) (* (pow x 5) (pow y 3))) (* (* (* (/ 3 7) (pow x 5)) (pow y 2)) z)) (* (* (/ 7 5) (pow x 4)) (pow y 3))) (* (* (* (/ 7 20) (pow x 4)) y) (pow z 2))) (* (* (/ 3 20) (pow x 4)) (pow z 3))) (* (* (/ 609 1000) (pow x 3)) (pow y 3))) (* (* (* (/ 63 200) (pow x 3)) (pow y 2)) z)) (* (* (* (/ 77 125) (pow x 3)) y) (pow z 2))) (* (* (/ 21 50) (pow x 3)) (pow z 3))) (* (* (/ 49 1250) (pow x 2)) (pow y 3))) (* (* (* (/ 147 2000) (pow x 2)) (pow y 2)) z)) (* (* (* (/ 23863 60000) (pow x 2)) y) (pow z 2))) (* (* (/ 91 400) (pow x 2)) (pow z 3))) (* (* (/ 27391 800000) x) (pow y 3))) (* (* (* (/ 4137 800000) x) (pow y 2)) z)) (* (* (* (/ 1078 9375) x) y) (pow z 2))) (* (* (/ 5887 200000) x) (pow z 3))) (* (/ 1029 160000) (pow y 3))) (* (* (/ 24353 1920000) y) (pow z 2))) (* (/ 343 128000) (pow z 3))))

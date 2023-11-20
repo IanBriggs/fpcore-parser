@@ -1,0 +1,19 @@
+;;  Reactor
+;;
+;; Origin: [6]
+;;
+;; \begin{displaymath} {\frac {1}{298}} T+{\frac {672000000}{149}} T{e^{- 7548.11... ...,{T}^ {-1}}}- 2020510067.0 {e^{- 7548.119260 {T}^{-1}}}-1 =0 \end{displaymath}
+;;
+;; Ranges: [100,1000]
+;;
+;; Solving method: HessianSolve+HullConsistency+3B
+;; Solutions:: 3 (exact)
+;; Computation time (April 2003):
+;; Evo 410C (1.2Ghz) 	0.06s
+
+(FPCore reactor (T)
+        :name "reactor"
+        :cite (Floudas:1999)
+        :pre (and (<= 100 T 1000))
+
+        (- (- (+ (* (/ 1 298) T) (* (* (/ 672000000 149) T) (pow e (* (- 7548.119260) (pow T (- 1)))))) (* 2020510067.0 (pow e (* (- 7548.119260) (pow T (- 1)))))) 1))

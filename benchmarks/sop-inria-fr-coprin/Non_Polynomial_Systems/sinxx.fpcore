@@ -1,0 +1,18 @@
+;;  Sinxx
+;;
+;; Origin: COPRIN
+;;
+;; \begin{displaymath} \sin(x)-x/100 \end{displaymath}
+;;
+;; Range: [0,A], where A may be chosen arbitrary large without any change in the computation time
+;;
+;; Solving method: GradientSolve,HullConsistency
+;; Solutions:: 32 (exact)
+;; Computation time (April 2003):
+;; Sun Blade 	0.051s
+
+(FPCore sinxx (x)
+        :name "sinxx"
+        :pre (and (<= 0 x 1e10))
+
+        (- (sin x) (/ x 100)))

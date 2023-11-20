@@ -1,0 +1,34 @@
+;;  AOL-legentil
+;;
+;; 3 equations
+;;
+;; 10/3*cos(x)/sin(x)^2+4*(1+tan(x)^2)/cos(y)+z*(-50/3*sin(y)*cos(x)/(sin(x)^2*(3.5-5*sin(y)))-10/3*cos(x)/sin(x)^2-4*(1+tan(x)^2)/cos(y))=0
+;;
+;; 4*tan(x)*sin(y)/cos(y)^2+z*(50/3*cos(y)/(sin(x)*(3.5-5*sin(y)))+250/3*sin(y)*cos(y)/(sin(x)*(3.5-5*sin(y))^2)-4*tan(x)*sin(y)/cos(y)^2)=0
+;;
+;; 50/3*sin(y)/(sin(x)*(3.5-5*sin(y)))+20+10/3/sin(x)-4*tan(x)/cos(y)=0
+;;
+;; Ranges: $]0,\pi/2[, [0,\pi/2[,[-1e8,1e8]$ for x,y,z
+;; Solving method: GradientSolve+3B+Simp2B
+;; Solutions:: 0
+;; Computation time:
+;; DELL D620 (1.7GHz), (May 2007): 	9mn
+;; Note that this problem may easily be solved by using the Weierstrass substitution to transform the equations into algebraic one and using resultants to obtain an univariate polynomial that leads to all solutions.
+
+(FPCore aol_legentil_1 (x y z)
+        :name "aol legentil 1"
+        :pre (and (<= 0 x (/ pi 2)) (<= 0 y (/ pi 2)) (<= (- 1e8) z 1e8))
+
+        (+ (+ (/ (* (/ 10 3) (cos x)) (pow (sin x) 2)) (/ (* 4 (+ 1 (pow (tan x) 2))) (cos y))) (* z (- (- (/ (* (* (/ (- 50) 3) (sin y)) (cos x)) (* (pow (sin x) 2) (- 3.5 (* 5 (sin y))))) (/ (* (/ 10 3) (cos x)) (pow (sin x) 2))) (/ (* 4 (+ 1 (pow (tan x) 2))) (cos y))))))
+
+(FPCore aol_legentil_2 (x y z)
+        :name "aol legentil 2"
+        :pre (and (<= 0 x (/ pi 2)) (<= 0 y (/ pi 2)) (<= (- 1e8) z 1e8))
+
+        (+ (/ (* (* 4 (tan x)) (sin y)) (pow (cos y) 2)) (* z (- (+ (/ (* (/ 50 3) (cos y)) (* (sin x) (- 3.5 (* 5 (sin y))))) (/ (* (* (/ 250 3) (sin y)) (cos y)) (* (sin x) (pow (- 3.5 (* 5 (sin y))) 2)))) (/ (* (* 4 (tan x)) (sin y)) (pow (cos y) 2))))))
+
+(FPCore aol_legentil_3 (x y z)
+        :name "aol legentil 3"
+        :pre (and (<= 0 x (/ pi 2)) (<= 0 y (/ pi 2)) (<= (- 1e8) z 1e8))
+
+        (- (+ (+ (/ (* (/ 50 3) (sin y)) (* (sin x) (- 3.5 (* 5 (sin y))))) 20) (/ (/ 10 3) (sin x))) (/ (* 4 (tan x)) (cos y))))

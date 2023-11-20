@@ -1,0 +1,27 @@
+;;  Lambert1
+;;
+;; Origin: another formulation of a classical astronomy problem
+;;
+;; We define:
+;;
+;; r0,r;
+;;                                      11                    10
+;;                   .138256930224638 10  , .68876844473745 10
+;; mu:=13.271244e10:
+;;
+;; We then define $S=r+r_0-2\sqrt{rr_0}\cos(x)\cos(\pi/8)$. The equation to solve in $x$ is
+;;
+;; \begin{displaymath} \sqrt{\frac{S^3}{\mu}}\frac{1}{\sin(x)^3}(x-\tan(x)(1- \frac{r+r_0}{S}\sin(x)^2))= 1e^{10} \end{displaymath}
+;;
+;; Ranges: [0.1, $\pi$/2-0.1]
+;;
+;; Solving method: GradientSolve+3B
+;; Solutions:: 1 (exact)
+;; Computation time:
+;; DELL D400 (1.7GHz) 	0.04s (September 2006)
+
+(FPCore lambert1 (x)
+        :name "lambert1"
+        :pre (and (<= 0.1 x (- (* 2 pi) 0.1)))
+
+        (let ([r0 0.138256930224638e11]) (let ([r 0.68876844473745e10]) (let ([mu 13.271244e10]) (let ([S (- (+ r r0) (* (* (* 2 (sqrt (* r r0))) (cos x)) (cos (/ pi 8))))]) (- (* (* (sqrt (/ (pow S 3) mu)) (/ 1 (pow (sin x) 3))) (- x (* (tan x) (- 1 (* (/ (+ r r_0) S) (pow (sin x) 2)))))) 1e10))))))

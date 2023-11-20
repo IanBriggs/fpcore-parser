@@ -1,0 +1,25 @@
+;;  Klein
+;; Origin:klein@mathematik.uni-kassel.de
+;; Minimize
+;;
+;; \begin{displaymath} Y(j+1)(2-2Y) \end{displaymath}
+;;
+;; subject to the constraint:
+;;
+;; \begin{displaymath} -Ylog[2](Y)-(1-Y)log[2](1-Y)-(1-0.75j/(j+1))=0 \end{displaymath}
+;;
+;; Range: j=[0,1], Y=[0.01,0.99]
+;;
+;; Method: MinimizeGradient
+;; Solutions:: 1 (approximate)
+;; Computation time (April 2003):
+;; Sun Blade 	1mn24s
+
+(FPCore klein (j Y)
+        :name "klein"
+        :pre (and
+                (<= 0 j 1)
+                (<= 0.01 Y 0.99)
+                (= 0 (- (- (* (- Y) (log2 Y)) (* (- 1 Y) (log2 (- 1 Y)))) (- 1 (/ (* 0.75 j) (+ j 1))))))
+
+        (* (* Y (+ j 1)) (- 2 (* 2 Y))))

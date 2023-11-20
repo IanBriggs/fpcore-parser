@@ -1,0 +1,22 @@
+;;  sci.math.num-analysis1
+;;
+;; Origin: Article 86825 of sci.math.num-analysis
+;;
+;; \begin{displaymath} 2.77675 x^3 (1 + cos(x) cosh(x)) -( sin(x) cosh(x) - sinh(x) cos(x)) \end{displaymath}
+;;
+;; Ranges: [-100,100]
+;;
+;; Solving method: HessianSolve+HullConsistency+3B
+;; Solutions:: 65 (49 approximate, 16 exact)
+;; Computation time (September 2005):
+;; DELL D400 (1.2Ghz) 	0.06s
+;; Solving method: Maple, based on intpakX
+;; Solutions:: 65 (1 approximate, 64 exact)
+;; Computation time (November 2005):
+;; DELL D400 (1.2Ghz) 	1069s
+
+(FPCore sci_math_num_analysis1 (x)
+        :name "sci math num analysis1"
+        :pre (and (<= (- 100) x 100))
+
+        (- (* (* 2.77675 (pow x 3)) (+ 1 (* (cos x) (cosh x)))) (- (* (sin x) (cosh x)) (* (sinh x) (cos x)))))

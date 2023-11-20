@@ -1,0 +1,32 @@
+;;  Lambert
+;;
+;; Origin: a classical astronomy problem
+;;
+;; We define:
+;;
+;; r0,r;
+;;                                      11                    10
+;;                   .138256930224638 10  , .68876844473745 10
+;; mu:=13.271244e10:
+;; dnu:=Pi/4.:
+;; A:=sqrt(r0*r*(1+cos(dnu))):
+;; S:=(u-sin(u))/u^3:
+;; y:=r0+r-A*sin(u)/sqrt(1-cos(u)):
+;; x:=u*sqrt(y)/sqrt(1-cos(u)):
+;;
+;; The equation to solve in $u$ is
+;;
+;; \begin{displaymath} (S x^3+A\sqrt{y})/\sqrt{\mu}= 1e^{10} \end{displaymath}
+;;
+;; Ranges: [0.1, 2$\pi$-0.1]
+;;
+;; Solving method: GradientSolve+3B
+;; Solutions:: 1 (exact)
+;; Computation time:
+;; DELL D400 (1.7GHz) 	0.11s (September 2006)
+
+(FPCore lambert (u)
+        :name "lambert"
+        :pre (and (<= 0.1 u (- (* 2 pi) 0.1)))
+
+        (let ([r0 0.138256930224638e11]) (let ([r 0.68876844473745e10]) (let ([mu 13.271244e10]) (let ([dnu (/ pi 4.)]) (let ([A (sqrt (* (* r0 r) (+ 1 (cos dnu))))]) (let ([S (/ (- u (sin u)) (pow u 3))]) (let ([y (- (+ r0 r) (/ (* A (sin u)) (sqrt (- 1 (cos u)))))]) (let ([x (/ (* u (sqrt y)) (sqrt (- 1 (cos u))))]) (- (/ (+ (* S (pow x 3)) (* A (sqrt y))) (sqrt mu)) 1e10))))))))))

@@ -1,0 +1,33 @@
+;;  Helical1
+;;
+;; Origin: COPRIN, derived from [9]
+;;
+;; \begin{eqnarray*} &&10(x_3-10(\frac{1}{\pi}\arctan(\frac{x_2}{x_1})+0.5))\\ &&10(\sqrt{x_1^2+x_2^2}-1)\\ &&x_1-\sin(x_3)\\ \end{eqnarray*}
+;;
+;; Range: x1 in [-1e8,-1e-3], x2,x3 in [-1e8,1e8]
+;;
+;; Solving method: GradientSolve,3B
+;; Solutions:: 2 (exact)
+;; Computation time (April 2003):
+;; EVO 410C (1.2GHz) 	0.08s`
+
+(FPCore helical1_1 (x_1 x_2 x_3)
+        :name "helical1 1"
+        :cite (More:1981)
+        :pre (and (<= (- 1e8) x_1 (- 1e3)) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8))
+
+        (* 10 (- x_3 (* 10 (+ (* (/ 1 pi) (atan (/ x_2 x_1))) 0.5)))))
+
+(FPCore helical1_2 (x_1 x_2 x_3)
+        :name "helical1 2"
+        :cite (More:1981)
+        :pre (and (<= (- 1e8) x_1 (- 1e3)) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8))
+
+        (* 10 (- (sqrt (+ (pow x_1 2) (pow x_2 2))) 1)))
+
+(FPCore helical1_3 (x_1 x_2 x_3)
+        :name "helical1 3"
+        :cite (More:1981)
+        :pre (and (<= (- 1e8) x_1 (- 1e3)) (<= (- 1e8) x_2 1e8) (<= (- 1e8) x_3 1e8))
+
+        (- x_1 (sin x_3)))

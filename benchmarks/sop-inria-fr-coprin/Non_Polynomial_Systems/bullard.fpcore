@@ -1,0 +1,26 @@
+;;  Bullard
+;;
+;; Origin: [6]
+;;
+;; \begin{eqnarray*} &&10000 x_1 x_2-1\\ &&e^{-x_1}+e^{-x_2}-1.001\\ \end{eqnarray*}
+;;
+;; Ranges: [-1e8,1e8]
+;;
+;; Solving method: HessianSolve+HullConsistency+3B
+;; Solutions:: 2 (exact)
+;; Computation time (April 2003):
+;; Evo 410C (1.2Ghz) 	0.01s
+
+(FPCore bullard_1 (x_1 x_2)
+        :name "bullard 1"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8))
+
+        (- (* (* 10000 x_1) x_2) 1))
+
+(FPCore bullard_2 (x_1 x_2)
+        :name "bullard 2"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8))
+
+        (- (+ (pow e (- x_1)) (pow e (- x_2))) 1.001))

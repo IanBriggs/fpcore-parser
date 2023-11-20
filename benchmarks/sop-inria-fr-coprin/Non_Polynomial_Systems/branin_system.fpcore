@@ -1,0 +1,33 @@
+;;  Branin system
+;;
+;; Origin: mentioned by Rump[11]
+;;
+;; \begin{eqnarray*} &&2 \sin(2 \pi x1/5.) \sin(2 \pi x3/5.)-x2=0\\ &&2.5-x3+0.1  x2  \sin(2 \pi x3)-x1=0\\ &&1+0.1  x2  \sin(2 \pi x1)-x3=0\\ \end{eqnarray*}
+;;
+;; Ranges: for all unknowns [-1e8,1e8]
+;;
+;; Solving method: GradientSolve,3B,HullConsistency
+;; Solutions:: 1 (exact)
+;; Computation time (September 2006):
+;; DELL D400 (1.7GHz) 	0.01s
+
+(FPCore branin_system_1 (x1 x2 x3)
+        :name "branin system 1"
+        :cite (Rump:1994)
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8))
+
+        (- (* (* 2 (sin (/ (* (* 2 pi) x1) 5.))) (sin (/ (* (* 2 pi) x3) 5.))) x2))
+
+(FPCore branin_system_2 (x1 x2 x3)
+        :name "branin system 2"
+        :cite (Rump:1994)
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8))
+
+        (- (+ (- 2.5 x3) (* (* 0.1 x2) (sin (* (* 2 pi) x3)))) x1))
+
+(FPCore branin_system_3 (x1 x2 x3)
+        :name "branin system 3"
+        :cite (Rump:1994)
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8))
+
+        (- (+ 1 (* (* 0.1 x2) (sin (* (* 2 pi) x1)))) x3))

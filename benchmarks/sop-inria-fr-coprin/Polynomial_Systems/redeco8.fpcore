@@ -1,0 +1,69 @@
+;; Redeco8
+;;
+;; Origin: COCONUT
+;; 8 equations with 8 unknowns
+;;
+;; x1 + x1*x2 + x2*x3 + x3*x4 + x4*x5 + x5*x6 + x6*x7 - 1*u8 =0
+;;         x2 + x1*x3 + x2*x4 + x3*x5 + x4*x6 + x5*x7 - 2*u8 =0
+;;                 x3 + x1*x4 + x2*x5 + x3*x6 + x4*x7 - 3*u8 =0
+;;                         x4 + x1*x5 + x2*x6 + x3*x7 - 4*u8 =0
+;;                                 x5 + x1*x6 + x2*x7 - 5*u8 =0
+;;                                         x6 + x1*x7 - 6*u8 =0
+;;                                                 x7 - 7*u8 =0
+;;                      x1 + x2 + x3 + x4 + x5 + x6 + x7 + 1 =0
+;;
+;; Ranges: [-1e8,1e8] for all unknowns
+;;
+;; Solving method: GradientSolve+HullConsistencyStrong+ +3B
+;; Solutions:: 8 (exact)
+;; Computation time (May 2004):
+;; DELL D400 (1.7GHz) 	39.46s
+
+
+(FPCore redeco8_1 (x1 x2 x3 x4 x5 x6 x7 u8)
+        :name "redeco8 1"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8) (<= (- 1e8) x7 1e8) (<= (- 1e8) u8 1e8))
+
+        (- (+ (+ (+ (+ (+ (+ 1 (* x1 x2)) (* x2 x3)) (* x3 x4)) (* x4 x5)) (* x5 x6)) (* x6 x7)) (* 1 u8)))
+
+(FPCore redeco8_2 (x1 x2 x3 x4 x5 x6 x7 u8)
+        :name "redeco8 2"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8) (<= (- 1e8) x7 1e8) (<= (- 1e8) u8 1e8))
+
+        (- (+ (+ (+ (+ (+ x2 (* x1 x3)) (* x2 x4)) (* x3 x5)) (* x4 x6)) (* x5 x7)) (* 2 u8)))
+
+(FPCore redeco8_3 (x1 x2 x3 x4 x5 x6 x7 u8)
+        :name "redeco8 3"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8) (<= (- 1e8) x7 1e8) (<= (- 1e8) u8 1e8))
+
+        (- (+ (+ (+ (+ x3 (* x1 x4)) (* x2 x5)) (* x3 x6)) (* x4 x7)) (* 3 u8)))
+
+(FPCore redeco8_4 (x1 x2 x3 x4 x5 x6 x7 u8)
+        :name "redeco8 4"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8) (<= (- 1e8) x7 1e8) (<= (- 1e8) u8 1e8))
+
+        (- (+ (+ (+ x4 (* x1 x5)) (* x2 x6)) (* x3 x7)) (* 4 u8)))
+
+(FPCore redeco8_5 (x1 x2 x3 x4 x5 x6 x7 u8)
+        :name "redeco8 5"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8) (<= (- 1e8) x7 1e8) (<= (- 1e8) u8 1e8))
+
+        (- (+ (+ x5 (* x1 x6)) (* x2 x7)) (* 5 u8)))
+
+(FPCore redeco8_6 (x1 x2 x3 x4 x5 x6 x7 u8)
+        :name "redeco8 6"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8) (<= (- 1e8) x7 1e8) (<= (- 1e8) u8 1e8))
+
+        (- (+ x6 (* x1 x7)) (* 6 u8)))
+
+(FPCore redeco8_7 (x1 x2 x3 x4 x5 x6 x7 u8)
+        :name "redeco8 7"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8) (<= (- 1e8) x7 1e8) (<= (- 1e8) u8 1e8))
+
+        (- x7 (* 7 u8)))
+
+(FPCore redeco8_8 (x1 x2 x3 x4 x5 x6 x7 u8)
+        :name "redeco8 8"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8) (<= (- 1e8) x7 1e8) (<= (- 1e8) u8 1e8))
+
+        (+ (+ (+ (+ (+ (+ (+ x1 x2) x3) x4) x5) x6) x7) 1))

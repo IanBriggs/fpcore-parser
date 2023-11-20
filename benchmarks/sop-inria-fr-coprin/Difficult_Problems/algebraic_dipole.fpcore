@@ -1,0 +1,69 @@
+;;  Algebraic: Dipole (*)
+;;
+;; Origin: COCONUT
+;; 8 equations defined by:
+;;
+;; a+b=0.63254
+;;  c+d =-1.34534
+;;  t*a+u*b-v*c-w*d=-0.8365348
+;;  v*a+w*b+t*c+u*d=1.7345334
+;;  a*t**2-a*v**2-2*c*t*v+b*u**2-b*w**2-2*d*u*w=1.352352
+;;  c*t**2-c*v**2+2*a*t*v+d*u**2-d*w**2+2*b*u*w=-0.843453
+;; a*t**3-3*a*t*v**2+c*v**3-3*c*v*t**2+b*u**3-3*b*u*w**2+d*w**3-3*d*w*u**2=
+;; -0.9563453
+;; c*t**3-3*c*t*v**2-a*v**3+3*a*v*t**2+ d*u**3-3*d*u*w**2-b*w**3+3*b*w*u**2=1.2342523
+;;
+;; Ranges: for all unknowns [-1e8,1e8]
+;; Solving method: HessianSolve+HullConsistency+ 3B + GlobalConsistencyTaylor +Simp2B
+;; Solutions:: 2 (exact)
+;; Computation time
+;; Cluster, (May 2007) (11 PC's) 	3 days
+;; See section Dipole2 for another formulation of the problem that leads to a relatively easy solving.
+
+(FPCore algebraic_dipole_1 (a b c d t u v w)
+        :name "algebraic dipole 1"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) t 1e8) (<= (- 1e8) u 1e8) (<= (- 1e8) v 1e8) (<= (- 1e8) w 1e8))
+
+        (- (+ a b) 0.63254))
+
+(FPCore algebraic_dipole_2 (a b c d t u v w)
+        :name "algebraic dipole 2"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) t 1e8) (<= (- 1e8) u 1e8) (<= (- 1e8) v 1e8) (<= (- 1e8) w 1e8))
+
+        (+ (+ c d) 1.34534))
+
+(FPCore algebraic_dipole_3 (a b c d t u v w)
+        :name "algebraic dipole 3"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) t 1e8) (<= (- 1e8) u 1e8) (<= (- 1e8) v 1e8) (<= (- 1e8) w 1e8))
+
+        (+ (- (- (+ (* t a) (* u b)) (* v c)) (* w d)) 0.8365348))
+
+(FPCore algebraic_dipole_4 (a b c d t u v w)
+        :name "algebraic dipole 4"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) t 1e8) (<= (- 1e8) u 1e8) (<= (- 1e8) v 1e8) (<= (- 1e8) w 1e8))
+
+        (- (+ (+ (+ (* v a) (* w b)) (* t c)) (* u d)) 1.7345334))
+
+(FPCore algebraic_dipole_5 (a b c d t u v w)
+        :name "algebraic dipole 5"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) t 1e8) (<= (- 1e8) u 1e8) (<= (- 1e8) v 1e8) (<= (- 1e8) w 1e8))
+
+        (- (- (- (+ (- (- (* a (pow t 2)) (* a (pow v 2))) (* (* (* 2 c) t) v)) (* b (pow u 2))) (* b (pow w 2))) (* (* (* 2 d) u) w)) 1.352352))
+
+(FPCore algebraic_dipole_6 (a b c d t u v w)
+        :name "algebraic dipole 6"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) t 1e8) (<= (- 1e8) u 1e8) (<= (- 1e8) v 1e8) (<= (- 1e8) w 1e8))
+
+        (+ (+ (- (+ (+ (- (* c (pow t 2)) (* c (pow v 2))) (* (* (* 2 a) t) v)) (* d (pow u 2))) (* d (pow w 2))) (* (* (* 2 b) u) w)) 0.843453))
+
+(FPCore algebraic_dipole_7 (a b c d t u v w)
+        :name "algebraic dipole 7"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) t 1e8) (<= (- 1e8) u 1e8) (<= (- 1e8) v 1e8) (<= (- 1e8) w 1e8))
+
+        (+ (- (+ (- (+ (- (+ (- (* a (pow t 3)) (* (* (* 3 a) t) (pow v 2))) (* c (pow v 3))) (* (* (* 3 c) v) (pow t 2))) (* b (pow u 3))) (* (* (* 3 b) u) (pow w 2))) (* d (pow w 3))) (* (* (* 3 d) w) (pow u 2))) 0.9563453))
+
+(FPCore algebraic_dipole_8 (a b c d t u v w)
+        :name "algebraic dipole 8"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) t 1e8) (<= (- 1e8) u 1e8) (<= (- 1e8) v 1e8) (<= (- 1e8) w 1e8))
+
+        (- (+ (- (- (+ (+ (- (- (* c (pow t 3)) (* (* (* 3 c) t) (pow v 2))) (* a (pow v 3))) (* (* (* 3 a) v) (pow t 2))) (* d (pow u 3))) (* (* (* 3 d) u) (pow w 2))) (* b (pow w 3))) (* (* (* 3 b) w) (pow u 2))) 1.2342523))

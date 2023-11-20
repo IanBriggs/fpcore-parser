@@ -1,0 +1,28 @@
+;; Himmelblau
+;;
+;; Origin: [9]
+;; 2 equations
+;;
+;; \begin{eqnarray*} eq1&=&-42 x_1 + 2 x_2^2 + 4 x_1 x_2 + 4 x_1^3 - 14\\ eq2&=&-26 x_2 + 2 x_1^2 + 4 x_1 x_2 + 4 x_2^3 - 22\\ \end{eqnarray*}
+;;
+;; Ranges: [-1e8,1e8] for x1, x2
+;;
+;; Solving method: HessianSolve+HullConsistency+3B
+;;
+;; Solutions:: 9 (exact)
+;; Computation time (April 2003):
+;; EVO 410C (1.2Ghz) 	0.11s
+
+(FPCore himmelblau_ (x_1 x_2)
+        :name "himmelblau "
+        :cite (More:1981)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8))
+
+        (- (+ (+ (+ (* (- 42) x_1) (* 2 (pow x_2 2))) (* (* 4 x_1) x_2)) (* 4 (pow x_1 3))) 14))
+
+(FPCore himmelblau_ (x_1 x_2)
+        :name "himmelblau "
+        :cite (More:1981)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8))
+
+        (- (+ (+ (+ (* (- 26) x_2) (* 2 (pow x_1 2))) (* (* 4 x_1) x_2)) (* 4 (pow x_2 3))) 22))

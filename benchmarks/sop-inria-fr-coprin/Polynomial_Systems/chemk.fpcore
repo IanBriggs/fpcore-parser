@@ -1,0 +1,42 @@
+;; Chemk
+;;
+;; Origin: Kearfott, COCONUT
+;; 4 equations defined by:
+;;
+;; x1^2 - x2 =0
+;; x4^2 - x3 =0
+;; 2.177e7*x2 - 1.697e7*x2*x4 + 0.55*x1*x4 + 0.45*x1 - x4=0
+;;
+;; 1.585e14*x2*x4 + 4.126e7*x1*x3 - 8.282e6*x1*x4 +
+;; 2.284e7*x3*x4 - 1.918e7*x3 + 48.4*x4 - 27.73=0
+;;
+;; Ranges: for all unknowns [0,1]
+;;
+;; Solving method: GradientSolve+HullConsistencyStrong+3B
+;; Solutions:: 1 (exact)
+;; Computation time (May 2004): will almost not change if the search space is extended to [-1e8,1e8]:
+;; DELL D400 (1.7 GHz) 	0.01s
+
+(FPCore chemk_1 (x_1 x_2 x_3 x_4)
+        :name "chemk 1"
+        :pre (and (<= 0 x_1 1) (<= 0 x_2 1) (<= 0 x_3 1) (<= 0 x_4 1))
+
+        (- (pow x_1 2) x_2))
+
+(FPCore chemk_2 (x_1 x_2 x_3 x_4)
+        :name "chemk 2"
+        :pre (and (<= 0 x_1 1) (<= 0 x_2 1) (<= 0 x_3 1) (<= 0 x_4 1))
+
+        (- (pow x_4 2) x_3))
+
+(FPCore chemk_3 (x_1 x_2 x_3 x_4)
+        :name "chemk 3"
+        :pre (and (<= 0 x_1 1) (<= 0 x_2 1) (<= 0 x_3 1) (<= 0 x_4 1))
+
+        (- (+ (+ (- (* 2.177e7 x_2) (* (* 1.697e7 x_2) x_4)) (* (* 0.55 x_1) x_4)) (* 0.45 x_1)) x_4))
+
+(FPCore chemk_4 (x_1 x_2 x_3 x_4)
+        :name "chemk 4"
+        :pre (and (<= 0 x_1 1) (<= 0 x_2 1) (<= 0 x_3 1) (<= 0 x_4 1))
+
+        (- (+ (- (+ (- (+ (* (* 1.585e14 x_2) x_4) (* (* 4.126e7 x_1) x_3)) (* (* 8.282e6 x_1) x_4)) (* (* 2.284e7 x_3) x_4)) (* 1.918e7 x_3)) (* 48.4 x_4)) 27.73))

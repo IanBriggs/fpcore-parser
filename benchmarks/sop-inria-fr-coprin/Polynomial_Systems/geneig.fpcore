@@ -1,0 +1,65 @@
+;; Geneig
+;;
+;; Origin: COCONUT
+;; Physical meaning: generalized eigenvalue problem
+;;
+;; 6 equations:
+;;
+;; -10*x1*x6^2+ 2*x2*x6^2-x3*x6^2+x4*x6^2+ 3*x5*x6^2+x1*x6+ 2*x2*x6+x3*x6+ 2*x4*
+;; x6+x5*x6+ 10*x1+ 2*x2-x3+ 2*x4-2*x5 =0
+;;
+;; 2*x1*x6^2-11*x2*x6^2+ 2*x3*x6^2-2*x4*x6^2+x5*x6^2+ 2*x1*x6+x2*x6+ 2*x3*x6+x4*
+;; x6+ 3*x5*x6+ 2*x1+ 9*x2+ 3*x3-x4-2*x5 =0
+;;
+;; -x1*x6^2+ 2*x2*x6^2-12*x3*x6^2-x4*x6^2+x5*x6^2+x1*x6+ 2*x2*x6-2*x4*x6-2*x5*x6-
+;; x1+ 3*x2+ 10*x3+ 2*x4-x5 =0
+;;
+;; x1*x6^2-2*x2*x6^2-x3*x6^2-10*x4*x6^2+ 2*x5*x6^2+ 2*x1*x6+x2*x6-2*x3*x6+ 2*x4*
+;; x6+ 3*x5*x6+ 2*x1-x2+ 2*x3+ 12*x4+x5 =0
+;;
+;; 3*x1*x6^2+x2*x6^2+x3*x6^2+ 2*x4*x6^2-11*x5*x6^2+x1*x6+ 3*x2*x6-2*x3*x6+ 3*x4*
+;; x6+ 3*x5*x6-2*x1-2*x2-x3+x4+ 10*x5 =0
+;;
+;; x1+x2+x3+x4+x5-1 :
+;;
+;; Ranges: [-1e8,1e8] for all unknowns
+;; Solving method: GradientSolve+HullConsistencyStrong+3B
+;; Solutions:: 10 (exact)
+;; Computation time (May 2004):
+;; DELL D400 (1.7Ghz) 	108s
+
+(FPCore geneig_1 (x1 x2 x3 x4 x5 x6)
+        :name "geneig 1"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8))
+
+        (- (+ (- (+ (+ (+ (+ (+ (+ (+ (+ (+ (- (+ (* (* (- 10) x1) (pow x6 2)) (* (* 2 x2) (pow x6 2))) (* x3 (pow x6 2))) (* x4 (pow x6 2))) (* (* 3 x5) (pow x6 2))) (* x1 x6)) (* (* 2 x2) x6)) (* x3 x6)) (* (* 2 x4) x6)) (* x5 x6)) (* 10 x1)) (* 2 x2)) x3) (* 2 x4)) (* 2 x5)))
+
+(FPCore geneig_2 (x1 x2 x3 x4 x5 x6)
+        :name "geneig 2"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8))
+
+        (- (- (+ (+ (+ (+ (+ (+ (+ (+ (+ (- (+ (- (* (* 2 x1) (pow x6 2)) (* (* 11 x2) (pow x6 2))) (* (* 2 x3) (pow x6 2))) (* (* 2 x4) (pow x6 2))) (* x5 (pow x6 2))) (* (* 2 x1) x6)) (* x2 x6)) (* (* 2 x3) x6)) (* x4 x6)) (* (* 3 x5) x6)) (* 2 x1)) (* 9 x2)) (* 3 x3)) x4) (* 2 x5)))
+
+(FPCore geneig_3 (x1 x2 x3 x4 x5 x6)
+        :name "geneig 3"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8))
+
+        (- (+ (+ (+ (- (- (- (+ (+ (+ (- (- (+ (* (- x1) (pow x6 2)) (* (* 2 x2) (pow x6 2))) (* (* 12 x3) (pow x6 2))) (* x4 (pow x6 2))) (* x5 (pow x6 2))) (* x1 x6)) (* (* 2 x2) x6)) (* (* 2 x4) x6)) (* (* 2 x5) x6)) x1) (* 3 x2)) (* 10 x3)) (* 2 x4)) x5))
+
+(FPCore geneig_4 (x1 x2 x3 x4 x5 x6)
+        :name "geneig 4"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8))
+
+        (+ (+ (+ (- (+ (+ (+ (- (+ (+ (+ (- (- (- (* x1 (pow x6 2)) (* (* 2 x2) (pow x6 2))) (* x3 (pow x6 2))) (* (* 10 x4) (pow x6 2))) (* (* 2 x5) (pow x6 2))) (* (* 2 x1) x6)) (* x2 x6)) (* (* 2 x3) x6)) (* (* 2 x4) x6)) (* (* 3 x5) x6)) (* 2 x1)) x2) (* 2 x3)) (* 12 x4)) x5))
+
+(FPCore geneig_5 (x1 x2 x3 x4 x5 x6)
+        :name "geneig 5"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8))
+
+        (+ (+ (- (- (- (+ (+ (- (+ (+ (- (+ (+ (+ (* (* 3 x1) (pow x6 2)) (* x2 (pow x6 2))) (* x3 (pow x6 2))) (* (* 2 x4) (pow x6 2))) (* (* 11 x5) (pow x6 2))) (* x1 x6)) (* (* 3 x2) x6)) (* (* 2 x3) x6)) (* (* 3 x4) x6)) (* (* 3 x5) x6)) (* 2 x1)) (* 2 x2)) x3) x4) (* 10 x5)))
+
+(FPCore geneig_6 (x1 x2 x3 x4 x5 x6)
+        :name "geneig 6"
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8) (<= (- 1e8) x3 1e8) (<= (- 1e8) x4 1e8) (<= (- 1e8) x5 1e8) (<= (- 1e8) x6 1e8))
+
+        (- (+ (+ (+ (+ x1 x2) x3) x4) x5) 1))

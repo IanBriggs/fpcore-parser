@@ -1,0 +1,47 @@
+;;  Puma modified
+;;
+;; Origin: COPRIN, modified from COCONUT Puma
+;; Physical meaning: inverse kinematics of a 3R robot, the angles t1,t2,t3 are the angles of the three joints
+;; 4 equations with 4 unknowns
+;;
+;; .4731e-2*cos(t1)*cos(t2)-.3578*sin(t1)*cos(t2)-.1238*cos(t1)
+;; -.1637e-2*sin(t1)-.9338*sin(t2)+cos(t4)-.3571=0
+;;
+;;  .2238*cos(t1)*cos(t2)+.7623*sin(t1)*cos(t2)+.2638*cos(t1)
+;; -.7745e-1*sin(t1)-.6734*sin(t2)-.6022=0
+;;
+;;  sin(t3)*sin(t4)+.3578*cos(t1)+.4731e-2*sin(t1)=0
+;;
+;;  -.7623*cos(t1)+.2238*sin(t1)+.3461=0
+;;
+;; Ranges: [0,$2\pi$] for all unknowns
+;;
+;; Solving method: GradientSolve+HullConsistencyStrong+ +3B
+;; Solutions:: 16 (exact)
+;; Computation time (May 2004):
+;; DELL D400 (1.7GHz) 	0.48s
+;; See also the algebraic puma
+
+(FPCore puma_modified_1 (t1 t2 t3 t4)
+        :name "puma modified 1"
+        :pre (and (<= 0 t1 (* 2 pi)) (<= 0 t2 (* 2 pi)) (<= 0 t3 (* 2 pi)) (<= 0 t4 (* 2 pi)))
+
+        (- (+ (- (- (- (- (* (* .4731e-2 (cos t1)) (cos t2)) (* (* .3578 (sin t1)) (cos t2))) (* .1238 (cos t1))) (* .1637e-2 (sin t1))) (* .9338 (sin t2))) (cos t4)) .3571))
+
+(FPCore puma_modified_2 (t1 t2 t3 t4)
+        :name "puma modified 2"
+        :pre (and (<= 0 t1 (* 2 pi)) (<= 0 t2 (* 2 pi)) (<= 0 t3 (* 2 pi)) (<= 0 t4 (* 2 pi)))
+
+        (- (- (- (+ (+ (* (* .2238 (cos t1)) (cos t2)) (* (* .7623 (sin t1)) (cos t2))) (* .2638 (cos t1))) (* .7745e-1 (sin t1))) (* .6734 (sin t2))) .6022))
+
+(FPCore puma_modified_3 (t1 t2 t3 t4)
+        :name "puma modified 3"
+        :pre (and (<= 0 t1 (* 2 pi)) (<= 0 t2 (* 2 pi)) (<= 0 t3 (* 2 pi)) (<= 0 t4 (* 2 pi)))
+
+        (+ (+ (* (sin t3) (sin t4)) (* .3578 (cos t1))) (* .4731e-2 (sin t1))))
+
+(FPCore puma_modified_4 (t1 t2 t3 t4)
+        :name "puma modified 4"
+        :pre (and (<= 0 t1 (* 2 pi)) (<= 0 t2 (* 2 pi)) (<= 0 t3 (* 2 pi)) (<= 0 t4 (* 2 pi)))
+
+        (+ (+ (* (- .7623) (cos t1)) (* .2238 (sin t1))) .3461))

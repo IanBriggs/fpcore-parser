@@ -1,0 +1,28 @@
+;; Stenger
+;;
+;; Origin: [7]
+;; 2 equations:
+;;
+;; \begin{eqnarray*} &&x_1^2-4 x_2\\ &&x_2^2-2x_1+4x_2 \end{eqnarray*}
+;;
+;; Ranges: [-1e8,1e8]
+;;
+;; Solving method: HessianSolve+HullConsistency+ 3B
+;; Solutions:: 2 (exact)
+;; Computation time
+;; DELL 620 (May 2007) (1.7GHz) 	0.01s
+
+
+(FPCore stenger_1 (x_1 x_2)
+        :name "stenger 1"
+        :cite (Kearfott:1987)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8))
+
+        (- (pow x_1 2) (* 4 x_2)))
+
+(FPCore stenger_2 (x_1 x_2)
+        :name "stenger 2"
+        :cite (Kearfott:1987)
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8))
+
+        (+ (- (pow x_2 2) (* 2 x_1)) (* 4 x_2)))

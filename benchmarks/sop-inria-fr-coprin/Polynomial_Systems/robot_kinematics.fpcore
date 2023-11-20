@@ -1,0 +1,71 @@
+;; Robot kinematics
+;; Origin: [6]
+;; Physical meaning: find the joint angles of a 4 degrees-of-freedom robot for reaching a given pose with the end-effector
+;; 8 equations
+;;
+;; \begin{eqnarray*} &&- 0.1238 x_1+x_7- 0.001637 x_2- 0.9338 x_4+ 0.004731 x_1 x_3... ...^2-1\\ &&x_3^2+x_4^2-1\\ &&x_5^2+x_6^2-1\\ &&x_7^2+x_8^2-1\\ \end{eqnarray*}
+;;
+;; - 0.1238 x_1+x_7- 0.001637 x_2- 0.9338 x_4+ 0.004731 x_1 x_3- 0.3578 x_2 x_3- 0.3571
+;;  0.2638 x_1-x_7- 0.07745 x_2- 0.6734 x_4+ 0.2238 x_1 x_3+ 0.7623 x_2 x_3- 0.6022
+;;  0.3578 x_1+ 0.004731 x_2+x_6 x_8- 0.7623 x_1+ 0.2238 x_2+ 0.3461
+;; x_1^2+x_2^2-1
+;; x_3^2+x_4^2-1
+;; x_5^2+x_6^2-1
+;; x_7^2+x_8^2-1
+;;
+;; Ranges: for all unknowns [-1,1]
+;;
+;; Solving method: HessianSolve+HullConsistency+ SimplexConsistency+3B
+;; Solutions:: 16 (exact)
+;; Computation time (April 2003):
+;; Evo 410C (1.2Ghz) 	0.38s
+
+
+(FPCore robot_kinematics_1 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "robot kinematics 1"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1) x_1 1) (<= (- 1) x_2 1) (<= (- 1) x_3 1) (<= (- 1) x_4 1) (<= (- 1) x_5 1) (<= (- 1) x_6 1) (<= (- 1) x_7 1) (<= (- 1) x_8 1))
+
+        (- (- (+ (- (- (+ (* (- 0.1238) x_1) x_7) (* 0.001637 x_2)) (* 0.9338 x_4)) (* (* 0.004731 x_1) x_3)) (* (* 0.3578 x_2) x_3)) 0.3571))
+
+(FPCore robot_kinematics_2 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "robot kinematics 2"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1) x_1 1) (<= (- 1) x_2 1) (<= (- 1) x_3 1) (<= (- 1) x_4 1) (<= (- 1) x_5 1) (<= (- 1) x_6 1) (<= (- 1) x_7 1) (<= (- 1) x_8 1))
+
+        (- (+ (+ (- (- (- (* 0.2638 x_1) x_7) (* 0.07745 x_2)) (* 0.6734 x_4)) (* (* 0.2238 x_1) x_3)) (* (* 0.7623 x_2) x_3)) 0.6022))
+
+(FPCore robot_kinematics_3 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "robot kinematics 3"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1) x_1 1) (<= (- 1) x_2 1) (<= (- 1) x_3 1) (<= (- 1) x_4 1) (<= (- 1) x_5 1) (<= (- 1) x_6 1) (<= (- 1) x_7 1) (<= (- 1) x_8 1))
+
+        (+ (+ (- (+ (+ (* 0.3578 x_1) (* 0.004731 x_2)) (* x_6 x_8)) (* 0.7623 x_1)) (* 0.2238 x_2)) 0.3461))
+
+(FPCore robot_kinematics_4 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "robot kinematics 4"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1) x_1 1) (<= (- 1) x_2 1) (<= (- 1) x_3 1) (<= (- 1) x_4 1) (<= (- 1) x_5 1) (<= (- 1) x_6 1) (<= (- 1) x_7 1) (<= (- 1) x_8 1))
+
+        (- (+ (pow x_1 2) (pow x_2 2)) 1))
+
+(FPCore robot_kinematics_5 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "robot kinematics 5"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1) x_1 1) (<= (- 1) x_2 1) (<= (- 1) x_3 1) (<= (- 1) x_4 1) (<= (- 1) x_5 1) (<= (- 1) x_6 1) (<= (- 1) x_7 1) (<= (- 1) x_8 1))
+
+        (- (+ (pow x_3 2) (pow x_4 2)) 1))
+
+(FPCore robot_kinematics_6 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "robot kinematics 6"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1) x_1 1) (<= (- 1) x_2 1) (<= (- 1) x_3 1) (<= (- 1) x_4 1) (<= (- 1) x_5 1) (<= (- 1) x_6 1) (<= (- 1) x_7 1) (<= (- 1) x_8 1))
+
+        (- (+ (pow x_5 2) (pow x_6 2)) 1))
+
+(FPCore robot_kinematics_7 (x_1 x_2 x_3 x_4 x_5 x_6 x_7 x_8)
+        :name "robot kinematics 7"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1) x_1 1) (<= (- 1) x_2 1) (<= (- 1) x_3 1) (<= (- 1) x_4 1) (<= (- 1) x_5 1) (<= (- 1) x_6 1) (<= (- 1) x_7 1) (<= (- 1) x_8 1))
+
+        (- (+ (pow x_7 2) (pow x_8 2)) 1))

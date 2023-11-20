@@ -1,0 +1,68 @@
+;; Nauheim
+;;
+;; Origin: COCONUT
+;; 8 equations with 8 unknowns
+;;
+;; e*g + 2*d*h =0
+;; 9*e + 4*b =0
+;; 4*c*h + 2*e*f + 3*d*g =0
+;; 7*c - 9*a + 8*f =0
+;; 4*d*f + 5*c*g + 6*h + 3*e =0
+;; 5*d + 6*c*f + 7*g - 9*b =0
+;; 9*d + 6*a - 5*b=0
+;; -9*c + 7*a - 8=0
+;;
+;; Ranges: [-1e8,1e8] for all unknowns
+;;
+;; Solving method: GradientSolve+HullConsistencyStrong+ +3B
+;; Solutions:: 4 (exact)
+;; Computation time (May 2004):
+;; DELL D400 (1.7GHz) 	0.62s
+
+(FPCore nauheim_1 (a b c d e f g h)
+        :name "nauheim 1"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) e 1e8) (<= (- 1e8) f 1e8) (<= (- 1e8) g 1e8) (<= (- 1e8) h 1e8))
+
+        (+ (* e g) (* (* 2 d) h)))
+
+(FPCore nauheim_2 (a b c d e f g h)
+        :name "nauheim 2"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) e 1e8) (<= (- 1e8) f 1e8) (<= (- 1e8) g 1e8) (<= (- 1e8) h 1e8))
+
+        (+ (* 9 e) (* 4 b)))
+
+(FPCore nauheim_3 (a b c d e f g h)
+        :name "nauheim 3"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) e 1e8) (<= (- 1e8) f 1e8) (<= (- 1e8) g 1e8) (<= (- 1e8) h 1e8))
+
+        (+ (+ (* (* 4 c) h) (* (* 2 e) f)) (* (* 3 d) g)))
+
+(FPCore nauheim_4 (a b c d e f g h)
+        :name "nauheim 4"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) e 1e8) (<= (- 1e8) f 1e8) (<= (- 1e8) g 1e8) (<= (- 1e8) h 1e8))
+
+        (+ (- (* 7 c) (* 9 a)) (* 8 f)))
+
+(FPCore nauheim_5 (a b c d e f g h)
+        :name "nauheim 5"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) e 1e8) (<= (- 1e8) f 1e8) (<= (- 1e8) g 1e8) (<= (- 1e8) h 1e8))
+
+        (+ (+ (+ (* (* 4 d) f) (* (* 5 c) g)) (* 6 h)) (* 3 e)))
+
+(FPCore nauheim_6 (a b c d e f g h)
+        :name "nauheim 6"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) e 1e8) (<= (- 1e8) f 1e8) (<= (- 1e8) g 1e8) (<= (- 1e8) h 1e8))
+
+        (- (+ (+ (* 5 d) (* (* 6 c) f)) (* 7 g)) (* 9 b)))
+
+(FPCore nauheim_7 (a b c d e f g h)
+        :name "nauheim 7"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) e 1e8) (<= (- 1e8) f 1e8) (<= (- 1e8) g 1e8) (<= (- 1e8) h 1e8))
+
+        (- (+ (* 9 d) (* 6 a)) (* 5 b)))
+
+(FPCore nauheim_8 (a b c d e f g h)
+        :name "nauheim 8"
+        :pre (and (<= (- 1e8) a 1e8) (<= (- 1e8) b 1e8) (<= (- 1e8) c 1e8) (<= (- 1e8) d 1e8) (<= (- 1e8) e 1e8) (<= (- 1e8) f 1e8) (<= (- 1e8) g 1e8) (<= (- 1e8) h 1e8))
+
+        (- (+ (* (- 9) c) (* 7 a)) 8))

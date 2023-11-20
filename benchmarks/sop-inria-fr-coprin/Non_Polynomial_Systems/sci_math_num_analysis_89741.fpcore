@@ -1,0 +1,30 @@
+;;  sci.math.num-analysis-89741
+;;
+;; Origin: Article 89741 of sci.math.num-analysis
+;;
+;; \begin{eqnarray*} &&-\cos (x)/81 + (y)^2/9 + \sin(z)/3-x\\ &&\sin(x)/3 + \cos (z)/3-y\\ &&-\cos (x)/9 + (y)/3 +\sin (z)/6-z\\ \end{eqnarray*}
+;;
+;; Ranges: [-1e8,1e8] for all unknowns (may be largely improved..)
+;;
+;; Solving method: HessianSolve+HullConsistency+3B
+;; Solutions:: 1, exact
+;; Computation time (April 2006):
+;; DELL D400 (1.2Ghz) 	$\approx$ 0.008s
+
+(FPCore sci_math_num_analysis_89741_1 (x y z)
+        :name "sci math num analysis 89741 1"
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (+ (+ (/ (- (cos x)) 81) (/ (pow y 2) 9)) (/ (sin z) 3)) x))
+
+(FPCore sci_math_num_analysis_89741_2 (x y z)
+        :name "sci math num analysis 89741 2"
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (+ (/ (sin x) 3) (/ (cos z) 3)) y))
+
+(FPCore sci_math_num_analysis_89741_3 (x y z)
+        :name "sci math num analysis 89741 3"
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (+ (+ (/ (- (cos x)) 9) (/ y 3)) (/ (sin z) 6)) z))

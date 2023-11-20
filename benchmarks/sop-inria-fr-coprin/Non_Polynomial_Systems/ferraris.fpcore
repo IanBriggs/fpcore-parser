@@ -1,0 +1,28 @@
+;;  Ferraris
+;;
+;; Origin: [6]
+;;
+;; \begin{eqnarray*} &&-0.25/\pi x_2 - 0.5x_1 + 0.5 \sin(x_1 x_2)\\ && e/\pi x_2 - 2e x_1 + (1 - 0.25/\pi)(e^{2x_1} -e)\\ \end{eqnarray*}
+;;
+;;  -0.25/Pi*x2 - 0.5*x1  + 0.5*sin(x1*x2);
+;; exp(1)/Pi*x2 - 2*exp(1)*x1  + (1 - 0.25/Pi)*(exp(2*x1) -exp(1));
+;;
+;; Ranges: [-1e8,1e8]
+;; Solving method: HessianSolve+HullConsistency+3B
+;; Solutions:: 12 (exact)
+;; Computation time (April 2003):
+;; Evo 410C (1.2Ghz) 	0.16s
+
+(FPCore ferraris_1 (x1 x2)
+        :name "ferraris 1"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8))
+
+        (+ (- (* (/ (- 0.25) pi) x2) (* 0.5 x1)) (* 0.5 (sin (* x1 x2)))))
+
+(FPCore ferraris_2 (x1 x2)
+        :name "ferraris 2"
+        :cite (Floudas:1999)
+        :pre (and (<= (- 1e8) x1 1e8) (<= (- 1e8) x2 1e8))
+
+        (+ (- (* (/ (exp 1) pi) x2) (* (* 2 (exp 1)) x1)) (* (- 1 (/ 0.25 pi)) (- (exp (* 2 x1)) (exp 1)))))

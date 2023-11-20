@@ -1,0 +1,25 @@
+;;  Helical
+;;
+;; Origin: [9]
+;;
+;; \begin{eqnarray*} &&-100\frac{1}{\pi} \arctan(\frac{x_2}{x_1})+0.5\\ &&10(\sqrt{x_1^2+x_2^2}-1)\\ \end{eqnarray*}
+;;
+;; Range: x1 in [-1e8,-1e-3], x2 in [-1e8,1e8]
+;;
+;; Solving method: GradientSolve,3B
+;; Solutions:: 1 (exact)
+;; Computation time (April 2003):
+
+(FPCore helical_1 (x_1 x_2)
+        :name "helical 1"
+        :cite (More:1981)
+        :pre (and (<= (- 1e8) x_1 (- 1e3)) (<= (- 1e8) x_2 1e8))
+
+        (+ (* (* (- 100) (/ 1 pi)) (atan (/ x_2 x_1))) 0.5))
+
+(FPCore helical_2 (x_1 x_2)
+        :name "helical 2"
+        :cite (More:1981)
+        :pre (and (<= (- 1e8) x_1 (- 1e3)) (<= (- 1e8) x_2 1e8))
+
+        (* 10 (- (sqrt (+ (pow x_1 2) (pow x_2 2))) 1)))

@@ -1,0 +1,19 @@
+;;  Rump univariate
+;;
+;; Origin: mentioned by Rump[11]
+;;
+;; \begin{displaymath} e^x-2x-1=0 \end{displaymath}
+;;
+;; Ranges: [-1e8,1e8]
+;;
+;; Solving method: HessianSolve,3B
+;; Solutions:: 2 (exact)
+;; Computation time (September 2006):
+;; DELL D400 (1.7GHz) 	0.006s
+
+(FPCore rump_univariate (x)
+        :name "rump univariate"
+        :cite (Rump:1994)
+        :pre (and (<= (- 1e8) x 1e8))
+
+        (- (- (pow e x) (* 2 x)) 1))

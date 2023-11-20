@@ -1,0 +1,59 @@
+;; 6body
+;;
+;; Origin: FRISCO
+;; Physical meaning: Polynomial systems arising in the study of central configurations in the N-body problem of Celestial Mechanics
+;; 6 equations
+;;
+;; \begin{eqnarray*} eq1&=&3*(b-d)*(B-D)+B+D-6*F+4\\ eq2&=&3*(b-d)*(B+D-2*F)+5*(B-... ...)+4*f+3\\ eq4&=&B^2*b^3-1\\ eq5&=&D^2*d^3-1\\ eq6&=&F^2*f^3-1 \end{eqnarray*}
+;;
+;; 3*(b-d)*(B-D)+B+D-6*F+4=0
+;; 3*(b-d)*(B+D-2*F)+5*(B-D)=0
+;; 3*(b-d)^2-6*(b+d)+4*f+3=0
+;; B^2*b^3-1=0
+;; D^2*d^3-1=0
+;; F^2*f^3-1=0
+;;
+;; Ranges: for all unknowns [0,1e5]
+;; Solving method: HessianSolve+HullConsistencyStrong+0.95
+;; Solutions:: 5 (exact)
+;; Computation time:
+;; Sun Blade 	28.69s (April 2003)
+;; EVO 410C (1.2Ghz) 	4.68s (April 2003)
+;; DELL D400 (1.7Ghz) 	0.95s (May 2004)
+
+
+(FPCore six_body_1 (b d f B D F)
+        :name "six body 1"
+        :pre (and (<= 0 b 1e5) (<= 0 d 1e5) (<= 0 f 1e5) (<= 0 B 1e5) (<= 0 D 1e5) (<= 0 F 1e5))
+
+        (+ (- (+ (+ (* (* 3 (- b d)) (- B D)) B) D) (* 6 F)) 4))
+
+(FPCore six_body_2 (b d f B D F)
+        :name "six body 2"
+        :pre (and (<= 0 b 1e5) (<= 0 d 1e5) (<= 0 f 1e5) (<= 0 B 1e5) (<= 0 D 1e5) (<= 0 F 1e5))
+
+        (+ (* (* 3 (- b d)) (- (+ B D) (* 2 F))) (* 5 (- B D))))
+
+(FPCore six_body_3 (b d f B D F)
+        :name "six body 3"
+        :pre (and (<= 0 b 1e5) (<= 0 d 1e5) (<= 0 f 1e5) (<= 0 B 1e5) (<= 0 D 1e5) (<= 0 F 1e5))
+
+        (+ (+ (- (* 3 (pow (- b d) 2)) (* 6 (+ b d))) (* 4 f)) 3))
+
+(FPCore six_body_4 (b d f B D F)
+        :name "six body 4"
+        :pre (and (<= 0 b 1e5) (<= 0 d 1e5) (<= 0 f 1e5) (<= 0 B 1e5) (<= 0 D 1e5) (<= 0 F 1e5))
+
+        (- (* (pow B 2) (pow b 3)) 1))
+
+(FPCore six_body_5 (b d f B D F)
+        :name "six body 5"
+        :pre (and (<= 0 b 1e5) (<= 0 d 1e5) (<= 0 f 1e5) (<= 0 B 1e5) (<= 0 D 1e5) (<= 0 F 1e5))
+
+        (- (* (pow D 2) (pow d 3)) 1))
+
+(FPCore six_body_6 (b d f B D F)
+        :name "six body 6"
+        :pre (and (<= 0 b 1e5) (<= 0 d 1e5) (<= 0 f 1e5) (<= 0 B 1e5) (<= 0 D 1e5) (<= 0 F 1e5))
+
+        (- (* (pow F 2) (pow f 3)) 1))

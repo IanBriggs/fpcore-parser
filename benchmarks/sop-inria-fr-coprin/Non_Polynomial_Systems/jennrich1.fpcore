@@ -1,0 +1,27 @@
+;;  Jennrich1
+;;
+;; Origin: COPRIN, derived from [9]
+;; 2 equations with 2 unknowns
+;;
+;; \begin{eqnarray*} &&3 -(e^{x_1}+e^{x_2})\\ &&6-(e^{2x_1}+e^{2x_2})\\ \end{eqnarray*}
+;;
+;; Range: [-5,5] for all unknowns
+;;
+;; Solving method: HessianSolve,3B
+;; Solutions:: 2 (exact)
+;; Computation time (April 2003):
+;; EVO 410C (1.2GHz) 	0.01s
+
+(FPCore jennrich1_1 (x_1 x_2)
+        :name "jennrich1 1"
+        :cite (More:1981)
+        :pre (and (<= (- 5) x_1 5) (<= (- 5) x_2 5))
+
+        (- 3 (+ (pow e x_1) (pow e x_2))))
+
+(FPCore jennrich1_2 (x_1 x_2)
+        :name "jennrich1 2"
+        :cite (More:1981)
+        :pre (and (<= (- 5) x_1 5) (<= (- 5) x_2 5))
+
+        (- 6 (+ (pow e (* 2 x_1)) (pow e (* 2 x_2)))))

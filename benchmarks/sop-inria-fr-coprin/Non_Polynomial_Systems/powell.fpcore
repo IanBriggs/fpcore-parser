@@ -1,0 +1,26 @@
+;;  Powell
+;;
+;; Origin: [9]
+;;
+;; \begin{eqnarray*} &&10^4 x_1x_2-1\\ &&e^{-1}+e^{-x_2}-1.0001 \end{eqnarray*}
+;;
+;; Ranges: [-100,100] for all unknowns
+;;
+;; Solving method: HessianSolve+HullConsistency+3B
+;; Solutions:: 2 (exact)
+;; Computation time (April 2003):
+;; Evo 410C (1.2Ghz) 	0.01s
+
+(FPCore powell_1 (x_1 x_2)
+        :name "powell 1"
+        :cite (More:1981)
+        :pre (and (<= (- 100) x_1 100) (<= (- 100) x_2 100))
+
+        (- (* (* (pow 10 4) x_1) x_2) 1))
+
+(FPCore powell_2 (x_1 x_2)
+        :name "powell 2"
+        :cite (More:1981)
+        :pre (and (<= (- 100) x_1 100) (<= (- 100) x_2 100))
+
+        (- (+ (pow e (- 1)) (pow e (- x_2))) 1.0001))

@@ -1,0 +1,19 @@
+;;  sci.math.num-analysis97384
+;;
+;; Origin: Article 97384 of sci.math.num-analysis
+;; Modified by COPRIN to scale the unknown
+;;
+;; \begin{displaymath} 2.800000000\times 10^{38} {\frac {{ 2.7}^{- 0.2800000000 ... ...{-67}} {M}^{2}}{M}^{2} \right) }{{M}^{4 }}}- 0.00001900000000 \end{displaymath}
+;;
+;; Ranges: [1e-4,1000]
+;;
+;; Solving method: HessianSolve+3B
+;; Solutions:: 1 (exact)
+;; Computation time (July 2007):
+;; DELL D620 (1.7Ghz) 	0.01s
+
+(FPCore sci_math_num_analysis97384 (M)
+        :name "sci math num analysis97384"
+        :pre (and (<= 1e-4 M 1000))
+
+        (- (/ (* 2.800000000e38 (* (pow 2.7 (* (- 0.2800000000) (pow M 2))) (+ 2.500000000e-33 (* (* 2.300000000e-69 (pow 2.7 (* 2.800000000e-67 (pow M 2)))) (pow M 2))))) (pow M 4)) 0.00001900000000))

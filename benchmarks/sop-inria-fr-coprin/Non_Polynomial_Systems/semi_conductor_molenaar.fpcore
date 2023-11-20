@@ -1,0 +1,51 @@
+;;  Semi-conductor (Molenaar)
+;;
+;; Origin: J. Molenaar, P.W. Hemker: A multigrid approach for the solution of the 2D semiconductor equations. IMPACT Comput. Sci. Eng. 2, No. 3, p. 219-243 (1990).
+;; 6 equations with a=38.683, ni=1.22e10, V=100, DDD=10.e17.
+;;
+;; \begin{eqnarray*} &&eq1=x2\\ &&eq2=x3\\ &&eq3=x5-V\\ &&eq4=x6-V\\ &&eq5=e^{a... ...a*(x1-x2)}-DDD/ni\\ &&eq6=e^{a*(x6-x4)}-e^{a*(x4-x5)}+DDD/ni\\ \end{eqnarray*}
+;;
+;; Ranges: [-400,400]
+;;
+;; Solving method: HessianSolve+HullConsistency+3B
+;; Solutions:: 1 (exact)
+;; Computation time (April 2003):
+;; Sun Blade 	0.16s
+;;
+;; NOTE: these correspond to eq5 and eq6 since eq1 through eq4 are incredibly simple
+
+(FPCore semi_conductor_molenaar_1 (x_1 x_2 x_3 x_4 x_5 x_6)
+        :name "semi conductor molenaar 1"
+        :pre (and (<= (- 400) x_1 400) (<= (- 400) x_2 400) (<= (- 400) x_3 400) (<= (- 400) x_4 400) (<= (- 400) x_5 400) (<= (- 400) x_6 400))
+
+        (let ([a 38.683]) (let ([ni 1.22e10]) (let ([V 100]) (let ([DDD 10.0e17]) x_2)))))
+
+(FPCore semi_conductor_molenaar_2 (x_1 x_2 x_3 x_4 x_5 x_6)
+        :name "semi conductor molenaar 2"
+        :pre (and (<= (- 400) x_1 400) (<= (- 400) x_2 400) (<= (- 400) x_3 400) (<= (- 400) x_4 400) (<= (- 400) x_5 400) (<= (- 400) x_6 400))
+
+        (let ([a 38.683]) (let ([ni 1.22e10]) (let ([V 100]) (let ([DDD 10.0e17]) x_3)))))
+
+(FPCore semi_conductor_molenaar_3 (x_1 x_2 x_3 x_4 x_5 x_6)
+        :name "semi conductor molenaar 3"
+        :pre (and (<= (- 400) x_1 400) (<= (- 400) x_2 400) (<= (- 400) x_3 400) (<= (- 400) x_4 400) (<= (- 400) x_5 400) (<= (- 400) x_6 400))
+
+        (let ([a 38.683]) (let ([ni 1.22e10]) (let ([V 100]) (let ([DDD 10.0e17]) (- x_5 V))))))
+
+(FPCore semi_conductor_molenaar_4 (x_1 x_2 x_3 x_4 x_5 x_6)
+        :name "semi conductor molenaar 4"
+        :pre (and (<= (- 400) x_1 400) (<= (- 400) x_2 400) (<= (- 400) x_3 400) (<= (- 400) x_4 400) (<= (- 400) x_5 400) (<= (- 400) x_6 400))
+
+        (let ([a 38.683]) (let ([ni 1.22e10]) (let ([V 100]) (let ([DDD 10.0e17]) (- x_6 V))))))
+
+(FPCore semi_conductor_molenaar_5 (x_1 x_2 x_3 x_4 x_5 x_6)
+        :name "semi conductor molenaar 5"
+        :pre (and (<= (- 400) x_1 400) (<= (- 400) x_2 400) (<= (- 400) x_3 400) (<= (- 400) x_4 400) (<= (- 400) x_5 400) (<= (- 400) x_6 400))
+
+        (let ([a 38.683]) (let ([ni 1.22e10]) (let ([V 100]) (let ([DDD 10.0e17]) (- (- (pow e (* a (- x_3 x_1))) (pow e (* a (- x_1 x_2)))) (/ DDD ni)))))))
+
+(FPCore semi_conductor_molenaar_6 (x_1 x_2 x_3 x_4 x_5 x_6)
+        :name "semi conductor molenaar 6"
+        :pre (and (<= (- 400) x_1 400) (<= (- 400) x_2 400) (<= (- 400) x_3 400) (<= (- 400) x_4 400) (<= (- 400) x_5 400) (<= (- 400) x_6 400))
+
+        (let ([a 38.683]) (let ([ni 1.22e10]) (let ([V 100]) (let ([DDD 10.0e17]) (+ (- (pow e (* a (- x_6 x_4))) (pow e (* a (- x_4 x_5)))) (/ DDD ni)))))))

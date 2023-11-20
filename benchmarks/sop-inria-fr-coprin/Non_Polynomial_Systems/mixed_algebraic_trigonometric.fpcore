@@ -1,0 +1,32 @@
+;;  Mixed algebraic-trigonometric
+;;
+;; Origin:sci.math.num-analysis
+;;
+;; \begin{eqnarray*} &&-x + y + z + 2 sin(y-z) = 1\\ &&-x + y - z + 2 sin(x-z) = 1\\ &&x + y - z + 2 sin(x-y) = 1\\ \end{eqnarray*}
+;;
+;; Ranges: [-1e8,1e8]
+;;
+;; Solving method: HessianSolve+HullConsistency+3B
+;; Solutions:: 1 (exact)
+;; Computation time:
+;; Sun Blade 	6.85s (April 2003)
+;; DELL D400 (1.7GHz) 	0.1s (May 2004)
+
+(FPCore mixed_algebraic_trigonometric_1 (x y z)
+        :name "mixed algebraic trigonometric 1"
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (+ (+ (+ (- x) y) z) (* 2 (sin (- y z)))) 1))
+
+(FPCore mixed_algebraic_trigonometric_2 (x y z)
+        :name "mixed algebraic trigonometric 2"
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (+ (- (+ (- x) y) z) (* 2 (sin (- x z)))) 1))
+
+(FPCore mixed_algebraic_trigonometric_3 (x y z)
+        :name "mixed algebraic trigonometric 3"
+        :pre (and (<= (- 1e8) x 1e8) (<= (- 1e8) y 1e8) (<= (- 1e8) z 1e8))
+
+        (- (+ (- (+ x y) z) (* 2 (sin (- x y)))) 1))
+

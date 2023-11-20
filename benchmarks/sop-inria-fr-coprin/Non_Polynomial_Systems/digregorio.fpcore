@@ -1,0 +1,33 @@
+;;  DiGregorio
+;;
+;; Origin: Digregorio [3]
+;;
+;; \begin{eqnarray*} &&-1000+\left (10-40 \cos(p)+q\right )^{2}+\left (-40+40 \si... ...(-10-35 \cos(t) \right )^{2}-1225 \left (\sin(t)\right )^{2}=0 \end{eqnarray*}
+;;
+;; Ranges: for $p,t$ [0,$2\pi$], for $q$ [-1000,1000]
+;;
+;; Solving method: GradientSolve+3B
+;; Solutions:: 4 (exact)
+;; Computation time (September 2006):
+;; DELL D400 (1.7Ghz) 	0.55s
+
+(FPCore digregorio_1 (p t q)
+        :name "digregorio 1"
+        :cite (Di-Gregorio:2006)
+        :pre (and (<= 0 p (* 2 pi)) (<= 0 t (* 2 pi)) (<= (- 1000) q 1000))
+
+        (+ (+ (- 1000) (pow (+ (- 10 (* 40 (cos p))) q) 2)) (pow (+ (- 40) (* 40 (sin p))) 2)))
+
+(FPCore digregorio_2 (p t q)
+        :name "digregorio 2"
+        :cite (Di-Gregorio:2006)
+        :pre (and (<= 0 p (* 2 pi)) (<= 0 t (* 2 pi)) (<= (- 1000) q 1000))
+
+        (- (- (+ (pow (- 20 (* 40 (cos p))) 2) (* 1600 (pow (sin p) 2))) (pow (- 20 (* 35 (cos t))) 2)) (* 1225 (pow (sin t) 2))))
+
+(FPCore digregorio_3 (p t q)
+        :name "digregorio 3"
+        :cite (Di-Gregorio:2006)
+        :pre (and (<= 0 p (* 2 pi)) (<= 0 t (* 2 pi)) (<= (- 1000) q 1000))
+
+        (- (- (+ 1600 (pow (- 10 q) 2)) (pow (- (- 10) (* 35 (cos t))) 2)) (* 1225 (pow (sin t) 2))))

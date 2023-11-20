@@ -1,0 +1,24 @@
+;;  sci.math.num-analysis92191
+;;
+;; Origin: Article 92191 of sci.math.num-analysis
+;;
+;; \begin{eqnarray*} && 0.7 {e^{-12 b}}\cos(12 a)+ 0.3 {e^{-13 b}}\cos(13 a)-... ...&& 0.7 {e^{-12 b}}\sin(12 a)+ 0.3 {e^{-13 b}}\sin(13 a)\\ \end{eqnarray*}
+;;
+;; Ranges: [0,$2\Pi$],[-10,30]
+;;
+;; Solving method: HessianSolve or GradientSolve+3B
+;; Solutions:: 14 (exact)
+;; Computation time (September 2006):
+;; DELL D400 (1.7GHz) 	21.3s (GradientSolve), 68.15s (HessianSolve)
+
+(FPCore sci_math_num_analysis92191_1 (a b)
+        :name "sci math num analysis92191 1"
+        :pre (and (<= 0 a (* 2 pi)) (<= (- 10) b 30))
+
+        (- (+ (* (* 0.7 (pow e (* (- 12) b))) (cos (* 12 a))) (* (* 0.3 (pow e (* (- 13) b))) (cos (* 13 a)))) 32))
+
+(FPCore sci_math_num_analysis92191_2 (a b)
+        :name "sci math num analysis92191 2"
+        :pre (and (<= 0 a (* 2 pi)) (<= (- 10) b 30))
+
+        (+ (* (* 0.7 (pow e (* (- 12) b))) (sin (* 12 a))) (* (* 0.3 (pow e (* (- 13) b))) (sin (* 13 a)))))

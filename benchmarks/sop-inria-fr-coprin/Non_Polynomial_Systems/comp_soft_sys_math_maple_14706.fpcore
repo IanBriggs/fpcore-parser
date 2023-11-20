@@ -1,0 +1,24 @@
+;;  comp.soft-sys.math.maple-14706
+;;
+;; Origin: Article 14706 of comp.soft-sys.math.maple
+;;
+;; \begin{eqnarray*} &&-sin(x)*cos(y)-2*cos(x)*sin(y)\\ &&-cos(x)*sin(y)-2*sin(x)*cos(y) \end{eqnarray*}
+;;
+;; Ranges: [0,2Pi]
+;;
+;; Solving method: HessianSolve+3B
+;; Solutions:: 13 (exact)
+;; Computation time (November 2005):
+;; Sun Blade 	11.36s
+
+(FPCore comp_soft_sys_math_maple_14706_1 (x y)
+        :name "comp soft sys math maple 14706 1"
+        :pre (and (<= 0 x (* 2 pi)) (<= 0 y (* 2 pi)))
+
+        (- (* (- (sin x)) (cos y)) (* (* 2 (cos x)) (sin y))))
+
+(FPCore comp_soft_sys_math_maple_14706_2 (x y)
+        :name "comp soft sys math maple 14706 2"
+        :pre (and (<= 0 x (* 2 pi)) (<= 0 y (* 2 pi)))
+
+        (- (* (- (cos x)) (sin y)) (* (* 2 (sin x)) (cos y))))

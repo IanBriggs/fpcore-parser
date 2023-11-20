@@ -1,0 +1,70 @@
+;;  Algebraic: Butcher8
+;;
+;; Origin: COCONUT
+;; 8 equations defined by:
+;;
+;; b1 + b2 + b3 - (a+b)=0
+;; b2*c2 + b3*c3 - (1/2 + 1/2*b + b^2 - a*b)=0
+;; b2*c2^2 + b3*c3^2 - (a*(1/3+b^2) - 4/3*b - b^2 - b^3)=0
+;; b3*a32*c2 - (a*(1/6 + 1/2*b + b^2) - 2/3*b - b^2 - b^3)=0
+;; b2*c2*83 + b3*c3^3 - (1/4 + 1/4*b + 5/2*b^2 + 3/2*b^3 + b^4 - a*(b+b^3))=0
+;; b3*c3*a32*c2 - (1/8 + 3/8*b + 7/4*b^2 + 3/2*b^3 + b^4 - a*(1/2*b + 1/2*b^2 + b^3))=0
+;; b3*a32*c2^2 - (1/12 + 1/12*b + 7/6*b^2 + 3/2*b^3 + b^4- a*(2/3*b + b^2 + b^3))=0
+;; 1/24 + 7/24*b + 13/12*b^2 + 3/2*b^3 + b^4 - a*(1/3*b + b^2 + b^3)=0
+;;
+;; Ranges: for all unknowns [-50,50]
+;;
+;; If a = -1, b =-1,b1 =-2, b2=b3=0, then all equations are verified whatever are c2,c3,a32. Hence we check all solutions for a in [-50,-1.1] and [-0.9,50].
+;;
+;; Solving method: HessianSolve+HullConsistency+ 3B +GlobalConsistencyTaylor+ special 2B and IntervalNewton
+;; Solutions:: 3 for a in [-50,-1.1], 3 for a in [-0.9,50] (exact)
+;; Computation time (May 2007):
+;; Dell 620 (1.7Ghz) 	58mn (a in [-50,-1.1]), 10 hours (a in [-0.9,50])
+
+(FPCore algebraic_butcher8_1 (a b b1 b2 b3 c2 c3 a32)
+        :name "algebraic butcher8 1"
+        :pre (and (<= (- 50) a 50) (<= (- 50) b 50) (<= (- 50) b1 50) (<= (- 50) b2 50) (<= (- 50) b3 50) (<= (- 50) c2 50) (<= (- 50) c3 50) (<= (- 50) a32 50))
+
+        (- (+ (+ b1 b2) b3) (+ a b)))
+
+(FPCore algebraic_butcher8_2 (a b b1 b2 b3 c2 c3 a32)
+        :name "algebraic butcher8 2"
+        :pre (and (<= (- 50) a 50) (<= (- 50) b 50) (<= (- 50) b1 50) (<= (- 50) b2 50) (<= (- 50) b3 50) (<= (- 50) c2 50) (<= (- 50) c3 50) (<= (- 50) a32 50))
+
+        (- (+ (* b2 c2) (* b3 c3)) (- (+ (+ (/ 1 2) (* (/ 1 2) b)) (pow b 2)) (* a b))))
+
+(FPCore algebraic_butcher8_3 (a b b1 b2 b3 c2 c3 a32)
+        :name "algebraic butcher8 3"
+        :pre (and (<= (- 50) a 50) (<= (- 50) b 50) (<= (- 50) b1 50) (<= (- 50) b2 50) (<= (- 50) b3 50) (<= (- 50) c2 50) (<= (- 50) c3 50) (<= (- 50) a32 50))
+
+        (- (+ (* b2 (pow c2 2)) (* b3 (pow c3 2))) (- (- (- (* a (+ (/ 1 3) (pow b 2))) (* (/ 4 3) b)) (pow b 2)) (pow b 3))))
+
+(FPCore algebraic_butcher8_4 (a b b1 b2 b3 c2 c3 a32)
+        :name "algebraic butcher8 4"
+        :pre (and (<= (- 50) a 50) (<= (- 50) b 50) (<= (- 50) b1 50) (<= (- 50) b2 50) (<= (- 50) b3 50) (<= (- 50) c2 50) (<= (- 50) c3 50) (<= (- 50) a32 50))
+
+        (- (* (* b3 a32) c2) (- (- (- (* a (+ (+ (/ 1 6) (* (/ 1 2) b)) (pow b 2))) (* (/ 2 3) b)) (pow b 2)) (pow b 3))))
+
+(FPCore algebraic_butcher8_5 (a b b1 b2 b3 c2 c3 a32)
+        :name "algebraic butcher8 5"
+        :pre (and (<= (- 50) a 50) (<= (- 50) b 50) (<= (- 50) b1 50) (<= (- 50) b2 50) (<= (- 50) b3 50) (<= (- 50) c2 50) (<= (- 50) c3 50) (<= (- 50) a32 50))
+
+        (- (+ (* (* b2 c2) 83) (* b3 (pow c3 3))) (- (+ (+ (+ (+ (/ 1 4) (* (/ 1 4) b)) (* (/ 5 2) (pow b 2))) (* (/ 3 2) (pow b 3))) (pow b 4)) (* a (+ b (pow b 3))))))
+
+(FPCore algebraic_butcher8_6 (a b b1 b2 b3 c2 c3 a32)
+        :name "algebraic butcher8 6"
+        :pre (and (<= (- 50) a 50) (<= (- 50) b 50) (<= (- 50) b1 50) (<= (- 50) b2 50) (<= (- 50) b3 50) (<= (- 50) c2 50) (<= (- 50) c3 50) (<= (- 50) a32 50))
+
+        (- (* (* (* b3 c3) a32) c2) (- (+ (+ (+ (+ (/ 1 8) (* (/ 3 8) b)) (* (/ 7 4) (pow b 2))) (* (/ 3 2) (pow b 3))) (pow b 4)) (* a (+ (+ (* (/ 1 2) b) (* (/ 1 2) (pow b 2))) (pow b 3))))))
+
+(FPCore algebraic_butcher8_7 (a b b1 b2 b3 c2 c3 a32)
+        :name "algebraic butcher8 7"
+        :pre (and (<= (- 50) a 50) (<= (- 50) b 50) (<= (- 50) b1 50) (<= (- 50) b2 50) (<= (- 50) b3 50) (<= (- 50) c2 50) (<= (- 50) c3 50) (<= (- 50) a32 50))
+
+        (- (* (* b3 a32) (pow c2 2)) (- (+ (+ (+ (+ (/ 1 12) (* (/ 1 12) b)) (* (/ 7 6) (pow b 2))) (* (/ 3 2) (pow b 3))) (pow b 4)) (* a (+ (+ (* (/ 2 3) b) (pow b 2)) (pow b 3))))))
+
+(FPCore algebraic_butcher8_8 (a b b1 b2 b3 c2 c3 a32)
+        :name "algebraic butcher8 8"
+        :pre (and (<= (- 50) a 50) (<= (- 50) b 50) (<= (- 50) b1 50) (<= (- 50) b2 50) (<= (- 50) b3 50) (<= (- 50) c2 50) (<= (- 50) c3 50) (<= (- 50) a32 50))
+
+        (- (+ (+ (+ (+ (/ 1 24) (* (/ 7 24) b)) (* (/ 13 12) (pow b 2))) (* (/ 3 2) (pow b 3))) (pow b 4)) (* a (+ (+ (* (/ 1 3) b) (pow b 2)) (pow b 3)))))

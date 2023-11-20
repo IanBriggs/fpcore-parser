@@ -1,0 +1,24 @@
+;;  Helical Valley
+;;
+;; Origin:
+;;
+;; \begin{eqnarray*} &&10000x_1x_2-1\\ && e^{-x_1}+ e^{-x_2}-1.0001 \end{eqnarray*}
+;;
+;; Range: x1 in [-1e8,1e8], x2 in [-1e8,1e8]
+;;
+;; Solving method: GradientSolve,3B
+;; Solutions:: 1 (exact)
+;; Computation time (April 2003):
+;; DELL D620 (1.7GHz) 	0.02s
+
+(FPCore helical_valley_1 (x_1 x_2)
+        :name "helical valley 1"
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8))
+
+        (- (* (* 10000 x_1) x_2) 1))
+
+(FPCore helical_valley_2 (x_1 x_2)
+        :name "helical valley 2"
+        :pre (and (<= (- 1e8) x_1 1e8) (<= (- 1e8) x_2 1e8))
+
+        (- (+ (pow e (- x_1)) (pow e (- x_2))) 1.0001))

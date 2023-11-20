@@ -1,0 +1,31 @@
+;;  AOL-cosh1
+;;
+;; Origin:AOL
+;; 3 equations
+;;
+;; \begin{eqnarray*} x * cosh( ( 1 / x ) + y) + z - 1=0\\ x * cosh( ( 2 / x ) + y) + z - 4=0\\ x * cosh( ( 3 / x ) + y) + z - 9=0 \end{eqnarray*}
+;;
+;; Ranges: [-100,100]
+;;
+;; Solving method: GradientSolve+HullConsistency+3B
+;; Solutions:: 1 (exact)
+;; Computation time (October 2004):
+;; DELL D400 (1.7GHz) 	5.96s
+
+(FPCore aol_cosh1_1 (x y z)
+        :name "aol cosh1 1"
+        :pre (and (<= (- 100) x 100) (<= (- 100) y 100) (<= (- 100) z 100))
+
+        (- (+ (* x (cosh (+ (/ 1 x) y))) z) 1))
+
+(FPCore aol_cosh1_2 (x y z)
+        :name "aol cosh1 2"
+        :pre (and (<= (- 100) x 100) (<= (- 100) y 100) (<= (- 100) z 100))
+
+        (- (+ (* x (cosh (+ (/ 2 x) y))) z) 4))
+
+(FPCore aol_cosh1_3 (x y z)
+        :name "aol cosh1 3"
+        :pre (and (<= (- 100) x 100) (<= (- 100) y 100) (<= (- 100) z 100))
+
+        (- (+ (* x (cosh (+ (/ 3 x) y))) z) 9))

@@ -1,0 +1,19 @@
+;;  Six hump camel
+;; Origin: [5]
+;; Minimize
+;;
+;; \begin{displaymath} \left (4- 2.1 {{\it x1}}^{2}+ {{\it x1}}^{4}/3 \right ){{\i... ...} {\it x2}+\left (-4+4 {{\it x2}}^{2} \right ){{\it x2}}^{2} \end{displaymath}
+;;
+;; for $x1$ in [-3,3], $x2$ in [-2,2]
+;;
+;; Method: MinimizeGradient
+;; Solutions:: 1 (approximate)
+;; Computation time (September 2006):
+;; DELL D400 (1.7Ghz) 	0.96s
+
+(FPCore six_hump_camel (x_1 x_2)
+        :name "six hump camel"
+        :cite (Myatt:2004)
+        :pre (and (<= (- 3) x_1 3) (<= (- 2) x_2 2))
+
+        (+ (+ (* (+ (- 4 (* 2.1 (pow x_1 2))) (/ (pow x_1 4) 3)) (pow x_1 2)) (* x_1 x_2)) (* (+ (- 4) (* 4 (pow x_2 2))) (pow x_2 2))))

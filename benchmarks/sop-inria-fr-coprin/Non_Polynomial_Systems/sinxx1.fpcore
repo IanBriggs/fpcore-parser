@@ -1,0 +1,18 @@
+;;  Sinxx1
+;;
+;; Origin: COPRIN
+;;
+;; \begin{displaymath} (3x^3-5x+2)sin(x)^2+(x^3+5x)sin(x)-2x^2-x-2 \end{displaymath}
+;;
+;; Range: [-10,10]
+;;
+;; Solving method: GradientSolve,HullConsistency
+;; Solutions:: 9 (exact)
+;; Computation time (April 2003):
+;; Sun Blade 	0.062s
+
+(FPCore sinxx1 (x)
+        :name "sinxx1"
+        :pre (and (<= (- 10) x 10))
+
+        (- (- (- (+ (* (+ (- (* 3 (pow x 3)) (* 5 x)) 2) (pow (sin x) 2)) (* (+ (pow x 3) (* 5 x)) (sin x))) (* 2 (pow x 2))) x) 2))

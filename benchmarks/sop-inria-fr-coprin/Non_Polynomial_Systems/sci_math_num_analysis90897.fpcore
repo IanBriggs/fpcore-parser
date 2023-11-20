@@ -1,0 +1,24 @@
+;;  sci.math.num-analysis90897
+;;
+;; Origin: Article 90897 of sci.math.num-analysis
+;;
+;; \begin{eqnarray*} &&x_1- 0.0000179297550 x_2^{2}=0\\ && x_2-\frac{90}{1-x_1}=0\\ \end{eqnarray*}
+;;
+;; Ranges: [-1000,0.99],[-1e8,1e8]
+;;
+;; Solving method: HessianSolve+3B
+;; Solutions:: 2 (exact)
+;; Computation time (June 2006):
+;; Sun Blade 	0.13s
+
+(FPCore sci_math_num_analysis90897_1 (x_1 x_2)
+        :name "sci math num analysis90897 1"
+        :pre (and (<= (- 1000) x_1 0.99) (<= (- 1e8) x_2 1e8))
+
+        (- x_1v (* 0.0000179297550 (pow x_2 2))))
+
+(FPCore sci_math_num_analysis90897_2 (x_1 x_2)
+        :name "sci math num analysis90897 2"
+        :pre (and (<= (- 1000) x_1 0.99) (<= (- 1e8) x_2 1e8))
+
+        (- x_2 (/ 90 (- 1 x_1))))
