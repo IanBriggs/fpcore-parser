@@ -21,9 +21,9 @@
 # String conversion
 #
 
-from fpcore.base_ast import (ASTNode, Array, Cast, Digits, Expr, Atom, FPCore,
-                             For, ForStar, If, Let, LetStar, Operation, Tensor,
-                             TensorStar, Variable, While, WhileStar)
+from fpcore.base_ast import (Array, ASTNode, Atom, Cast, Digits, Expr, For,
+                             ForStar, FPCore, If, Let, LetStar, Operation,
+                             Tensor, TensorStar, Variable, While, WhileStar)
 from utils import add_method
 
 
@@ -176,7 +176,7 @@ def pretty_str(self: FPCore) -> str:
     prop = "\n        ".join([(f':{sym} "{data}"'
                              if type(data) == str
                              else f':{sym} {data}')
-                            for sym, data in self.properties.items()])
+                              for sym, data in self.properties.items()])
     return (f"(FPCore {name_str}({arguments_str})\n"
             f"        {prop}\n"
             "\n"

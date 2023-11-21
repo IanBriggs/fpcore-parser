@@ -21,17 +21,20 @@
 # String conversion
 #
 
-from fpcore.base_ast import (ASTNode, Array, Cast, Digits, Expr, Atom, FPCore,
-                             For, ForStar, If, Let, LetStar, Operation, Tensor,
-                             TensorStar, Variable, While, WhileStar)
+from fpcore.base_ast import (Array, ASTNode, Atom, Cast, Digits, Expr, For,
+                             ForStar, FPCore, If, Let, LetStar, Operation,
+                             Tensor, TensorStar, Variable, While, WhileStar)
 from utils import add_method
+
 
 def binding_str(bindings: dict) -> str:
     return " ".join([f"[{k} {v}]" for k, v in bindings.items()])
 
+
 def update_binding_str(update_bindings: dict) -> str:
     return " ".join([f"[{k} {i} {u}]" for k, (i, u)
                      in update_bindings.items()])
+
 
 def properties_str(expr: Expr, inner: str) -> str:
     if len(expr.properties) == 0:
@@ -173,7 +176,7 @@ def __str__(self: FPCore) -> str:
     prop = " ".join([(f':{sym} "{data}"'
                      if type(data) == str
                      else f':{sym} {data}')
-                     for sym,data in self.properties.items()])
+                     for sym, data in self.properties.items()])
     return "(FPCore {}({}) {} {})".format(name_str,
                                           arguments_str,
                                           prop,

@@ -21,25 +21,28 @@
 #   based on order in the file (e.g. HEXNUM must come before DECNUM)
 # * changes from what is given on the FPBench website are noted with the word
 #   "Modification"
-# * `pylance` freaks out since sly messes with the python ast, disable with the
-#   next line
+# * `pylance` freaks out since sly messes with the python ast, disable this
+#   with the next line
 # pyright: reportUndefinedVariable=false
 #
 
 import sys
+from typing import Dict
 
 from sly import Lexer
-from utils import Logger, Timer
 
-logger = Logger(level=Logger.EXTRA, color=Logger.blue)
+from utils import Timer
+
 timer = Timer()
 
 # As FPCores are parsed named ones are added to this dict.
-# This means user's can call functions, but only after defining them
+# It maps FPCore names to FPCore base_ast.FPCore objects
 ADDED_OPERATIONS = dict()
 
 
 class FPCoreLexError(Exception):
+    """Raised when lexing fails"""
+
     def __init__(self, msg, tok):
         self.msg = msg
         self.tok = tok
@@ -48,13 +51,13 @@ class FPCoreLexError(Exception):
 class FPCoreLexer(Lexer):
     tokens = {
         # Delimiters
-        LP, # left parenthesis
-        RP, # right parenthesis
-        LB, # left square bracket
-        RB, # right square bracket
+        LP,  # left parenthesis
+        RP,  # right parenthesis
+        LB,  # left square bracket
+        RB,  # right square bracket
         COLON,
         BANG,
-        HASH, # Modification: hash is short for setting precision to integer
+        HASH,  # Modification: hash is short for setting precision to integer
 
         # Literals
         RATIONAL,
@@ -104,41 +107,41 @@ class FPCoreLexer(Lexer):
     # From https://fpbench.org/spec/fpcore-2.0.html#g:rational
     # This regex allows leading zeros for both numerator and denominator
     RATIONAL = (
-        r"[+-]?"             # an optional plus (+) or minus (-) sign
-        r"[0-9]+"            # any sequence of decimal digits
-        r"/"                 # a slash
-        r"[0-9]*[1-9][0-9]*" # a nonzero sequence of decimal digits
+        r"[+-]?"              # an optional plus (+) or minus (-) sign
+        r"[0-9]+"             # any sequence of decimal digits
+        r"/"                  # a slash
+        r"[0-9]*[1-9][0-9]*"  # a nonzero sequence of decimal digits
     )
 
     # From https://fpbench.org/spec/fpcore-2.0.html#g:hexnum
     #     Modification: to be used in a case sensitive environment
     HEXNUM = (
-        r"[+-]?"             # an optional plus (+) or minus (-) sign
-        r"0[xX]"             # 0x or 0X
-        r"("                 # followed by either
-        r"[0-9a-fA-F]+"      #     hexadecimal digits
-        r"(\.[0-9a-fA-F]+)?" #     optional period and more hexadecimal digits
-        r"|"                 #   or
-        r"\.[0-9a-fA-F]+)"   #     period and hexadecimal digits
-        r"("                 # followed by optional
-        r"[pP]"              #     p or P
-        r"[-+]?"             #     an optional plus (+) or minus (-) sign
-        r"[0-9]+)?"          #     decimal digits
+        r"[+-]?"              # an optional plus (+) or minus (-) sign
+        r"0[xX]"              # 0x or 0X
+        r"("                  # followed by either
+        r"[0-9a-fA-F]+"       # ... hexadecimal digits
+        r"(\.[0-9a-fA-F]+)?"  # ... optional period and more hexadecimal digits
+        r"|"                  # . or
+        r"\.[0-9a-fA-F]+)"    # ... period and hexadecimal digits
+        r"("                  # followed by optional
+        r"[pP]"               # ... p or P
+        r"[-+]?"              # ... an optional plus (+) or minus (-) sign
+        r"[0-9]+)?"           # ... decimal digits
     )
 
     # From https://fpbench.org/spec/fpcore-2.0.html#g:decnum
     #     Modification: to be used in a case sensitive environment
     DECNUM = (
-        r"[-+]?"       # an optional plus (+) or minus (-) sign
-        r"("           # followed by either
-        r"[0-9]+"      #     decimal digits
-        r"(\.[0-9]+)?" #     optional period and more decimal digits
-        r"|"           #   or
-        r"\.[0-9]+)"   #     period and decimal digits
-        r"("           # followed by optional
-        r"[eE]"        #     e or E
-        r"[-+]?"       #     an optional plus (+) or minus (-) sign
-        r"[0-9]+)?"    #     decimal digits
+        r"[-+]?"        # an optional plus (+) or minus (-) sign
+        r"("            # followed by either
+        r"[0-9]+"       # ... decimal digits
+        r"(\.[0-9]+)?"  # ... optional period and more decimal digits
+        r"|"            # . or
+        r"\.[0-9]+)"    # ... period and decimal digits
+        r"("            # followed by optional
+        r"[eE]"         # ... e or E
+        r"[-+]?"        # ... an optional plus (+) or minus (-) sign
+        r"[0-9]+)?"     # ... decimal digits
     )
 
     # From https://fpbench.org/spec/fpcore-2.0.html#g:string
@@ -153,8 +156,8 @@ class FPCoreLexer(Lexer):
     # From https://fpbench.org/spec/fpcore-2.0.html#g:symbol
     #   Modification: added α-ωΑ-Ω
     SYMBOL = (
-        r"[α-ωΑ-Ωa-zA-Z~!@$%^&*_\-+=<>.?/:]"     # non-digit
-        r"[α-ωΑ-Ωa-zA-Z0-9~!@$%^&*_\-+=<>.?/:]*" # zero or more of any
+        r"[α-ωΑ-Ωa-zA-Z~!@$%^&*_\-+=<>.?/:]"      # non-digit
+        r"[α-ωΑ-Ωa-zA-Z0-9~!@$%^&*_\-+=<>.?/:]*"  # zero or more of any
     )
 
     # Since SYMBOL matches all keywords we need to do token remapping.
@@ -250,17 +253,12 @@ _lexer = FPCoreLexer()
 
 def lex(text):
     """Tokenize input text as FPCore"""
-    try:
-        timer.start()
+    with timer:
         lexed = _lexer.tokenize(text)
-    finally:
-        timer.stop()
     return lexed
 
 
 def main(argv):
-    logger.set_log_level(Logger.EXTRA)
-
     if len(argv) == 1:
         text = sys.stdin.read()
     elif len(argv) == 2:
@@ -275,12 +273,14 @@ def main(argv):
     numbered = "\n".join(fmt.format(num+1, line) for num, line
                          in enumerate(text.splitlines()))
 
-    logger.blog("Input text", numbered)
+    print("Input text:")
+    print(f"\n{numbered}\n")
 
+    print("{:14} {}".format("Type", "Value"))
     for token in lex(text):
-        logger("{:14} '{}'", token.type, token.value)
+        print("{:14} '{}'".format(token.type, token.value))
 
-    logger("Lexing time: {:.6f} ms", timer.elapsed_time() * 1000)
+    print("Lexing time: {:.6f} ms".format(timer.elapsed_time_ms()))
 
 
 if __name__ == "__main__":
@@ -289,6 +289,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("")
         print("Goodbye")
-        return_code = 130 # meaning "Script terminated by Control-C"
+        return_code = 130  # meaning "Script terminated by Control-C"
 
     sys.exit(return_code)

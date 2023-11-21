@@ -21,21 +21,25 @@
 # String conversion
 #
 
-from fpcore.base_ast import (ASTNode, Array, Atom, Cast, Digits, Expr,
-                             FPCore, For, If, Let, Operation, Tensor, TensorStar, Variable, While)
+from fpcore.base_ast import (Array, ASTNode, Atom, Cast, Digits, Expr, For,
+                             FPCore, If, Let, Operation, Tensor, TensorStar,
+                             Variable, While)
 from utils import add_method
 
 
 def binding_repr(bindings: dict) -> str:
     return ", ".join([f"{repr(k)}: {repr(v)}" for k, v in bindings.items()])
 
+
 def update_binding_repr(update_bindings: dict) -> str:
     return ", ".join([f"{repr(k)}: ({repr(i)}, {repr(u)})" for k, (i, u)
-                            in update_bindings.items()])
+                      in update_bindings.items()])
+
 
 def auto_class_repr(node: ASTNode, args: str) -> str:
     class_name = type(node).__name__
     return f"{class_name}({args})"
+
 
 def auto_properties_repr(expr: Expr, args: str) -> str:
     base = auto_class_repr(expr, args)
@@ -144,7 +148,7 @@ def __repr__(self: FPCore) -> str:
     props = [f"{repr(k)}: {repr(v)}" for k, v in self.properties.items()]
     properties_repr = "{" + ", ".join(props) + "}"
     args = "{}, [{}], {}, {}".format(repr(self.operation_name),
-                                       arguments_repr,
-                                       properties_repr,
-                                       repr(self.body))
+                                     arguments_repr,
+                                     properties_repr,
+                                     repr(self.body))
     return auto_class_repr(self, args)

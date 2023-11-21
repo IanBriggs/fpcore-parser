@@ -24,10 +24,7 @@
 
 
 from fpcore.base_ast import ASTNode, FPCore
-from utils import add_method, Logger
-
-
-logger = Logger()
+from utils import add_method
 
 
 @add_method(ASTNode)
@@ -58,4 +55,3 @@ def extract_name(self: FPCore) -> str:
         logger.warning("Using '{}'", name)
 
     return name
-

@@ -17,7 +17,7 @@
 # The parser
 #
 # Notes:
-# * to get the CNF you can run `grep "##" parser.py | sed "s|.*##||g"`
+# * to get the CNF you can run `grep "# cnf" parser.py | sed "s|.*# cnf||g"`
 # * the spec doesn't clearly differentiate between lexer tokens and parse rules
 #   everything looks like parse rules, so more specificity is presented here
 #    + in CNF strings:
@@ -29,25 +29,25 @@
 #      - some tokens are from just literals and so the tokens are used
 # * changes from what is given on the FPBench website are noted with the word
 #   "Modification"
-# * `pylance` freaks out since sly messes with the python ast, disable with the
-#   next line
+# * `pylance` freaks out since sly messes with the python ast, disable this
+#   with the next line
 # pyright: reportUndefinedVariable=false
 #
 
 import sys
 
 from sly import Parser
-from utils import Logger, Timer
 
 import fpcore.base_ast as base_ast
 import fpcore.lexer as fpcore_lexer
+from utils import Timer
 
-
-logger = Logger(level=Logger.EXTRA, color=Logger.cyan)
 timer = Timer()
 
 
 class FPCoreParseError(Exception):
+    """Raised when parsing fails"""
+
     def __init__(self, msg, p=None):
         self.msg = msg
         self.p = p
@@ -57,73 +57,73 @@ class FPCoreParser(Parser):
     tokens = fpcore_lexer.FPCoreLexer.tokens | {"ADDED_OPERATION"}
 
     # Modification: add <fpcores> to allow multiple fpcore items
-    ## fpcores :=
-    ##     | <fpcore>+
+    # cfn fpcores :=
+    # cfn     | <fpcore>+
     @_("fpcore { fpcore }")
     def fpcores(self, p):
         return (p.fpcore0, *p.fpcore1)
 
     # Modification: split out <signature>
-    ## fpcore :=
-    ##     | ( FPCore <signature> <property>* <expr> )
+    # cfn fpcore :=
+    # cfn     | ( FPCore <signature> <property>* <expr> )
     @_("LP FPCORE signature { property } expr RP")
     def fpcore(self, p):
         name = p.signature[0]
         args = p.signature[1]
-        prop = {k:v for k,v in p.property}
+        prop = {k: v for k, v in p.property}
         fpc = base_ast.FPCore(name, args, prop, p.expr)
         # Add operation here now that there is a body for the FPCore
         if name is not None:
             fpcore_lexer.ADDED_OPERATIONS[name] = fpc
         return fpc
 
-     ## signature :=
-    ##      | {symbol}? (<argument>*)
+    # cfn signature :=
+    # cfn      | {symbol}? (<argument>*)
     @_("[ SYMBOL ] LP { argument } RP")
     def signature(self, p):
         name = p[0][0]
         args = p.argument
         return (name, args)
 
-    ## dimension :=
-    ##     | <variable>
-    ##     | <number>
+    # cfn dimension :=
+    # cfn     | <variable>
+    # cfn     | <number>
     @_("variable",
        "number")
     def dimension(self, p):
         return p[0]
 
-    ## argument :=
-    ##     | <variable>
+    # cfn argument :=
+    # cfn     | <variable>
     @_("variable")
     def argument(self, p):
         return p[0]
 
-    ##     | ( <variable> <dimension>+ )
+    # cfn     | ( <variable> <dimension>+ )
     @_("LP variable dimension { dimension } RP")
     def argument(self, p):
         return p.variable.set_dimension((p.dimension0, *p.dimension1))
 
-    ##     | ( ! <property>* <variable> <dimension>* )
+    # cfn     | ( ! <property>* <variable> <dimension>* )
     @_("LP BANG { property } variable { dimension } RP")
     def argument(self, p):
         if len(p.property) > 0:
-            prop = {k:v for k,v in p.property}
+            prop = {k: v for k, v in p.property}
             p.variable.add_properties(prop)
         if len(p.dimension) > 0:
             p.variable.set_dimension(p.dimension)
         return p.variable
 
     # Modification: split out many <expr> as their own rules
-    ## expr :=
-    ##     | <number>
-    ##     | <variable>
-    ##     | <operation>
-    ##     | <if_expr>
-    ##     | <let_expr>
-    ##     | <while_expr>
-    ##     | <for_expr>
-    ##     | <tensor_expr>
+    # cfn expr :=
+    # cfn     | <number>
+    # cfn     | <variable>
+    # cfn     | <operation>
+    # cfn     | <if_expr>
+    # cfn     | <let_expr>
+    # cfn     | <while_expr>
+    # cfn     | <for_expr>
+    # cfn     | <tensor_expr>
     @_("number",
        "variable",
        "operation",
@@ -135,61 +135,61 @@ class FPCoreParser(Parser):
     def expr(self, p):
         return p[0]
 
-    ##     | {constant}
+    # cfn     | {constant}
     @_("CONSTANT")
     def expr(self, p):
         return base_ast.Constant(p[0])
 
-    ##     | ( cast <expr> )
+    # cfn     | ( cast <expr> )
     @_("LP CAST expr RP")
     def expr(self, p):
         return base_ast.Cast(p.expr)
 
-    ##     | ( array <expr>* )
+    # cfn     | ( array <expr>* )
     @_("LP ARRAY { expr } RP")
     def expr(self, p):
         return base_ast.Array(p.expr)
 
-    ##     | ( ! <property>* <expr> )
+    # cfn     | ( ! <property>* <expr> )
     @_("LP BANG { property } expr RP")
     def expr(self, p):
         if len(p.property) > 0:
-            prop = {k:v for k,v in p.property}
+            prop = {k: v for k, v in p.property}
             p.expr.add_properties(prop)
         return p.expr
 
     # Modification: hash is short for setting precision to integer
-    ##     | ( # <expr> )
+    # cfn     | ( # <expr> )
     @_("LP HASH expr RP")
     def expr(self, p):
         p.expr.add_properties({"precision": "integer"})
         return p.expr
 
     # number :=
-    ##     | {rational}
+    # cfn     | {rational}
     @_("RATIONAL")
     def number(self, p):
         return base_ast.Rational(p[0])
 
-    ##     | {decnum}
+    # cfn     | {decnum}
     @_("DECNUM")
     def number(self, p):
         return base_ast.Decnum(p[0])
 
-    ##     | {hexnum}
+    # cfn     | {hexnum}
     @_("HEXNUM")
     def number(self, p):
         return base_ast.Hexnum(p[0])
 
-    ##     | ( digits {decnum} {decnum} {decnum} )
+    # cfn     | ( digits {decnum} {decnum} {decnum} )
     @_("LP DIGITS DECNUM DECNUM DECNUM RP")
     def number(self, p):
         return base_ast.Digits(p[2], p[3], p[4])
 
     # Modification: allow {operation} in <property>
-    ## property :=
-    ##     | : {symbol} <data>
-    ##     | : {operation} <data>
+    # cfn property :=
+    # cfn     | : {symbol} <data>
+    # cfn     | : {operation} <data>
     @_("COLON SYMBOL data",
        "COLON OPERATION data")
     def property(self, p):
@@ -199,14 +199,14 @@ class FPCoreParser(Parser):
     # Modification: allow <let_expr> in <data>
     # Modification: allow <binding> in <data>
     # Modification: allow <if_expr> in <data>
-    ## data :=
-    ##     | {symbol}
-    ##     | <number>
-    ##     | {string}
-    ##     | <operation>
-    ##     | <let_expr>
-    ##     | <binding>
-    ##     | <if_expr>
+    # cfn data :=
+    # cfn     | {symbol}
+    # cfn     | <number>
+    # cfn     | {string}
+    # cfn     | <operation>
+    # cfn     | <let_expr>
+    # cfn     | <binding>
+    # cfn     | <if_expr>
     @_("SYMBOL",
        "number",
        "STRING",
@@ -217,7 +217,7 @@ class FPCoreParser(Parser):
     def data(self, p):
         return p[0]
 
-    ##     | ( <data>* )
+    # cfn     | ( <data>* )
     @_("LP { data } RP")
     def data(self, p):
         return p.data
@@ -225,92 +225,92 @@ class FPCoreParser(Parser):
     # Modification: change + to *, so zero argument operations can be used
     # Modification: add <added_operation>, so we can define and call FPCores
     #               as operations
-    ## operation :=
-    ##     | ( {operation} <expr>* )
-    ##     | ( {added_operation} <expr>* )
+    # cfn operation :=
+    # cfn     | ( {operation} <expr>* )
+    # cfn     | ( {added_operation} <expr>* )
     @_("LP OPERATION { expr } RP",
        "LP ADDED_OPERATION { expr } RP")
     def operation(self, p):
         return base_ast.Operation(p[1], *p.expr)
 
-    ## if_expr :=
-    ##     | ( if <expr> <expr> <expr> )
+    # cfn if_expr :=
+    # cfn     | ( if <expr> <expr> <expr> )
     @_("LP IF expr expr expr RP")
     def if_expr(self, p):
         return base_ast.If(p.expr0, p.expr1, p.expr2)
 
     # Modification: split out <binding>
-    ## let_expr :=
-    ##     | ( let ( <binding>* ) <expr> )
+    # cfn let_expr :=
+    # cfn     | ( let ( <binding>* ) <expr> )
     @_("LP LET LP { binding } RP expr RP")
     def let_expr(self, p):
-        bind = {var:expr for var, expr in p.binding}
+        bind = {var: expr for var, expr in p.binding}
         return base_ast.Let(bind, p.expr)
 
-    ##     | ( let* ( <binding>* ) <expr> )
+    # cfn     | ( let* ( <binding>* ) <expr> )
     @_("LP LET_STAR LP { binding } RP expr RP")
     def let_expr(self, p):
-        bind = {var:expr for var, expr in p.binding}
+        bind = {var: expr for var, expr in p.binding}
         return base_ast.LetStar(bind, p.expr)
 
     # Modification: split out <update_binding>
-    ## while_expr :=
-    ##     | ( while <expr> ( <update_binding>* ) <expr> )
+    # cfn while_expr :=
+    # cfn     | ( while <expr> ( <update_binding>* ) <expr> )
     @_("LP WHILE expr LP { update_binding } RP expr RP")
     def while_expr(self, p):
         up_bind = {var: (init, upd) for var, init, upd in p.update_binding}
         return base_ast.While(p.expr0, up_bind, p.expr1)
 
-    ##     | ( while* <expr> ( <update_binding>* ) <expr> )
+    # cfn     | ( while* <expr> ( <update_binding>* ) <expr> )
     @_("LP WHILE_STAR expr LP { update_binding } RP expr RP")
     def while_expr(self, p):
         up_bind = {var: (init, upd) for var, init, upd in p.update_binding}
         return base_ast.WhileStar(p.expr0, up_bind, p.expr1)
 
-    ## for_expr :=
-    ##     | ( for ( <binding>* ) ( <update_binding>* ) <expr> )
+    # cfn for_expr :=
+    # cfn     | ( for ( <binding>* ) ( <update_binding>* ) <expr> )
     @_("LP FOR LP { binding } RP LP { update_binding } RP expr RP")
     def for_expr(self, p):
-        bind = {var:expr for var, expr in p.binding}
+        bind = {var: expr for var, expr in p.binding}
         up_bind = {var: (init, upd) for var, init, upd in p.update_binding}
         return base_ast.For(bind, up_bind, p.expr)
 
-    ##     | ( for* ( <binding>* ) ( <update_binding>* ) <expr> )
+    # cfn     | ( for* ( <binding>* ) ( <update_binding>* ) <expr> )
     @_("LP FOR_STAR LP { binding } RP LP { update_binding } RP expr RP")
     def for_expr(self, p):
-        bind = {var:expr for var, expr in p.binding}
+        bind = {var: expr for var, expr in p.binding}
         up_bind = {var: (init, upd) for var, init, upd in p.update_binding}
         return base_ast.ForStar(bind, up_bind, p.expr)
 
-    ## tensor_expr :=
-    ##     | ( tensor ( <binding>* ) <expr> )
+    # cfn tensor_expr :=
+    # cfn     | ( tensor ( <binding>* ) <expr> )
     @_("LP TENSOR LP { binding } RP expr RP")
     def tensor_expr(self, p):
-        bind = {var:expr for var, expr in p.binding}
+        bind = {var: expr for var, expr in p.binding}
         return base_ast.Tensor(bind, p.expr)
 
-    ##     | ( tensor* ( <binding>* ) ( <update_binding>* ) <expr> )
+    # cfn     | ( tensor* ( <binding>* ) ( <update_binding>* ) <expr> )
     @_("LP TENSOR_STAR LP { binding } RP LP { update_binding } RP expr RP")
     def tensor_expr(self, p):
-        bind = {var:expr for var, expr in p.binding}
+        bind = {var: expr for var, expr in p.binding}
         up_bind = {var: (init, upd) for var, init, upd in p.update_binding}
         return base_ast.TensorStar(bind, up_bind, p.expr)
 
-    ## binding :=
-    ##     | [ <variable> <expr> ]
+    # cfn binding :=
+    # cfn     | [ <variable> <expr> ]
     @_("LB variable expr RB")
     def binding(self, p):
         return (p.variable, p.expr)
 
-    ## update_binding :=
-    ##     | [ <variable> <expr> <expr> ]
+    # cfn update_binding :=
+    # cfn     | [ <variable> <expr> <expr> ]
     @_("LB variable expr expr RB")
     def update_binding(self, p):
         return (p.variable, p.expr0, p.expr1)
 
     # Modification: rename <symbol> to <variable>
-    ## variable :=
-    ##     | {symbol}
+    # cfn variable :=
+    # cfn     | {symbol}
     @_("SYMBOL")
     def variable(self, p):
         return base_ast.Variable(p[0])
@@ -348,22 +348,17 @@ _parser = FPCoreParser()
 def parse(text):
     """Parse input text as FPCore"""
     tokens = fpcore_lexer.lex(text)
-    try:
-        timer.start()
-        assert(len(fpcore_lexer.ADDED_OPERATIONS) == 0)
+    with timer:
+        assert (len(fpcore_lexer.ADDED_OPERATIONS) == 0)
         parsed = _parser.parse(tokens)
         for op in fpcore_lexer.ADDED_OPERATIONS:
             if op is None:
                 raise FPCoreParseError(f"Operation never defined: '{op}'")
         fpcore_lexer.ADDED_OPERATIONS = dict()
-    finally:
-        timer.stop()
     return parsed
 
 
 def main(argv):
-    logger.set_log_level(Logger.EXTRA)
-
     if len(argv) == 1:
         text = sys.stdin.read()
     elif len(argv) == 2:
@@ -378,14 +373,18 @@ def main(argv):
     numbered = "\n".join(fmt.format(num+1, line) for num, line
                          in enumerate(text.splitlines()))
 
-    logger.blog("Input text", numbered)
+    print("Input text:")
+    print(f"\n{numbered}\n")
 
     for fpc in parse(text):
-        logger.blog("repr", repr(fpc))
-        logger.blog("str", str(fpc))
+        print("repr:")
+        print(f"\n{repr(fpc)}\n")
+        print("str:")
+        print(f"\n{str(fpc)}\n")
 
-    logger(" Lexing time: {:.6f} ms", fpcore_lexer.timer.elapsed_time() * 1000)
-    logger("Parsing time: {:.6f} ms", timer.elapsed_time() * 1000)
+    lexing_time = fpcore_lexer.timer.elapsed_time_ms()
+    print(" Lexing time: {:.6f} ms".format(lexing_time))
+    print("Parsing time: {:.6f} ms".format(timer.elapsed_time_ms()))
 
 
 if __name__ == "__main__":

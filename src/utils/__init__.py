@@ -9,5 +9,4 @@
 #
 
 from .add_method import add_method
-from .logging import Logger
 from .timing import Timer

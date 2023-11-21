@@ -23,48 +23,51 @@
 # Class Structure:
 #
 # ASTNode
-#  ├─Expr
-#  │  ├─Atom
-#  │  │  ├─Constant
-#  │  │  ├─Variable
-#  │  │  └─Number
-#  │  │     ├─Rational
-#  │  │     ├─Decnum
-#  │  │     ├─Hexnum
-#  │  │     └─Digits
-#  │  ├─Operation
-#  │  ├─If
-#  │  ├─Let
-#  │  │  └─LetStar
-#  │  ├─While
-#  │  │  └─WhileStar
-#  │  ├─For
-#  │  │  └─ForStar
-#  │  ├─Tensor
-#  │  │  └─TensorStar
-#  │  └─Cast
-#  └─FPCore
+#  ├─ Expr
+#  │  ├─ Atom
+#  │  │  ├─ Constant
+#  │  │  ├─ Variable
+#  │  │  └─ Number
+#  │  │     ├─ Rational
+#  │  │     ├─ Decnum
+#  │  │     ├─ Hexnum
+#  │  │     └─ Digits
+#  │  ├─ Operation
+#  │  ├─ If
+#  │  ├─ Let
+#  │  │  └─ LetStar
+#  │  ├─ While
+#  │  │  └─ WhileStar
+#  │  ├─ For
+#  │  │  └─ ForStar
+#  │  ├─ Tensor
+#  │  │  └─ TensorStar
+#  │  ├─ Cast
+#  │  └─ Array
+#  └─ FPCore
+
+from typing import Dict, List, Tuple
 
 
-from utils import Logger
+class FPCorePropertyError(Exception):
+    """Raised when a property is redefined"""
 
-
-logger = Logger(level=Logger.EXTRA)
+    def __init__(self, msg: str):
+        self.msg = msg
 
 
 class ASTNode:
     def __init__(self) -> None:
         self.properties = dict()
 
-    def add_properties(self, properties: dict):
+    def add_properties(self, properties: Dict):
         # Check for redefinition but allow precision to be redefined
         defined = self.properties.keys()
-        redefined = [k for k in properties.keys()
-                     if k in defined and k != "precision"]
+        incoming = properties.keys()
+        redefined = [k for k in incoming if k in defined and k != "precision"]
         if len(redefined) != 0:
             first = redefined[0]
-            msg = f"Redefined property '{first}'"
-            raise ValueError(msg)
+            raise FPCorePropertyError(f"Redefined property '{first}'")
         # Add new properties
         self.properties.update(properties)
         return self
@@ -89,7 +92,7 @@ class Variable(Atom):
         super().__init__(source)
         self.dimension = None
 
-    def set_dimension(self, *dimension: tuple[int]):
+    def set_dimension(self, *dimension: Tuple[int, ...]):
         self.dimension = dimension
         return self
 
@@ -112,14 +115,14 @@ class Hexnum(Number):
 
 class Digits(Number):
     def __init__(self, mantissa: int, exponent: int, base: int) -> None:
-        super().__init__(f"{mantissa} {exponent} {base}")
+        super().__init__(source=f"{mantissa} {exponent} {base}")
         self.mantissa = mantissa
         self.exponent = exponent
         self.base = base
 
 
 class Operation(Expr):
-    def __init__(self, op: str, *args: tuple[Expr]) -> None:
+    def __init__(self, op: str, *args: Tuple[Expr, ...]) -> None:
         super().__init__()
         self.op = op
         self.args = args
@@ -134,7 +137,7 @@ class If(Expr):
 
 
 class Let(Expr):
-    def __init__(self, bindings: dict, body: Expr) -> None:
+    def __init__(self, bindings: Dict[Variable, Expr], body: Expr) -> None:
         super().__init__()
         self.bindings = bindings
         self.body = body
@@ -145,7 +148,10 @@ class LetStar(Let):
 
 
 class While(Expr):
-    def __init__(self, cond: Expr, update_bindings: dict, body: Expr) -> None:
+    def __init__(self,
+                 cond: Expr,
+                 update_bindings: Dict[Variable, Tuple[Expr, Expr]],
+                 body: Expr) -> None:
         super().__init__()
         self.cond = cond
         self.update_bindings = update_bindings
@@ -157,7 +163,9 @@ class WhileStar(While):
 
 
 class For(Expr):
-    def __init__(self, bindings: dict, update_bindings: dict,
+    def __init__(self,
+                 bindings: Dict[Variable, Expr],
+                 update_bindings: Dict[Variable, Tuple[Expr, Expr]],
                  body: Expr) -> None:
         super().__init__()
         self.bindings = bindings
@@ -170,14 +178,16 @@ class ForStar(For):
 
 
 class Tensor(Expr):
-    def __init__(self, bindings: dict, body: Expr) -> None:
+    def __init__(self, bindings: Dict[Variable, Expr], body: Expr) -> None:
         super().__init__()
         self.bindings = bindings
         self.body = body
 
 
 class TensorStar(Tensor):
-    def __init__(self, bindings: dict, update_bindings: dict,
+    def __init__(self,
+                 bindings: Dict[Variable, Expr],
+                 update_bindings: Dict[Variable, Tuple[Expr, Expr]],
                  body: Expr) -> None:
         super().__init__(bindings, body)
         self.update_bindings = update_bindings
@@ -198,7 +208,7 @@ class Array(Expr):
 class FPCore(ASTNode):
     def __init__(self,
                  operation_name: str,
-                 arguments: list[Variable],
+                 arguments: List[Variable],
                  properties: dict,
                  body: Expr) -> None:
         super().__init__()

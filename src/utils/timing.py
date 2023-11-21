@@ -13,18 +13,23 @@ import time
 from typing import Any, Optional, Union
 
 NS_PER_SEC = 1_000_000_000
+NS_PER_MS = 1_000_000
 
 
-def ns_to_sec(ns: float) -> float:
+def ns_to_sec(ns: int) -> float:
     return ns / NS_PER_SEC
 
 
+def ns_to_ms(ns: int) -> float:
+    return ns / NS_PER_MS
+
+
 class TimerRunningError(Exception):
-    """Raised when an improper method is called while a Timer is running"""
+    """Raised when an improper method is called on a Timer that is running"""
 
     def __init__(self, method: str) -> None:
         self.method = method
-        msg = f"Method '{method}' was called while Timer was active"
+        msg = f"Method '{method}' was called while Timer was running"
         super().__init__(msg)
 
 
@@ -32,7 +37,7 @@ class TimerStoppedError(Exception):
     """Raised when a 'stop' is called on a Timer that is not running"""
 
     def __init__(self) -> None:
-        msg = "Method 'stop' was called while Timer was not active"
+        msg = "Method 'stop' was called while Timer was not running"
         super().__init__(msg)
 
 
@@ -72,7 +77,7 @@ class Timer:
         return len(self._times_ns)
 
     def __getitem__(self, key: Any) -> Union(float, list[float]):
-        """Get specific elapsed time in seconds"""
+        """Get specific elapsed time(s) in seconds"""
         if self._start_ns is not None:
             raise TimerRunningError("__getitem__")
         res = self._times_ns[key]
@@ -108,6 +113,12 @@ class Timer:
         if self._start_ns is not None:
             raise TimerRunningError("elapsed_ns")
         return ns_to_sec(sum(self._times_ns))
+
+    def elapsed_time_ms(self) -> float:
+        """Returns the total elapsed time in milliseconds"""
+        if self._start_ns is not None:
+            raise TimerRunningError("elapsed_ns")
+        return ns_to_ms(sum(self._times_ns))
 
     def mean(self) -> float:
         """Returns the mean time per session in seconds"""

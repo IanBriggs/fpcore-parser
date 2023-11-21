@@ -30,15 +30,12 @@
 #
 
 from fpcore.base_ast import ASTNode, Expr, FPCore, Number, Operation
-from utils import add_method, Logger
-
-logger = Logger(level=Logger.EXTRA)
+from utils import add_method
 
 
 def cast_to_astnode(x):
     typ = type(x)
     if typ == FPCore:
-        logger.dlog("Extracting body from FPCore: {}", x)
         x = x.body
     elif typ == int:
         x = Number(str(x))
@@ -52,7 +49,6 @@ def cast_to_astnode(x):
             float(sx)
         except ValueError:
             raise ValueError(f"Non-numeric value: {sx}")
-        logger.dlog("Casting {} to Number type: {}", typ, sx)
         x = Number(sx)
     return x
 
