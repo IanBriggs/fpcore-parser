@@ -72,14 +72,12 @@ class FPCoreParser(Parser):
         args = p.signature[1]
         prop = {k:v for k,v in p.property}
         fpc = base_ast.FPCore(name, args, prop, p.expr)
-        # Add here now that there is a body for the FPCore
+        # Add operation here now that there is a body for the FPCore
         if name is not None:
             fpcore_lexer.ADDED_OPERATIONS[name] = fpc
         return fpc
 
-    # Modification: if a name is defined add it to the list of
-    #               {added_operations}
-    ## signature :=
+     ## signature :=
     ##      | {symbol}? (<argument>*)
     @_("[ SYMBOL ] LP { argument } RP")
     def signature(self, p):
@@ -160,7 +158,7 @@ class FPCoreParser(Parser):
             p.expr.add_properties(prop)
         return p.expr
 
-    # Modification: Bill's syntactic sugar
+    # Modification: hash is short for setting precision to integer
     ##     | ( # <expr> )
     @_("LP HASH expr RP")
     def expr(self, p):
@@ -348,6 +346,7 @@ _parser = FPCoreParser()
 
 
 def parse(text):
+    """Parse input text as FPCore"""
     tokens = fpcore_lexer.lex(text)
     try:
         timer.start()
@@ -371,7 +370,7 @@ def main(argv):
         with open(argv[1], "r") as f:
             text = f.read()
     if text.strip() == "":
-        text = "(FPCore test () 1) (FPCore () 1)"
+        text = "(FPCore (x) :pre (<= 1/100 x 1/2) (/ (- (exp x) 1) x))"
 
     lines = text.splitlines()
     max_line_num = len(lines)

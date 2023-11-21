@@ -34,6 +34,8 @@ from utils import Logger, Timer
 logger = Logger(level=Logger.EXTRA, color=Logger.blue)
 timer = Timer()
 
+# As FPCores are parsed named ones are added to this dict.
+# This means user's can call functions, but only after defining them
 ADDED_OPERATIONS = dict()
 
 
@@ -52,7 +54,7 @@ class FPCoreLexer(Lexer):
         RB, # right square bracket
         COLON,
         BANG,
-        HASH, # Modification: Bill's syntactic sugar
+        HASH, # Modification: hash is short for setting precision to integer
 
         # Literals
         RATIONAL,
@@ -247,6 +249,7 @@ _lexer = FPCoreLexer()
 
 
 def lex(text):
+    """Tokenize input text as FPCore"""
     try:
         timer.start()
         lexed = _lexer.tokenize(text)
@@ -286,6 +289,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("")
         print("Goodbye")
-        return_code = 130  # meaning "Script terminated by Control-C"
+        return_code = 130 # meaning "Script terminated by Control-C"
 
     sys.exit(return_code)
